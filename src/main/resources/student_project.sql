@@ -100,12 +100,23 @@ CREATE TABLE jc_student_order_tmp
     h_given_name varchar(100) not null,
     h_patronymic varchar(100) not null,
     h_date_of_birth date not null,
+    h_post_index varchar(10),
+	h_street_code integer not null,
+    h_building varchar(10) not null,
+    h_extension varchar(10),
+    h_apartment varchar(10),
     w_sur_name varchar(100) not null,
     w_given_name varchar(100) not null,
     w_patronymic varchar(100) not null,
     w_date_of_birth date not null,
-    PRIMARY KEY (student_order_id)
-
+    w_post_index varchar(10),
+	w_street_code integer not null,
+    w_building varchar(10) not null,
+    w_extension varchar(10),
+    w_apartment varchar(10),
+    PRIMARY KEY (student_order_id),
+	FOREIGN KEY (h_street_code) REFERENCES jc_street(street_code) ON DELETE RESTRICT,
+	FOREIGN KEY (w_street_code) REFERENCES jc_street(street_code) ON DELETE RESTRICT
 );
 
 CREATE TABLE jc_student_child
