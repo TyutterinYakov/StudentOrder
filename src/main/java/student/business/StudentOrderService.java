@@ -20,6 +20,7 @@ import student.dao.StudentOrderStatusRepository;
 import student.dao.UniversityRepository;
 import student.domain.Address;
 import student.domain.Adult;
+import student.domain.Child;
 import student.domain.Street;
 import student.domain.StudentOrder;
 import student.domain.StudentOrderChild;
@@ -56,13 +57,14 @@ public class StudentOrderService {
 		so.setCertificateNumber("1234567890");
 		so.setRegisterOffice(registerDao.getOne(1L));
 		so.setMarriageDate(LocalDate.now());
+		orderDao.save(so);
+		
 		StudentOrderChild ch = buildChild(so);
 		List<StudentOrderChild> childs = new LinkedList<>();
 		childs.add(ch);
 		so.setStudentOrderChild(childs);
 		
 		childDao.save(ch);
-		orderDao.save(so);
 	}
 	
 	@Transactional
@@ -71,7 +73,7 @@ public class StudentOrderService {
 		List<StudentOrder> orders = orderDao.findAll();
 		logger.info("testGet");
 		logger.info("WIFE: "+orders.get(0).getWife().getSurName());
-		logger.info("CHILD: "+orders.get(0).getStudentOrderChild().get(0).getGivenName());
+		//logger.info("CHILD: "+orders.get(0).getStudentOrderChild().get(0).getChild().getGivenName());
 	}
 	
 	private Adult buildPerson(boolean wife) {
@@ -112,16 +114,20 @@ public class StudentOrderService {
 		}
 		return a;
 	}
-	
+
 	private StudentOrderChild buildChild(StudentOrder so) {
-		StudentOrderChild ch = new StudentOrderChild();
+		StudentOrderChild sc = new StudentOrderChild();
+		System.out.println(so.getStudentOrderId());
+		sc.setStudentOrder(so);
+		
+		Child ch = new Child();
 		ch.setSurName("Тюттерин");
 		ch.setGivenName("...");
 		ch.setPatronymic("Яковлевич");
 		ch.setChildCertificate("333333");
 		ch.setCertificateDate(LocalDate.now());
 		ch.setDateOfBirth(LocalDate.now());
-		ch.setStudentOrder(orderDao.getOne(1L));
+		
 		Address add = new Address();
 		add.setStreet(streetDao.getOne(1L));
 		add.setPostCode("33333");
@@ -130,7 +136,7 @@ public class StudentOrderService {
 		add.setApartment("33");
 		ch.setAddress(add);
 		ch.setRegisterOffice(registerDao.getOne(2L));		
-		
-		return ch;
+		sc.setChild(ch);
+		return sc;
 	}
 }

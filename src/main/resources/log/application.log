@@ -1465,3 +1465,153 @@ Caused by: org.hibernate.MappingException: property mapping has wrong number of 
 2021-12-25 22:12:23 INFO  [main]: WIFE: Тюттерина
 2021-12-25 22:12:23 INFO  [main]: CHILD: ...
 2021-12-25 22:12:23 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:41:01 INFO  [main]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-12-25 22:41:01 INFO  [main]: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7d20d0b, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@77f1baf5, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@41a2befb, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6c40365c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7bedc48a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@131ef10, org.springframework.test.context.event.EventPublishingTestExecutionListener@55b0dcab]
+2021-12-25 22:41:02 INFO  [main]: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-25 22:41:02 INFO  [main]: Finished Spring Data repository scanning in 182 ms. Found 8 JPA repository interfaces.
+2021-12-25 22:41:03 INFO  [main]: HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-25 22:41:03 INFO  [main]: HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-25 22:41:03 INFO  [main]: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-25 22:41:04 INFO  [main]: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-25 22:41:05 INFO  [main]: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 22:41:05 INFO  [main]: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:41:07 WARN  [main]: SQL Error: 0, SQLState: 23502
+2021-12-25 22:41:07 ERROR [main]: ERROR: null value in column "student_order_id" of relation "jc_student_child" violates not-null constraint
+  Подробности: Failing row contains (6, null, Тюттерин, ..., Яковлевич, 2021-12-25, 333333, 2021-12-25, 2, 33333, 1, 22, 4A, 33).
+2021-12-25 22:41:07 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:41:31 INFO  [main]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-12-25 22:41:31 INFO  [main]: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@bccb269, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@609cd4d8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@17f7cd29, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7d8704ef, org.springframework.test.context.transaction.TransactionalTestExecutionListener@13b6aecc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@158a8276, org.springframework.test.context.event.EventPublishingTestExecutionListener@3c3d9b6b]
+2021-12-25 22:41:31 INFO  [main]: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-25 22:41:31 INFO  [main]: Finished Spring Data repository scanning in 140 ms. Found 8 JPA repository interfaces.
+2021-12-25 22:41:32 INFO  [main]: HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-25 22:41:32 INFO  [main]: HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-25 22:41:32 INFO  [main]: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-25 22:41:33 INFO  [main]: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-25 22:41:34 INFO  [main]: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 22:41:34 INFO  [main]: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:41:35 WARN  [main]: SQL Error: 0, SQLState: 23502
+2021-12-25 22:41:35 ERROR [main]: ERROR: null value in column "student_order_id" of relation "jc_student_child" violates not-null constraint
+  Подробности: Failing row contains (7, null, Тюттерин, ..., Яковлевич, 2021-12-25, 333333, 2021-12-25, 2, 33333, 1, 22, 4A, 33).
+2021-12-25 22:41:35 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:42:29 INFO  [main]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-12-25 22:42:29 INFO  [main]: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@bccb269, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@609cd4d8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@17f7cd29, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7d8704ef, org.springframework.test.context.transaction.TransactionalTestExecutionListener@13b6aecc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@158a8276, org.springframework.test.context.event.EventPublishingTestExecutionListener@3c3d9b6b]
+2021-12-25 22:42:30 INFO  [main]: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-25 22:42:30 INFO  [main]: Finished Spring Data repository scanning in 142 ms. Found 8 JPA repository interfaces.
+2021-12-25 22:42:30 INFO  [main]: HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-25 22:42:31 INFO  [main]: HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-25 22:42:31 INFO  [main]: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-25 22:42:31 INFO  [main]: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-25 22:42:32 INFO  [main]: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 22:42:32 INFO  [main]: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:42:33 WARN  [main]: SQL Error: 0, SQLState: 23502
+2021-12-25 22:42:33 ERROR [main]: ERROR: null value in column "student_order_id" of relation "jc_student_child" violates not-null constraint
+  Подробности: Failing row contains (8, null, Тюттерин, ..., Яковлевич, 2021-12-25, 333333, 2021-12-25, 2, 33333, 1, 22, 4A, 33).
+2021-12-25 22:42:33 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:44:09 INFO  [main]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-12-25 22:44:09 INFO  [main]: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@bccb269, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@609cd4d8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@17f7cd29, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7d8704ef, org.springframework.test.context.transaction.TransactionalTestExecutionListener@13b6aecc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@158a8276, org.springframework.test.context.event.EventPublishingTestExecutionListener@3c3d9b6b]
+2021-12-25 22:44:09 INFO  [main]: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-25 22:44:09 INFO  [main]: Finished Spring Data repository scanning in 136 ms. Found 8 JPA repository interfaces.
+2021-12-25 22:44:10 INFO  [main]: HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-25 22:44:10 INFO  [main]: HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-25 22:44:10 INFO  [main]: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-25 22:44:11 INFO  [main]: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-25 22:44:11 INFO  [main]: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 22:44:11 INFO  [main]: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:44:12 WARN  [main]: SQL Error: 0, SQLState: 23502
+2021-12-25 22:44:12 ERROR [main]: ERROR: null value in column "student_order_id" of relation "jc_student_child" violates not-null constraint
+  Подробности: Failing row contains (9, null, Тюттерин, ..., Яковлевич, 2021-12-25, 333333, 2021-12-25, 2, 33333, 1, 22, 4A, 33).
+2021-12-25 22:44:12 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:47:10 INFO  [main]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-12-25 22:47:10 INFO  [main]: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3023df74, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@313ac989, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4562e04d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2a65fe7c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4135c3b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6302bbb1, org.springframework.test.context.event.EventPublishingTestExecutionListener@31304f14]
+2021-12-25 22:47:10 INFO  [main]: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-25 22:47:10 INFO  [main]: Finished Spring Data repository scanning in 186 ms. Found 8 JPA repository interfaces.
+2021-12-25 22:47:11 INFO  [main]: HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-25 22:47:11 INFO  [main]: HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-25 22:47:11 INFO  [main]: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-25 22:47:12 INFO  [main]: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-25 22:47:13 INFO  [main]: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 22:47:13 INFO  [main]: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:47:14 WARN  [main]: SQL Error: 0, SQLState: 23502
+2021-12-25 22:47:14 ERROR [main]: ERROR: null value in column "student_order_id" of relation "jc_student_child" violates not-null constraint
+  Подробности: Failing row contains (10, null, Тюттерин, ..., Яковлевич, 2021-12-25, 333333, 2021-12-25, 2, 33333, 1, 22, 4A, 33).
+2021-12-25 22:47:14 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:50:28 INFO  [main]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-12-25 22:50:28 INFO  [main]: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@bccb269, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@609cd4d8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@17f7cd29, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7d8704ef, org.springframework.test.context.transaction.TransactionalTestExecutionListener@13b6aecc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@158a8276, org.springframework.test.context.event.EventPublishingTestExecutionListener@3c3d9b6b]
+2021-12-25 22:50:28 INFO  [main]: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-25 22:50:28 INFO  [main]: Finished Spring Data repository scanning in 139 ms. Found 8 JPA repository interfaces.
+2021-12-25 22:50:29 INFO  [main]: HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-25 22:50:29 INFO  [main]: HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-25 22:50:29 INFO  [main]: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-25 22:50:30 INFO  [main]: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-25 22:50:30 INFO  [main]: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 22:50:30 INFO  [main]: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:50:31 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:50:53 INFO  [main]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-12-25 22:50:53 INFO  [main]: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@bccb269, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@609cd4d8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@17f7cd29, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7d8704ef, org.springframework.test.context.transaction.TransactionalTestExecutionListener@13b6aecc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@158a8276, org.springframework.test.context.event.EventPublishingTestExecutionListener@3c3d9b6b]
+2021-12-25 22:50:54 INFO  [main]: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-25 22:50:54 INFO  [main]: Finished Spring Data repository scanning in 134 ms. Found 8 JPA repository interfaces.
+2021-12-25 22:50:55 INFO  [main]: HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-25 22:50:55 INFO  [main]: HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-25 22:50:55 INFO  [main]: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-25 22:50:55 INFO  [main]: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-25 22:50:56 INFO  [main]: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 22:50:56 INFO  [main]: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:50:57 WARN  [main]: SQL Error: 0, SQLState: 23502
+2021-12-25 22:50:57 ERROR [main]: ERROR: null value in column "student_order_id" of relation "jc_student_child" violates not-null constraint
+  Подробности: Failing row contains (11, null, Тюттерин, ..., Яковлевич, 2021-12-25, 333333, 2021-12-25, 2, 33333, 1, 22, 4A, 33).
+2021-12-25 22:50:57 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:56:33 INFO  [main]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-12-25 22:56:33 INFO  [main]: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3fc2959f, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5aa9e4eb, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6989da5e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@385c9627, org.springframework.test.context.transaction.TransactionalTestExecutionListener@139982de, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@682b2fa, org.springframework.test.context.event.EventPublishingTestExecutionListener@217ed35e]
+2021-12-25 22:56:34 INFO  [main]: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-25 22:56:34 INFO  [main]: Finished Spring Data repository scanning in 156 ms. Found 8 JPA repository interfaces.
+2021-12-25 22:56:34 INFO  [main]: HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-25 22:56:34 INFO  [main]: HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-25 22:56:35 INFO  [main]: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-25 22:56:35 INFO  [main]: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-25 22:56:36 INFO  [main]: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 22:56:36 INFO  [main]: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:56:38 WARN  [main]: SQL Error: 0, SQLState: 23502
+2021-12-25 22:56:38 ERROR [main]: ERROR: null value in column "student_order_id" of relation "jc_student_child" violates not-null constraint
+  Подробности: Failing row contains (12, null, Тюттерин, ..., Яковлевич, 2021-12-25, 333333, 2021-12-25, 2, 33333, 1, 22, 4A, 33).
+2021-12-25 22:56:38 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:57:12 INFO  [main]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-12-25 22:57:12 INFO  [main]: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@bccb269, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@609cd4d8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@17f7cd29, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7d8704ef, org.springframework.test.context.transaction.TransactionalTestExecutionListener@13b6aecc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@158a8276, org.springframework.test.context.event.EventPublishingTestExecutionListener@3c3d9b6b]
+2021-12-25 22:57:12 INFO  [main]: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-25 22:57:13 INFO  [main]: Finished Spring Data repository scanning in 182 ms. Found 8 JPA repository interfaces.
+2021-12-25 22:57:13 INFO  [main]: HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-25 22:57:13 INFO  [main]: HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-25 22:57:13 INFO  [main]: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-25 22:57:14 INFO  [main]: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-25 22:57:15 INFO  [main]: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 22:57:15 INFO  [main]: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:57:16 WARN  [main]: SQL Error: 0, SQLState: 23502
+2021-12-25 22:57:16 ERROR [main]: ERROR: null value in column "student_order_id" of relation "jc_student_child" violates not-null constraint
+  Подробности: Failing row contains (13, null, Тюттерин, ..., Яковлевич, 2021-12-25, 333333, 2021-12-25, 2, 33333, 1, 22, 4A, 33).
+2021-12-25 22:57:16 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:57:22 INFO  [main]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-12-25 22:57:22 INFO  [main]: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@bccb269, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@609cd4d8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@17f7cd29, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7d8704ef, org.springframework.test.context.transaction.TransactionalTestExecutionListener@13b6aecc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@158a8276, org.springframework.test.context.event.EventPublishingTestExecutionListener@3c3d9b6b]
+2021-12-25 22:57:22 INFO  [main]: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-25 22:57:23 INFO  [main]: Finished Spring Data repository scanning in 178 ms. Found 8 JPA repository interfaces.
+2021-12-25 22:57:23 INFO  [main]: HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-25 22:57:23 INFO  [main]: HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-25 22:57:23 INFO  [main]: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-25 22:57:24 INFO  [main]: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-25 22:57:25 INFO  [main]: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 22:57:25 INFO  [main]: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:57:26 WARN  [main]: SQL Error: 0, SQLState: 23502
+2021-12-25 22:57:26 ERROR [main]: ERROR: null value in column "student_order_id" of relation "jc_student_child" violates not-null constraint
+  Подробности: Failing row contains (14, null, Тюттерин, ..., Яковлевич, 2021-12-25, 333333, 2021-12-25, 2, 33333, 1, 22, 4A, 33).
+2021-12-25 22:57:26 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:58:37 INFO  [main]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-12-25 22:58:37 INFO  [main]: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@bccb269, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@609cd4d8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@17f7cd29, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7d8704ef, org.springframework.test.context.transaction.TransactionalTestExecutionListener@13b6aecc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@158a8276, org.springframework.test.context.event.EventPublishingTestExecutionListener@3c3d9b6b]
+2021-12-25 22:58:37 INFO  [main]: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-25 22:58:38 INFO  [main]: Finished Spring Data repository scanning in 166 ms. Found 8 JPA repository interfaces.
+2021-12-25 22:58:38 INFO  [main]: HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-25 22:58:38 INFO  [main]: HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-25 22:58:38 INFO  [main]: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-25 22:58:39 INFO  [main]: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-25 22:58:40 INFO  [main]: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 22:58:40 INFO  [main]: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 22:58:42 INFO  [main]: testGet
+2021-12-25 22:58:42 INFO  [main]: WIFE: Тюттерина
+2021-12-25 22:58:42 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'

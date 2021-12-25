@@ -8,6 +8,7 @@ import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,20 +20,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="jc_student_child")
-@AssociationOverrides({
-	@AssociationOverride(name="address.street", joinColumns =@JoinColumn(name="c_street_code"))
-})
-@AttributeOverrides({
-	@AttributeOverride(name="surName", column=@Column(name="c_sur_name")),
-	@AttributeOverride(name="givenName", column=@Column(name="c_given_name")),
-	@AttributeOverride(name="patronymic", column=@Column(name="c_patronymic")),
-	@AttributeOverride(name="dateOfBirth", column=@Column(name="c_date_of_birth")),
-	@AttributeOverride(name="address.postCode", column=@Column(name="c_post_index")),
-	@AttributeOverride(name="address.building", column=@Column(name="c_building")),
-	@AttributeOverride(name="address.extension", column=@Column(name="c_extension")),
-	@AttributeOverride(name="address.apartment", column=@Column(name="c_apartment"))
-})
-public class StudentOrderChild extends Person {
+public class StudentOrderChild{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -41,13 +29,26 @@ public class StudentOrderChild extends Person {
 	@ManyToOne(cascade= {CascadeType.REFRESH}, fetch=FetchType.LAZY)
 	@JoinColumn(name="student_order_id")
 	private StudentOrder studentOrder;
-	@Column(name="c_certificate_number")
-	private String childCertificate;
-	@Column(name="c_certificate_date")
-	private LocalDate certificateDate;
-	@ManyToOne(cascade= {CascadeType.REFRESH}, fetch=FetchType.LAZY)
-	@JoinColumn(name="c_register_office_id")
-	private RegisterOffice registerOffice;
+
+	@AssociationOverrides({
+		@AssociationOverride(name="address.street", joinColumns =@JoinColumn(name="c_street_code")),
+		@AssociationOverride(name="registerOffice.c_register_office_id", joinColumns =@JoinColumn(name="c_street_code"))
+	})
+	@AttributeOverrides({
+		@AttributeOverride(name="surName", column=@Column(name="c_sur_name")),
+		@AttributeOverride(name="givenName", column=@Column(name="c_given_name")),
+		@AttributeOverride(name="patronymic", column=@Column(name="c_patronymic")),
+		@AttributeOverride(name="dateOfBirth", column=@Column(name="c_date_of_birth")),
+		@AttributeOverride(name="address.postCode", column=@Column(name="c_post_index")),
+		@AttributeOverride(name="address.building", column=@Column(name="c_building")),
+		@AttributeOverride(name="address.extension", column=@Column(name="c_extension")),
+		@AttributeOverride(name="address.apartment", column=@Column(name="c_apartment")),
+		@AttributeOverride(name="childCertificate", column=@Column(name="c_certificate_number")),
+		@AttributeOverride(name="certificateDate", column=@Column(name="c_certificate_date"))
+		
+	})
+	@Embedded
+	private Child child;
 	
 	
 	public Long getStudentChildId() {
@@ -62,24 +63,13 @@ public class StudentOrderChild extends Person {
 	public void setStudentOrder(StudentOrder studentOrder) {
 		this.studentOrder = studentOrder;
 	}
-	public String getChildCertificate() {
-		return childCertificate;
+	public Child getChild() {
+		return child;
 	}
-	public void setChildCertificate(String childCertificate) {
-		this.childCertificate = childCertificate;
+	public void setChild(Child child) {
+		this.child = child;
 	}
-	public LocalDate getCertificateDate() {
-		return certificateDate;
-	}
-	public void setCertificateDate(LocalDate certificateDate) {
-		this.certificateDate = certificateDate;
-	}
-	public RegisterOffice getRegisterOffice() {
-		return registerOffice;
-	}
-	public void setRegisterOffice(RegisterOffice registerOffice) {
-		this.registerOffice = registerOffice;
-	}
+
 	
 	
 	
