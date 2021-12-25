@@ -2,15 +2,10 @@ package student.domain;
 
 import java.time.LocalDate;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Embeddable
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public class Person {
 	private String surName;
 	private String givenName;

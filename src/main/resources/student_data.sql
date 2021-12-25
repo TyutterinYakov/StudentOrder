@@ -56,3 +56,8 @@ INSERT INTO jc_register_office (r_office_id, r_office_area_id, r_office_name) VA
 (5, '020010020002', 'ЗАГС Область 1 поселения 2'),
 (6, '020020010000', 'ЗАГС Область 2 район 1'),
 (7, '020020020000', 'ЗАГС Область 2 район 2');
+
+INSERT INTO jc_order_status (status_id, status_name) values 
+(1, 'В обработке'),
+(2, 'Рассмотрено');
+
