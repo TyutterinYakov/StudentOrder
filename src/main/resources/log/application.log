@@ -1,0 +1,573 @@
+2021-12-25 15:47:41 INFO  [main]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-12-25 15:47:41 INFO  [main]: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@bccb269, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@609cd4d8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@17f7cd29, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7d8704ef, org.springframework.test.context.transaction.TransactionalTestExecutionListener@13b6aecc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@158a8276, org.springframework.test.context.event.EventPublishingTestExecutionListener@3c3d9b6b]
+2021-12-25 15:47:42 INFO  [main]: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-25 15:47:42 INFO  [main]: Finished Spring Data repository scanning in 152 ms. Found 1 JPA repository interfaces.
+2021-12-25 15:47:43 INFO  [main]: HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-25 15:47:43 INFO  [main]: HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-25 15:47:43 INFO  [main]: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-25 15:47:44 INFO  [main]: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-25 15:47:45 INFO  [main]: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 15:47:45 INFO  [main]: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 15:47:46 INFO  [main]: testGet
+2021-12-25 15:47:46 INFO  [main]: Тюттерина
+2021-12-25 15:47:46 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 15:58:04 DEBUG [main]: SpringJUnit4ClassRunner constructor called with [class student.business.StudentOrderServiceTest]
+2021-12-25 15:58:04 DEBUG [main]: Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+2021-12-25 15:58:04 DEBUG [main]: Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+2021-12-25 15:58:05 DEBUG [main]: Instantiating TestContextBootstrapper for test class [student.business.StudentOrderServiceTest] from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+2021-12-25 15:58:05 DEBUG [main]: Delegating to GenericXmlContextLoader to process context configuration [ContextConfigurationAttributes@49ec71f8 declaringClass = 'student.business.StudentOrderServiceTest', classes = '{}', locations = '{classpath:springCOntext.xml}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader'].
+2021-12-25 15:58:05 DEBUG [main]: Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: @TestExecutionListeners is not present for class [student.business.StudentOrderServiceTest]: using defaults.
+2021-12-25 15:58:05 INFO  [main]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-12-25 15:58:05 DEBUG [main]: Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [javax/servlet/ServletContext]
+2021-12-25 15:58:05 INFO  [main]: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@75db5df9, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@707194ba, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1190200a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6a2f6f80, org.springframework.test.context.transaction.TransactionalTestExecutionListener@45b4c3a9, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@399c4be1, org.springframework.test.context.event.EventPublishingTestExecutionListener@291caca8]
+2021-12-25 15:58:05 DEBUG [main]: Retrieved @ProfileValueSourceConfiguration [null] for test class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Retrieved @ProfileValueSourceConfiguration [null] for test class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Retrieved @ProfileValueSourceConfiguration [null] for test class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Retrieved @ProfileValueSourceConfiguration [null] for test class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Retrieved @ProfileValueSourceConfiguration [null] for test class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Retrieved @ProfileValueSourceConfiguration [null] for test class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Before test class: context [DefaultTestContext@2f54a33d testClass = StudentOrderServiceTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+2021-12-25 15:58:05 DEBUG [main]: Retrieved @ProfileValueSourceConfiguration [null] for test class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [student.business.StudentOrderServiceTest]
+2021-12-25 15:58:05 DEBUG [main]: Performing dependency injection for test context [[DefaultTestContext@2f54a33d testClass = StudentOrderServiceTest, testInstance = student.business.StudentOrderServiceTest@69fb6037, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]].
+2021-12-25 15:58:05 DEBUG [main]: Delegating to GenericXmlContextLoader to load context from [MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]].
+2021-12-25 15:58:05 DEBUG [main]: Loading ApplicationContext for merged context configuration [[MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2021-12-25 15:58:05 DEBUG [main]: Activating profiles []
+2021-12-25 15:58:06 DEBUG [main]: Identified candidate component class: file [/Users/asatutterin/Desktop/new studentOrder/target/classes/student/business/StudentOrderService.class]
+2021-12-25 15:58:06 DEBUG [main]: Ignored because not a concrete top-level class: file [/Users/asatutterin/Desktop/new studentOrder/target/classes/student/dao/StudentOrderRepository.class]
+2021-12-25 15:58:06 INFO  [main]: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-25 15:58:06 DEBUG [main]: Scanning for JPA repositories in packages student.
+2021-12-25 15:58:06 DEBUG [main]: Identified candidate component class: file [/Users/asatutterin/Desktop/new studentOrder/target/classes/student/dao/StudentOrderRepository.class]
+2021-12-25 15:58:06 INFO  [main]: Finished Spring Data repository scanning in 105 ms. Found 1 JPA repository interfaces.
+2021-12-25 15:58:06 DEBUG [main]: Loaded 21 bean definitions from class path resource [springCOntext.xml]
+2021-12-25 15:58:06 DEBUG [main]: Refreshing org.springframework.context.support.GenericApplicationContext@77eca502
+2021-12-25 15:58:06 DEBUG [main]: Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2021-12-25 15:58:06 DEBUG [main]: Creating shared instance of singleton bean 'emBeanDefinitionRegistrarPostProcessor'
+2021-12-25 15:58:06 DEBUG [main]: Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2021-12-25 15:58:06 DEBUG [main]: Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2021-12-25 15:58:06 DEBUG [main]: Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
+2021-12-25 15:58:06 DEBUG [main]: Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2021-12-25 15:58:06 DEBUG [main]: Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2021-12-25 15:58:06 DEBUG [main]: Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2021-12-25 15:58:06 DEBUG [main]: Creating shared instance of singleton bean 'emf'
+2021-12-25 15:58:06 DEBUG [main]: Creating shared instance of singleton bean 'dataSource'
+2021-12-25 15:58:06 DEBUG [main]: Loaded JDBC driver: org.postgresql.Driver
+2021-12-25 15:58:06 DEBUG [main]: Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-12-25 15:58:06 DEBUG [main]: Creating shared instance of singleton bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0'
+2021-12-25 15:58:06 DEBUG [main]: Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2021-12-25 15:58:06 DEBUG [main]: Building JPA container EntityManagerFactory for persistence unit 'default'
+2021-12-25 15:58:06 DEBUG [main]: PersistenceUnitInfo [
+	name: default
+	persistence provider classname: null
+	classloader: jdk.internal.loader.ClassLoaders$AppClassLoader@42110406
+	excludeUnlistedClasses: true
+	JTA datasource: null
+	Non JTA datasource: org.springframework.jdbc.datasource.DriverManagerDataSource@73ff4fae
+	Transaction type: RESOURCE_LOCAL
+	PU root URL: file:/Users/asatutterin/Desktop/new%20studentOrder/target/test-classes/
+	Shared Cache Mode: UNSPECIFIED
+	Validation Mode: AUTO
+	Jar files URLs []
+	Managed classes names [
+		student.domain.Person
+		student.domain.StudentOrder]
+	Mapping files names []
+	Properties []
+2021-12-25 15:58:06 DEBUG [main]: Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+2021-12-25 15:58:06 DEBUG [main]: Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+2021-12-25 15:58:06 DEBUG [main]: Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+2021-12-25 15:58:06 INFO  [main]: HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-25 15:58:06 DEBUG [main]: HHH000206: hibernate.properties not found
+2021-12-25 15:58:07 DEBUG [main]: Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+2021-12-25 15:58:07 DEBUG [main]: Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+2021-12-25 15:58:07 DEBUG [main]: Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+2021-12-25 15:58:07 INFO  [main]: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration boolean -> org.hibernate.type.BooleanType@773c0293
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration boolean -> org.hibernate.type.BooleanType@773c0293
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@773c0293
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@2dbd803f
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration true_false -> org.hibernate.type.TrueFalseType@5b22b970
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration yes_no -> org.hibernate.type.YesNoType@529cfee5
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration byte -> org.hibernate.type.ByteType@af78c87
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration byte -> org.hibernate.type.ByteType@af78c87
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@af78c87
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration character -> org.hibernate.type.CharacterType@660591fb
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration char -> org.hibernate.type.CharacterType@660591fb
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@660591fb
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration short -> org.hibernate.type.ShortType@5eb97ced
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration short -> org.hibernate.type.ShortType@5eb97ced
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.lang.Short -> org.hibernate.type.ShortType@5eb97ced
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration integer -> org.hibernate.type.IntegerType@2bcec6a6
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration int -> org.hibernate.type.IntegerType@2bcec6a6
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@2bcec6a6
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration long -> org.hibernate.type.LongType@3e850122
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration long -> org.hibernate.type.LongType@3e850122
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.lang.Long -> org.hibernate.type.LongType@3e850122
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration float -> org.hibernate.type.FloatType@293cde83
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration float -> org.hibernate.type.FloatType@293cde83
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.lang.Float -> org.hibernate.type.FloatType@293cde83
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration double -> org.hibernate.type.DoubleType@398474a2
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration double -> org.hibernate.type.DoubleType@398474a2
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@398474a2
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@1d12b024
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@1d12b024
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration big_integer -> org.hibernate.type.BigIntegerType@543e593
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@543e593
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration string -> org.hibernate.type.StringType@a64e035
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.lang.String -> org.hibernate.type.StringType@a64e035
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration nstring -> org.hibernate.type.StringNVarcharType@49dbaaf3
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@1f443fae
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration url -> org.hibernate.type.UrlType@782168b7
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.net.URL -> org.hibernate.type.UrlType@782168b7
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration Duration -> org.hibernate.type.DurationType@1bfe3203
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.time.Duration -> org.hibernate.type.DurationType@1bfe3203
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration Instant -> org.hibernate.type.InstantType@14fc5d40
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.time.Instant -> org.hibernate.type.InstantType@14fc5d40
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@5f13be1
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@5f13be1
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration LocalDate -> org.hibernate.type.LocalDateType@26ae880a
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@26ae880a
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@298d9a05
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@298d9a05
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@7bb004b8
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@7bb004b8
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@185f7840
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@185f7840
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@3b08f438
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@3b08f438
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration date -> org.hibernate.type.DateType@5cd61783
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.sql.Date -> org.hibernate.type.DateType@5cd61783
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration time -> org.hibernate.type.TimeType@5e4fa1da
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.sql.Time -> org.hibernate.type.TimeType@5e4fa1da
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration timestamp -> org.hibernate.type.TimestampType@70e02081
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@70e02081
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.util.Date -> org.hibernate.type.TimestampType@70e02081
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@15fdd1f2
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration calendar -> org.hibernate.type.CalendarType@795fd838
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@795fd838
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@795fd838
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@e4d2696
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@5af97169
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration locale -> org.hibernate.type.LocaleType@121c54fa
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@121c54fa
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration currency -> org.hibernate.type.CurrencyType@49798e84
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@49798e84
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration timezone -> org.hibernate.type.TimeZoneType@34dc85a
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@34dc85a
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration class -> org.hibernate.type.ClassType@2098d37d
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.lang.Class -> org.hibernate.type.ClassType@2098d37d
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@4349754
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@4349754
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@1ba05e38
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration binary -> org.hibernate.type.BinaryType@773e2eb5
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration byte[] -> org.hibernate.type.BinaryType@773e2eb5
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration [B -> org.hibernate.type.BinaryType@773e2eb5
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@38a1c423
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@38a1c423
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@38a1c423
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration row_version -> org.hibernate.type.RowVersionType@4074023c
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration image -> org.hibernate.type.ImageType@6e91893
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration characters -> org.hibernate.type.CharArrayType@4a3be6a5
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration char[] -> org.hibernate.type.CharArrayType@4a3be6a5
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration [C -> org.hibernate.type.CharArrayType@4a3be6a5
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@f202d6d
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@f202d6d
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@f202d6d
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration text -> org.hibernate.type.TextType@7a2e0858
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration ntext -> org.hibernate.type.NTextType@2715644a
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration blob -> org.hibernate.type.BlobType@7207cb51
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@7207cb51
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@4a6c18ad
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration clob -> org.hibernate.type.ClobType@f339eae
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@f339eae
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration nclob -> org.hibernate.type.NClobType@35ff8fc9
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@35ff8fc9
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@16c8b7bd
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@6e106680
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration serializable -> org.hibernate.type.SerializableType@7e75bf2d
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration object -> org.hibernate.type.ObjectType@3bb8aabc
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@3bb8aabc
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@57b75756
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@5327a06e
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@2679311f
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@287f7811
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@451f87af
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@2b556bb2
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@44cb460e
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@17271176
+2021-12-25 15:58:07 DEBUG [main]: Injecting JPA temp ClassLoader [org.springframework.instrument.classloading.SimpleThrowawayClassLoader@4a5905d9] into BootstrapContext; was [null]
+2021-12-25 15:58:07 DEBUG [main]: ClassLoaderAccessImpl#injectTempClassLoader(org.springframework.instrument.classloading.SimpleThrowawayClassLoader@4a5905d9) [was null]
+2021-12-25 15:58:07 DEBUG [main]: Injecting ScanEnvironment [org.hibernate.jpa.boot.internal.StandardJpaScanEnvironmentImpl@5c0f79f0] into BootstrapContext; was [null]
+2021-12-25 15:58:07 DEBUG [main]: Injecting ScanOptions [org.hibernate.boot.archive.scan.internal.StandardScanOptions@21fdfefc] into BootstrapContext; was [org.hibernate.boot.archive.scan.internal.StandardScanOptions@3daa82be]
+2021-12-25 15:58:07 DEBUG [main]: Injecting JPA temp ClassLoader [null] into BootstrapContext; was [org.springframework.instrument.classloading.SimpleThrowawayClassLoader@4a5905d9]
+2021-12-25 15:58:07 DEBUG [main]: ClassLoaderAccessImpl#injectTempClassLoader(null) [was org.springframework.instrument.classloading.SimpleThrowawayClassLoader@4a5905d9]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+2021-12-25 15:58:07 DEBUG [main]: Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+2021-12-25 15:58:07 DEBUG [main]: Creating new JDBC DriverManager Connection to [jdbc:postgresql://localhost:5432/jc_student]
+2021-12-25 15:58:07 DEBUG [main]: Database ->
+       name : PostgreSQL
+    version : 14.1
+      major : 14
+      minor : 1
+2021-12-25 15:58:07 DEBUG [main]: Driver ->
+       name : PostgreSQL JDBC Driver
+    version : 42.3.1
+      major : 42
+      minor : 3
+2021-12-25 15:58:07 DEBUG [main]: JDBC version : 4.2
+2021-12-25 15:58:07 INFO  [main]: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-12-25 15:58:07 DEBUG [main]: JDBC driver metadata reported database stores quoted identifiers in neither upper, lower nor mixed case
+2021-12-25 15:58:07 DEBUG [main]: Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@e042c99
+2021-12-25 15:58:07 DEBUG [main]: Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@e042c99
+2021-12-25 15:58:07 DEBUG [main]: HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@4349754
+2021-12-25 15:58:07 DEBUG [main]: Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@7fd26ad8] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@1894593a]
+2021-12-25 15:58:07 DEBUG [main]: Binding entity from annotated class: student.domain.StudentOrder
+2021-12-25 15:58:07 DEBUG [main]: Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+2021-12-25 15:58:07 DEBUG [main]: Import with entity name StudentOrder
+2021-12-25 15:58:07 DEBUG [main]: Bind entity student.domain.StudentOrder on table jc_student_order_tmp
+2021-12-25 15:58:07 DEBUG [main]: Binding column: Ejb3Column{table=org.hibernate.mapping.Table(jc_student_order_tmp), mappingColumn=student_order_id, insertable=true, updatable=true, unique=false}
+2021-12-25 15:58:07 DEBUG [main]: Not known whether passed class name [student.domain.StudentOrder] is safe
+2021-12-25 15:58:07 DEBUG [main]: No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : student.domain.StudentOrder
+2021-12-25 15:58:07 DEBUG [main]: MetadataSourceProcessor property studentOrderId with lazy=false
+2021-12-25 15:58:07 DEBUG [main]: Attempting to locate auto-apply AttributeConverter for property [student.domain.StudentOrder:studentOrderId]
+2021-12-25 15:58:07 DEBUG [main]: building SimpleValue for studentOrderId
+2021-12-25 15:58:08 DEBUG [main]: Building property studentOrderId
+2021-12-25 15:58:08 DEBUG [main]: #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(student_order_id)]), studentOrderId, identity, , ...)
+2021-12-25 15:58:08 DEBUG [main]: Binding column: Ejb3Column{table=org.hibernate.mapping.Table(jc_student_order_tmp), mappingColumn=husband, insertable=true, updatable=true, unique=false}
+2021-12-25 15:58:08 DEBUG [main]: Column(s) overridden for property dateOfBirth
+2021-12-25 15:58:08 DEBUG [main]: Binding column: Ejb3Column{table=org.hibernate.mapping.Table(jc_student_order_tmp), mappingColumn=h_date_of_birth, insertable=true, updatable=true, unique=false}
+2021-12-25 15:58:08 DEBUG [main]: MetadataSourceProcessor property dateOfBirth with lazy=false
+2021-12-25 15:58:08 DEBUG [main]: Attempting to locate auto-apply AttributeConverter for property [student.domain.StudentOrder.husband:dateOfBirth]
+2021-12-25 15:58:08 DEBUG [main]: building SimpleValue for dateOfBirth
+2021-12-25 15:58:08 DEBUG [main]: Building property dateOfBirth
+2021-12-25 15:58:08 DEBUG [main]: Column(s) overridden for property givenName
+2021-12-25 15:58:08 DEBUG [main]: Binding column: Ejb3Column{table=org.hibernate.mapping.Table(jc_student_order_tmp), mappingColumn=h_given_name, insertable=true, updatable=true, unique=false}
+2021-12-25 15:58:08 DEBUG [main]: MetadataSourceProcessor property givenName with lazy=false
+2021-12-25 15:58:08 DEBUG [main]: Attempting to locate auto-apply AttributeConverter for property [student.domain.StudentOrder.husband:givenName]
+2021-12-25 15:58:08 DEBUG [main]: building SimpleValue for givenName
+2021-12-25 15:58:08 DEBUG [main]: Building property givenName
+2021-12-25 15:58:08 DEBUG [main]: Column(s) overridden for property patronymic
+2021-12-25 15:58:08 DEBUG [main]: Binding column: Ejb3Column{table=org.hibernate.mapping.Table(jc_student_order_tmp), mappingColumn=h_patronymic, insertable=true, updatable=true, unique=false}
+2021-12-25 15:58:08 DEBUG [main]: MetadataSourceProcessor property patronymic with lazy=false
+2021-12-25 15:58:08 DEBUG [main]: Attempting to locate auto-apply AttributeConverter for property [student.domain.StudentOrder.husband:patronymic]
+2021-12-25 15:58:08 DEBUG [main]: building SimpleValue for patronymic
+2021-12-25 15:58:08 DEBUG [main]: Building property patronymic
+2021-12-25 15:58:08 DEBUG [main]: Column(s) overridden for property surName
+2021-12-25 15:58:08 DEBUG [main]: Binding column: Ejb3Column{table=org.hibernate.mapping.Table(jc_student_order_tmp), mappingColumn=h_sur_name, insertable=true, updatable=true, unique=false}
+2021-12-25 15:58:08 DEBUG [main]: MetadataSourceProcessor property surName with lazy=false
+2021-12-25 15:58:08 DEBUG [main]: Attempting to locate auto-apply AttributeConverter for property [student.domain.StudentOrder.husband:surName]
+2021-12-25 15:58:08 DEBUG [main]: building SimpleValue for surName
+2021-12-25 15:58:08 DEBUG [main]: Building property surName
+2021-12-25 15:58:08 DEBUG [main]: Building property husband
+2021-12-25 15:58:08 DEBUG [main]: Binding column: Ejb3Column{table=org.hibernate.mapping.Table(jc_student_order_tmp), mappingColumn=wife, insertable=true, updatable=true, unique=false}
+2021-12-25 15:58:08 DEBUG [main]: Column(s) overridden for property dateOfBirth
+2021-12-25 15:58:08 DEBUG [main]: Binding column: Ejb3Column{table=org.hibernate.mapping.Table(jc_student_order_tmp), mappingColumn=w_date_of_birth, insertable=true, updatable=true, unique=false}
+2021-12-25 15:58:08 DEBUG [main]: MetadataSourceProcessor property dateOfBirth with lazy=false
+2021-12-25 15:58:08 DEBUG [main]: Attempting to locate auto-apply AttributeConverter for property [student.domain.StudentOrder.wife:dateOfBirth]
+2021-12-25 15:58:08 DEBUG [main]: building SimpleValue for dateOfBirth
+2021-12-25 15:58:08 DEBUG [main]: Building property dateOfBirth
+2021-12-25 15:58:08 DEBUG [main]: Column(s) overridden for property givenName
+2021-12-25 15:58:08 DEBUG [main]: Binding column: Ejb3Column{table=org.hibernate.mapping.Table(jc_student_order_tmp), mappingColumn=w_given_name, insertable=true, updatable=true, unique=false}
+2021-12-25 15:58:08 DEBUG [main]: MetadataSourceProcessor property givenName with lazy=false
+2021-12-25 15:58:08 DEBUG [main]: Attempting to locate auto-apply AttributeConverter for property [student.domain.StudentOrder.wife:givenName]
+2021-12-25 15:58:08 DEBUG [main]: building SimpleValue for givenName
+2021-12-25 15:58:08 DEBUG [main]: Building property givenName
+2021-12-25 15:58:08 DEBUG [main]: Column(s) overridden for property patronymic
+2021-12-25 15:58:08 DEBUG [main]: Binding column: Ejb3Column{table=org.hibernate.mapping.Table(jc_student_order_tmp), mappingColumn=w_patronymic, insertable=true, updatable=true, unique=false}
+2021-12-25 15:58:08 DEBUG [main]: MetadataSourceProcessor property patronymic with lazy=false
+2021-12-25 15:58:08 DEBUG [main]: Attempting to locate auto-apply AttributeConverter for property [student.domain.StudentOrder.wife:patronymic]
+2021-12-25 15:58:08 DEBUG [main]: building SimpleValue for patronymic
+2021-12-25 15:58:08 DEBUG [main]: Building property patronymic
+2021-12-25 15:58:08 DEBUG [main]: Column(s) overridden for property surName
+2021-12-25 15:58:08 DEBUG [main]: Binding column: Ejb3Column{table=org.hibernate.mapping.Table(jc_student_order_tmp), mappingColumn=w_sur_name, insertable=true, updatable=true, unique=false}
+2021-12-25 15:58:08 DEBUG [main]: MetadataSourceProcessor property surName with lazy=false
+2021-12-25 15:58:08 DEBUG [main]: Attempting to locate auto-apply AttributeConverter for property [student.domain.StudentOrder.wife:surName]
+2021-12-25 15:58:08 DEBUG [main]: building SimpleValue for surName
+2021-12-25 15:58:08 DEBUG [main]: Building property surName
+2021-12-25 15:58:08 DEBUG [main]: Building property wife
+2021-12-25 15:58:08 DEBUG [main]: Starting fillSimpleValue for studentOrderId
+2021-12-25 15:58:08 DEBUG [main]: Starting fillSimpleValue for dateOfBirth
+2021-12-25 15:58:08 DEBUG [main]: Starting fillSimpleValue for givenName
+2021-12-25 15:58:08 DEBUG [main]: Starting fillSimpleValue for patronymic
+2021-12-25 15:58:08 DEBUG [main]: Starting fillSimpleValue for surName
+2021-12-25 15:58:08 DEBUG [main]: Starting fillSimpleValue for dateOfBirth
+2021-12-25 15:58:08 DEBUG [main]: Starting fillSimpleValue for givenName
+2021-12-25 15:58:08 DEBUG [main]: Starting fillSimpleValue for patronymic
+2021-12-25 15:58:08 DEBUG [main]: Starting fillSimpleValue for surName
+2021-12-25 15:58:08 DEBUG [main]: Forcing column [student_order_id] to be non-null as it is part of the primary key for table [jc_student_order_tmp]
+2021-12-25 15:58:08 DEBUG [main]: Building session factory
+2021-12-25 15:58:08 DEBUG [main]: SessionFactory name : null
+2021-12-25 15:58:08 DEBUG [main]: Automatic flush during beforeCompletion(): enabled
+2021-12-25 15:58:08 DEBUG [main]: Automatic session close at end of transaction: disabled
+2021-12-25 15:58:08 DEBUG [main]: Statistics: disabled
+2021-12-25 15:58:08 DEBUG [main]: Deleted entity synthetic identifier rollback: disabled
+2021-12-25 15:58:08 DEBUG [main]: Default entity-mode: pojo
+2021-12-25 15:58:08 DEBUG [main]: Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2021-12-25 15:58:08 DEBUG [main]: Allow initialization of lazy state outside session : disabled
+2021-12-25 15:58:08 DEBUG [main]: Using BatchFetchStyle : LEGACY
+2021-12-25 15:58:08 DEBUG [main]: Default batch fetch size: -1
+2021-12-25 15:58:08 DEBUG [main]: Maximum outer join fetch depth: null
+2021-12-25 15:58:08 DEBUG [main]: Default null ordering: NONE
+2021-12-25 15:58:08 DEBUG [main]: Order SQL updates by primary key: disabled
+2021-12-25 15:58:08 DEBUG [main]: Order SQL inserts for batching: disabled
+2021-12-25 15:58:08 DEBUG [main]: multi-tenancy strategy : NONE
+2021-12-25 15:58:08 DEBUG [main]: JTA Track by Thread: enabled
+2021-12-25 15:58:08 DEBUG [main]: Query language substitutions: {}
+2021-12-25 15:58:08 DEBUG [main]: Named query checking : enabled
+2021-12-25 15:58:08 DEBUG [main]: Second-level cache: disabled
+2021-12-25 15:58:08 DEBUG [main]: Second-level query cache: disabled
+2021-12-25 15:58:08 DEBUG [main]: Second-level query cache factory: null
+2021-12-25 15:58:08 DEBUG [main]: Second-level cache region prefix: null
+2021-12-25 15:58:08 DEBUG [main]: Optimize second-level cache for minimal puts: disabled
+2021-12-25 15:58:08 DEBUG [main]: Structured second-level cache entries: disabled
+2021-12-25 15:58:08 DEBUG [main]: Second-level cache direct-reference entries: disabled
+2021-12-25 15:58:08 DEBUG [main]: Automatic eviction of collection cache: disabled
+2021-12-25 15:58:08 DEBUG [main]: JDBC batch size: 15
+2021-12-25 15:58:08 DEBUG [main]: JDBC batch updates for versioned data: enabled
+2021-12-25 15:58:08 DEBUG [main]: Scrollable result sets: enabled
+2021-12-25 15:58:08 DEBUG [main]: Wrap result sets: disabled
+2021-12-25 15:58:08 DEBUG [main]: JDBC3 getGeneratedKeys(): enabled
+2021-12-25 15:58:08 DEBUG [main]: JDBC result set fetch size: null
+2021-12-25 15:58:08 DEBUG [main]: Connection release mode: ON_CLOSE
+2021-12-25 15:58:08 DEBUG [main]: Generate SQL with comments: disabled
+2021-12-25 15:58:08 DEBUG [main]: JPA compliance - query : disabled
+2021-12-25 15:58:08 DEBUG [main]: JPA compliance - closed-handling : disabled
+2021-12-25 15:58:08 DEBUG [main]: JPA compliance - lists : disabled
+2021-12-25 15:58:08 DEBUG [main]: JPA compliance - transactions : disabled
+2021-12-25 15:58:08 DEBUG [main]: EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+2021-12-25 15:58:08 DEBUG [main]: EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+2021-12-25 15:58:08 DEBUG [main]: Session factory constructed with filter configurations : {}
+2021-12-25 15:58:08 DEBUG [main]: Instantiating session factory with properties: {java.specification.version=17, hibernate.connection.handling_mode=DELAYED_ACQUISITION_AND_HOLD, sun.jnu.encoding=UTF-8, hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, java.class.path=/Users/asatutterin/Desktop/new studentOrder/target/test-classes:/Users/asatutterin/Desktop/new studentOrder/target/classes:/Users/asatutterin/.m2/repository/org/hibernate/hibernate-core/5.6.1.Final/hibernate-core-5.6.1.Final.jar:/Users/asatutterin/.m2/repository/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final.jar:/Users/asatutterin/.m2/repository/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar:/Users/asatutterin/.m2/repository/net/bytebuddy/byte-buddy/1.11.20/byte-buddy-1.11.20.jar:/Users/asatutterin/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/asatutterin/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.1.1.Final/jboss-transaction-api_1.2_spec-1.1.1.Final.jar:/Users/asatutterin/.m2/repository/org/jboss/jandex/2.2.3.Final/jandex-2.2.3.Final.jar:/Users/asatutterin/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/Users/asatutterin/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/Users/asatutterin/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.1.2.Final/hibernate-commons-annotations-5.1.2.Final.jar:/Users/asatutterin/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/Users/asatutterin/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar:/Users/asatutterin/.m2/repository/org/glassfish/jaxb/txw2/2.3.1/txw2-2.3.1.jar:/Users/asatutterin/.m2/repository/com/sun/istack/istack-commons-runtime/3.0.7/istack-commons-runtime-3.0.7.jar:/Users/asatutterin/.m2/repository/org/jvnet/staxex/stax-ex/1.8/stax-ex-1.8.jar:/Users/asatutterin/.m2/repository/com/sun/xml/fastinfoset/FastInfoset/1.2.15/FastInfoset-1.2.15.jar:/Users/asatutterin/.m2/repository/org/postgresql/postgresql/42.3.1/postgresql-42.3.1.jar:/Users/asatutterin/.m2/repository/org/checkerframework/checker-qual/3.5.0/checker-qual-3.5.0.jar:/Users/asatutterin/.m2/repository/org/springframework/spring-context/5.3.14/spring-context-5.3.14.jar:/Users/asatutterin/.m2/repository/org/springframework/spring-aop/5.3.14/spring-aop-5.3.14.jar:/Users/asatutterin/.m2/repository/org/springframework/spring-core/5.3.14/spring-core-5.3.14.jar:/Users/asatutterin/.m2/repository/org/springframework/spring-jcl/5.3.14/spring-jcl-5.3.14.jar:/Users/asatutterin/.m2/repository/org/springframework/spring-expression/5.3.14/spring-expression-5.3.14.jar:/Users/asatutterin/.m2/repository/org/springframework/spring-beans/5.3.14/spring-beans-5.3.14.jar:/Users/asatutterin/.m2/repository/org/springframework/spring-orm/5.3.14/spring-orm-5.3.14.jar:/Users/asatutterin/.m2/repository/org/springframework/spring-jdbc/5.3.14/spring-jdbc-5.3.14.jar:/Users/asatutterin/.m2/repository/org/springframework/spring-tx/5.3.14/spring-tx-5.3.14.jar:/Users/asatutterin/.m2/repository/org/springframework/data/spring-data-jpa/2.6.0/spring-data-jpa-2.6.0.jar:/Users/asatutterin/.m2/repository/org/springframework/data/spring-data-commons/2.6.0/spring-data-commons-2.6.0.jar:/Users/asatutterin/.m2/repository/org/springframework/spring-test/5.3.14/spring-test-5.3.14.jar:/Users/asatutterin/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar:/Users/asatutterin/.m2/repository/org/slf4j/slf4j-log4j12/1.7.5/slf4j-log4j12-1.7.5.jar:/Users/asatutterin/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/asatutterin/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/asatutterin/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/asatutterin/eclipse/java-2021-12/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/210/0/.cp:/Users/asatutterin/eclipse/java-2021-12/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/209/0/.cp, java.vm.vendor=Eclipse Adoptium, sun.arch.data.model=64, java.vendor.url=https://adoptium.net/, user.timezone=Europe/Moscow, jakarta.persistence.sharedCache.mode=UNSPECIFIED, java.vm.specification.version=17, os.name=Mac OS X, javax.persistence.validation.mode=AUTO, jakarta.persistence.nonJtaDataSource=org.springframework.jdbc.datasource.DriverManagerDataSource@73ff4fae, sun.java.launcher=SUN_STANDARD, user.country=RU, sun.boot.library.path=/Users/asatutterin/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_17.0.1.v20211116-1657/jre/lib, sun.java.command=org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 51661 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames student.business.StudentOrderServiceTest, javax.persistence.nonJtaDataSource=org.springframework.jdbc.datasource.DriverManagerDataSource@73ff4fae, http.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, javax.persistence.sharedCache.mode=UNSPECIFIED, jdk.debug=release, sun.cpu.endian=little, user.home=/Users/asatutterin, user.language=ru, java.specification.vendor=Oracle Corporation, java.version.date=2021-10-19, java.home=/Users/asatutterin/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_17.0.1.v20211116-1657/jre, file.separator=/, java.vm.compressedOopsMode=Zero based, line.separator=
+, hibernate.persistenceUnitName=default, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, hibernate.transaction.coordinator_class=class org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorBuilderImpl, jakarta.persistence.validation.mode=AUTO, hibernate.hbm2ddl.auto=none, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, ftp.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, java.runtime.version=17.0.1+12, user.name=asatutterin, path.separator=:, os.version=10.16, java.runtime.name=OpenJDK Runtime Environment, file.encoding=UTF-8, hibernate.ejb.persistenceUnitName=default, java.vm.name=OpenJDK 64-Bit Server VM, hibernate.show_sql=true, java.vendor.version=Temurin-17.0.1+12, java.vendor.url.bug=https://github.com/adoptium/adoptium-support/issues, java.io.tmpdir=/var/folders/3q/52vqmm754wd6_fl2ntkf713r0000gn/T/, java.version=17.0.1, user.dir=/Users/asatutterin/Desktop/new studentOrder, os.arch=x86_64, java.vm.specification.name=Java Virtual Machine Specification, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.registry.StandardServiceRegistryBuilder$1@79518e00, native.encoding=UTF-8, java.library.path=/Users/asatutterin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:., java.vendor=Eclipse Adoptium, java.vm.info=mixed mode, java.vm.version=17.0.1+12, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeBig, hibernate.connection.datasource=org.springframework.jdbc.datasource.DriverManagerDataSource@73ff4fae, socksNonProxyHosts=local|*.local|169.254/16|*.169.254/16, java.class.version=61.0}
+2021-12-25 15:58:08 DEBUG [main]: Skipping JACC integration as it was not enabled
+2021-12-25 15:58:08 DEBUG [main]: Instantiated session factory
+2021-12-25 15:58:08 DEBUG [main]: Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@7fd26ad8] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@795f8317]
+2021-12-25 15:58:08 DEBUG [main]: Not known whether passed class name [student.domain.StudentOrder] is safe
+2021-12-25 15:58:08 DEBUG [main]: No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : student.domain.StudentOrder
+2021-12-25 15:58:08 DEBUG [main]: Static SQL for entity: student.domain.StudentOrder
+2021-12-25 15:58:08 DEBUG [main]:  Version select: select student_order_id from jc_student_order_tmp where student_order_id =?
+2021-12-25 15:58:08 DEBUG [main]:  Snapshot select: select studentord_.student_order_id, studentord_.h_date_of_birth as h_date_o2_0_, studentord_.h_given_name as h_given_3_0_, studentord_.h_patronymic as h_patron4_0_, studentord_.h_sur_name as h_sur_na5_0_, studentord_.w_date_of_birth as w_date_o6_0_, studentord_.w_given_name as w_given_7_0_, studentord_.w_patronymic as w_patron8_0_, studentord_.w_sur_name as w_sur_na9_0_ from jc_student_order_tmp studentord_ where studentord_.student_order_id=?
+2021-12-25 15:58:08 DEBUG [main]:  Insert 0: insert into jc_student_order_tmp (h_date_of_birth, h_given_name, h_patronymic, h_sur_name, w_date_of_birth, w_given_name, w_patronymic, w_sur_name, student_order_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2021-12-25 15:58:08 DEBUG [main]:  Update 0: update jc_student_order_tmp set h_date_of_birth=?, h_given_name=?, h_patronymic=?, h_sur_name=?, w_date_of_birth=?, w_given_name=?, w_patronymic=?, w_sur_name=? where student_order_id=?
+2021-12-25 15:58:08 DEBUG [main]:  Delete 0: delete from jc_student_order_tmp where student_order_id=?
+2021-12-25 15:58:08 DEBUG [main]:  Identity insert: insert into jc_student_order_tmp (h_date_of_birth, h_given_name, h_patronymic, h_sur_name, w_date_of_birth, w_given_name, w_patronymic, w_sur_name) values (?, ?, ?, ?, ?, ?, ?, ?)
+2021-12-25 15:58:08 DEBUG [main]: Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7698b7a4]
+2021-12-25 15:58:08 DEBUG [main]: Visiting attribute path : husband
+2021-12-25 15:58:08 DEBUG [main]: Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CompositeQuerySpaceImpl@3a4aadf8]
+2021-12-25 15:58:08 DEBUG [main]: Visiting attribute path : husband.dateOfBirth
+2021-12-25 15:58:08 DEBUG [main]: Visiting attribute path : husband.givenName
+2021-12-25 15:58:08 DEBUG [main]: Visiting attribute path : husband.patronymic
+2021-12-25 15:58:08 DEBUG [main]: Visiting attribute path : husband.surName
+2021-12-25 15:58:08 DEBUG [main]: Visiting attribute path : wife
+2021-12-25 15:58:08 DEBUG [main]: Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.CompositeQuerySpaceImpl@78307a56]
+2021-12-25 15:58:08 DEBUG [main]: Visiting attribute path : wife.dateOfBirth
+2021-12-25 15:58:08 DEBUG [main]: Visiting attribute path : wife.givenName
+2021-12-25 15:58:08 DEBUG [main]: Visiting attribute path : wife.patronymic
+2021-12-25 15:58:08 DEBUG [main]: Visiting attribute path : wife.surName
+2021-12-25 15:58:08 DEBUG [main]: Building LoadPlan...
+2021-12-25 15:58:08 DEBUG [main]: processing queryspace <gen:0>
+2021-12-25 15:58:08 DEBUG [main]: LoadPlan(entity=student.domain.StudentOrder)
+    - Returns
+       - EntityReturnImpl(entity=student.domain.StudentOrder, querySpaceUid=<gen:0>, path=student.domain.StudentOrder)
+          - CompositeAttributeFetchImpl(composite=student.domain.Person, querySpaceUid=<gen:1>, path=student.domain.StudentOrder.husband)
+          - CompositeAttributeFetchImpl(composite=student.domain.Person, querySpaceUid=<gen:2>, path=student.domain.StudentOrder.wife)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=student.domain.StudentOrder)
+          - SQL table alias mapping - studentord0_
+          - alias suffix - 0_
+          - suffixed key columns - {student_1_0_0_}
+          - JOIN (JoinDefinedByMetadata(husband)) : <gen:0> -> <gen:1>
+             - CompositeQuerySpaceImpl(uid=<gen:1>)
+                - SQL table alias mapping - studentord0_
+          - JOIN (JoinDefinedByMetadata(wife)) : <gen:0> -> <gen:2>
+             - CompositeQuerySpaceImpl(uid=<gen:2>)
+                - SQL table alias mapping - studentord0_
+
+2021-12-25 15:58:08 DEBUG [main]: Static select for entity student.domain.StudentOrder [NONE]: select studentord0_.student_order_id as student_1_0_0_, studentord0_.h_date_of_birth as h_date_o2_0_0_, studentord0_.h_given_name as h_given_3_0_0_, studentord0_.h_patronymic as h_patron4_0_0_, studentord0_.h_sur_name as h_sur_na5_0_0_, studentord0_.w_date_of_birth as w_date_o6_0_0_, studentord0_.w_given_name as w_given_7_0_0_, studentord0_.w_patronymic as w_patron8_0_0_, studentord0_.w_sur_name as w_sur_na9_0_0_ from jc_student_order_tmp studentord0_ where studentord0_.student_order_id=?
+2021-12-25 15:58:08 DEBUG [main]: No actions specified; doing nothing
+2021-12-25 15:58:08 DEBUG [main]: No JtaPlatform was specified, checking resolver
+2021-12-25 15:58:08 DEBUG [main]: No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+2021-12-25 15:58:08 DEBUG [main]: Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 15:58:08 INFO  [main]: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-25 15:58:08 DEBUG [main]: Checking 0 named HQL queries
+2021-12-25 15:58:08 DEBUG [main]: Checking 0 named SQL queries
+2021-12-25 15:58:08 DEBUG [main]: EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+2021-12-25 15:58:08 DEBUG [main]: Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@160e99e0
+2021-12-25 15:58:08 DEBUG [main]: Registering SessionFactory: e5bcc805-623a-4e47-8e86-1ebba53d1e3a (<unnamed>)
+2021-12-25 15:58:08 DEBUG [main]: Not binding SessionFactory to JNDI, no JNDI name configured
+2021-12-25 15:58:08 INFO  [main]: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 15:58:08 DEBUG [main]: Creating shared instance of singleton bean 'studentOrderService'
+2021-12-25 15:58:08 DEBUG [main]: Creating shared instance of singleton bean 'studentOrderRepository'
+2021-12-25 15:58:09 DEBUG [main]: Creating shared instance of singleton bean 'jpaMappingContext'
+2021-12-25 15:58:09 DEBUG [main]: Initializing JpaMetamodelMappingContext…
+2021-12-25 15:58:09 DEBUG [main]: Finished initializing JpaMetamodelMappingContext!
+2021-12-25 15:58:09 DEBUG [main]: Creating new EntityManager for shared EntityManager invocation
+2021-12-25 15:58:09 DEBUG [main]: Statistics initialized [enabled=false]
+2021-12-25 15:58:09 DEBUG [main]: Creating new EntityManager for shared EntityManager invocation
+2021-12-25 15:58:09 DEBUG [main]: Initializing repository instance for student.dao.StudentOrderRepository…
+2021-12-25 15:58:09 DEBUG [main]: Creating new EntityManager for shared EntityManager invocation
+2021-12-25 15:58:09 DEBUG [main]: Finished creation of repository instance for {}.
+2021-12-25 15:58:09 DEBUG [main]: Creating shared instance of singleton bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
+2021-12-25 15:58:09 DEBUG [main]: Creating shared instance of singleton bean 'org.springframework.data.jpa.util.JpaMetamodelCacheCleanup'
+2021-12-25 15:58:09 DEBUG [main]: Creating shared instance of singleton bean 'org.springframework.data.jpa.repository.support.JpaEvaluationContextExtension'
+2021-12-25 15:58:09 DEBUG [main]: Creating shared instance of singleton bean 'txManager'
+2021-12-25 15:58:09 DEBUG [main]: Storing ApplicationContext [2011997442] in cache under key [[MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+2021-12-25 15:58:09 DEBUG [main]: Spring test ApplicationContext cache statistics: [DefaultContextCache@3f0ce0d1 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1]
+2021-12-25 15:58:09 DEBUG [main]: Retrieved ApplicationContext [2011997442] from cache with key [[MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+2021-12-25 15:58:09 DEBUG [main]: Spring test ApplicationContext cache statistics: [DefaultContextCache@3f0ce0d1 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1]
+2021-12-25 15:58:09 DEBUG [main]: Before test method: context [DefaultTestContext@2f54a33d testClass = StudentOrderServiceTest, testInstance = student.business.StudentOrderServiceTest@69fb6037, testMethod = testSave@StudentOrderServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+2021-12-25 15:58:09 DEBUG [main]: Retrieved ApplicationContext [2011997442] from cache with key [[MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+2021-12-25 15:58:09 DEBUG [main]: Spring test ApplicationContext cache statistics: [DefaultContextCache@3f0ce0d1 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1]
+2021-12-25 15:58:09 DEBUG [main]: Retrieved ApplicationContext [2011997442] from cache with key [[MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+2021-12-25 15:58:09 DEBUG [main]: Spring test ApplicationContext cache statistics: [DefaultContextCache@3f0ce0d1 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1]
+2021-12-25 15:58:09 DEBUG [main]: Creating new transaction with name [student.business.StudentOrderService.testSave]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2021-12-25 15:58:09 DEBUG [main]: Opened new EntityManager [SessionImpl(63746349<open>)] for JPA transaction
+2021-12-25 15:58:09 DEBUG [main]: On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2021-12-25 15:58:09 DEBUG [main]: begin
+2021-12-25 15:58:09 DEBUG [main]: Creating new JDBC DriverManager Connection to [jdbc:postgresql://localhost:5432/jc_student]
+2021-12-25 15:58:09 DEBUG [main]: Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@4f64d9cb]
+2021-12-25 15:58:09 DEBUG [main]: Found thread-bound EntityManager [SessionImpl(63746349<open>)] for JPA transaction
+2021-12-25 15:58:09 DEBUG [main]: Participating in existing transaction
+2021-12-25 15:58:10 DEBUG [main]: Executing identity-insert immediately
+2021-12-25 15:58:10 DEBUG [main]: insert into jc_student_order_tmp (h_date_of_birth, h_given_name, h_patronymic, h_sur_name, w_date_of_birth, w_given_name, w_patronymic, w_sur_name) values (?, ?, ?, ?, ?, ?, ?, ?)
+2021-12-25 15:58:10 DEBUG [main]: Natively generated identity: 3
+2021-12-25 15:58:10 DEBUG [main]: HHH000387: ResultSet's statement was not registered
+2021-12-25 15:58:10 DEBUG [main]: Initiating transaction commit
+2021-12-25 15:58:10 DEBUG [main]: Committing JPA transaction on EntityManager [SessionImpl(63746349<open>)]
+2021-12-25 15:58:10 DEBUG [main]: committing
+2021-12-25 15:58:10 DEBUG [main]: Processing flush-time cascades
+2021-12-25 15:58:10 DEBUG [main]: Dirty checking collections
+2021-12-25 15:58:10 DEBUG [main]: Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2021-12-25 15:58:10 DEBUG [main]: Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2021-12-25 15:58:10 DEBUG [main]: Listing entities:
+2021-12-25 15:58:10 DEBUG [main]: student.domain.StudentOrder{wife=component[dateOfBirth,givenName,patronymic,surName]{patronymic=..., surName=Тюттерина, givenName=..., dateOfBirth=2021-12-25}, studentOrderId=3, husband=component[dateOfBirth,givenName,patronymic,surName]{patronymic=Николаевич, surName=Тюттерин, givenName=Яков, dateOfBirth=2021-12-25}}
+2021-12-25 15:58:10 DEBUG [main]: Closing JPA EntityManager [SessionImpl(63746349<open>)] after transaction
+2021-12-25 15:58:10 DEBUG [main]: Creating new transaction with name [student.business.StudentOrderService.testGet]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2021-12-25 15:58:10 DEBUG [main]: Opened new EntityManager [SessionImpl(293749050<open>)] for JPA transaction
+2021-12-25 15:58:10 DEBUG [main]: On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2021-12-25 15:58:10 DEBUG [main]: begin
+2021-12-25 15:58:10 DEBUG [main]: Creating new JDBC DriverManager Connection to [jdbc:postgresql://localhost:5432/jc_student]
+2021-12-25 15:58:10 DEBUG [main]: Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@19705650]
+2021-12-25 15:58:10 DEBUG [main]: Found thread-bound EntityManager [SessionImpl(293749050<open>)] for JPA transaction
+2021-12-25 15:58:10 DEBUG [main]: Participating in existing transaction
+2021-12-25 15:58:10 DEBUG [main]: Rendered criteria query -> select generatedAlias0 from StudentOrder as generatedAlias0
+2021-12-25 15:58:10 DEBUG [main]: QueryTranslatorFactory: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory@99c4993
+2021-12-25 15:58:10 DEBUG [main]: parse() - HQL: select generatedAlias0 from student.domain.StudentOrder as generatedAlias0
+2021-12-25 15:58:10 DEBUG [main]: throwQueryException() : no errors
+2021-12-25 15:58:10 DEBUG [main]: --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    \-[SELECT_FROM] Node: 'SELECT_FROM'
+       +-[FROM] Node: 'from'
+       |  \-[RANGE] Node: 'RANGE'
+       |     +-[DOT] Node: '.'
+       |     |  +-[DOT] Node: '.'
+       |     |  |  +-[IDENT] Node: 'student'
+       |     |  |  \-[IDENT] Node: 'domain'
+       |     |  \-[IDENT] Node: 'StudentOrder'
+       |     \-[ALIAS] Node: 'generatedAlias0'
+       \-[SELECT] Node: 'select'
+          \-[IDENT] Node: 'generatedAlias0'
+
+2021-12-25 15:58:10 DEBUG [main]: select << begin [level=1, statement=select]
+2021-12-25 15:58:10 DEBUG [main]: FromClause{level=1} : student.domain.StudentOrder (generatedAlias0) -> studentord0_
+2021-12-25 15:58:10 DEBUG [main]: Resolved : generatedAlias0 -> studentord0_.student_order_id
+2021-12-25 15:58:10 DEBUG [main]: select : finishing up [level=1, statement=select]
+2021-12-25 15:58:10 DEBUG [main]: processQuery() :  ( SELECT ( {select clause} studentord0_.student_order_id ) ( FromClause{level=1} jc_student_order_tmp studentord0_ ) )
+2021-12-25 15:58:10 DEBUG [main]: Tables referenced from query nodes:
+ \-QueryNode
+    +-SelectClause
+    | referencedTables(entity StudentOrder): [jc_student_order_tmp]
+    |  +-IdentNode
+    |  | persister: SingleTableEntityPersister(student.domain.StudentOrder)
+    |  | originalText: generatedAlias0
+    |  \-SqlFragment
+    \-FromClause
+       \-FromElement
+
+2021-12-25 15:58:10 DEBUG [main]: Using FROM fragment [jc_student_order_tmp studentord0_]
+2021-12-25 15:58:10 DEBUG [main]: select >> end [level=1, statement=select]
+2021-12-25 15:58:10 DEBUG [main]: --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (jc_student_order_tmp)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'studentord0_.student_order_id as student_1_0_' {alias=generatedAlias0, className=student.domain.StudentOrder, tableAlias=studentord0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'studentord0_.h_date_of_birth as h_date_o2_0_, studentord0_.h_given_name as h_given_3_0_, studentord0_.h_patronymic as h_patron4_0_, studentord0_.h_sur_name as h_sur_na5_0_, studentord0_.w_date_of_birth as w_date_o6_0_, studentord0_.w_given_name as w_given_7_0_, studentord0_.w_patronymic as w_patron8_0_, studentord0_.w_sur_name as w_sur_na9_0_'
+    \-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[generatedAlias0], fromElementByTableAlias=[studentord0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+       \-[FROM_FRAGMENT] FromElement: 'jc_student_order_tmp studentord0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=generatedAlias0,role=null,tableName=jc_student_order_tmp,tableAlias=studentord0_,origin=null,columns={,className=student.domain.StudentOrder}}
+
+2021-12-25 15:58:10 DEBUG [main]: throwQueryException() : no errors
+2021-12-25 15:58:10 DEBUG [main]: HQL: select generatedAlias0 from student.domain.StudentOrder as generatedAlias0
+2021-12-25 15:58:10 DEBUG [main]: SQL: select studentord0_.student_order_id as student_1_0_, studentord0_.h_date_of_birth as h_date_o2_0_, studentord0_.h_given_name as h_given_3_0_, studentord0_.h_patronymic as h_patron4_0_, studentord0_.h_sur_name as h_sur_na5_0_, studentord0_.w_date_of_birth as w_date_o6_0_, studentord0_.w_given_name as w_given_7_0_, studentord0_.w_patronymic as w_patron8_0_, studentord0_.w_sur_name as w_sur_na9_0_ from jc_student_order_tmp studentord0_
+2021-12-25 15:58:10 DEBUG [main]: throwQueryException() : no errors
+2021-12-25 15:58:10 DEBUG [main]: select studentord0_.student_order_id as student_1_0_, studentord0_.h_date_of_birth as h_date_o2_0_, studentord0_.h_given_name as h_given_3_0_, studentord0_.h_patronymic as h_patron4_0_, studentord0_.h_sur_name as h_sur_na5_0_, studentord0_.w_date_of_birth as w_date_o6_0_, studentord0_.w_given_name as w_given_7_0_, studentord0_.w_patronymic as w_patron8_0_, studentord0_.w_sur_name as w_sur_na9_0_ from jc_student_order_tmp studentord0_
+2021-12-25 15:58:10 DEBUG [main]: Result set row: 0
+2021-12-25 15:58:10 DEBUG [main]: Result row: EntityKey[student.domain.StudentOrder#1]
+2021-12-25 15:58:10 DEBUG [main]: Result set row: 1
+2021-12-25 15:58:10 DEBUG [main]: Result row: EntityKey[student.domain.StudentOrder#2]
+2021-12-25 15:58:10 DEBUG [main]: Result set row: 2
+2021-12-25 15:58:10 DEBUG [main]: Result row: EntityKey[student.domain.StudentOrder#3]
+2021-12-25 15:58:10 DEBUG [main]: Resolving attributes for [student.domain.StudentOrder#1]
+2021-12-25 15:58:10 DEBUG [main]: Processing attribute `husband` : value = [Ljava.lang.Object;@48cf8414
+2021-12-25 15:58:10 DEBUG [main]: Attribute (`husband`)  - enhanced for lazy-loading? - false
+2021-12-25 15:58:10 DEBUG [main]: Processing attribute `wife` : value = [Ljava.lang.Object;@27dbaa33
+2021-12-25 15:58:10 DEBUG [main]: Attribute (`wife`)  - enhanced for lazy-loading? - false
+2021-12-25 15:58:10 DEBUG [main]: Done materializing entity [student.domain.StudentOrder#1]
+2021-12-25 15:58:10 DEBUG [main]: Resolving attributes for [student.domain.StudentOrder#2]
+2021-12-25 15:58:10 DEBUG [main]: Processing attribute `husband` : value = [Ljava.lang.Object;@3b021664
+2021-12-25 15:58:10 DEBUG [main]: Attribute (`husband`)  - enhanced for lazy-loading? - false
+2021-12-25 15:58:10 DEBUG [main]: Processing attribute `wife` : value = [Ljava.lang.Object;@f59da34
+2021-12-25 15:58:10 DEBUG [main]: Attribute (`wife`)  - enhanced for lazy-loading? - false
+2021-12-25 15:58:10 DEBUG [main]: Done materializing entity [student.domain.StudentOrder#2]
+2021-12-25 15:58:10 DEBUG [main]: Resolving attributes for [student.domain.StudentOrder#3]
+2021-12-25 15:58:10 DEBUG [main]: Processing attribute `husband` : value = [Ljava.lang.Object;@752973de
+2021-12-25 15:58:10 DEBUG [main]: Attribute (`husband`)  - enhanced for lazy-loading? - false
+2021-12-25 15:58:10 DEBUG [main]: Processing attribute `wife` : value = [Ljava.lang.Object;@52a67293
+2021-12-25 15:58:10 DEBUG [main]: Attribute (`wife`)  - enhanced for lazy-loading? - false
+2021-12-25 15:58:10 DEBUG [main]: Done materializing entity [student.domain.StudentOrder#3]
+2021-12-25 15:58:10 INFO  [main]: testGet
+2021-12-25 15:58:10 INFO  [main]: Тюттерина
+2021-12-25 15:58:10 DEBUG [main]: Initiating transaction commit
+2021-12-25 15:58:10 DEBUG [main]: Committing JPA transaction on EntityManager [SessionImpl(293749050<open>)]
+2021-12-25 15:58:10 DEBUG [main]: committing
+2021-12-25 15:58:10 DEBUG [main]: Processing flush-time cascades
+2021-12-25 15:58:10 DEBUG [main]: Dirty checking collections
+2021-12-25 15:58:10 DEBUG [main]: Flushed: 0 insertions, 0 updates, 0 deletions to 3 objects
+2021-12-25 15:58:10 DEBUG [main]: Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2021-12-25 15:58:10 DEBUG [main]: Listing entities:
+2021-12-25 15:58:10 DEBUG [main]: student.domain.StudentOrder{wife=component[dateOfBirth,givenName,patronymic,surName]{patronymic=..., surName=Тюттерина, givenName=..., dateOfBirth=2021-12-25}, studentOrderId=3, husband=component[dateOfBirth,givenName,patronymic,surName]{patronymic=Николаевич, surName=Тюттерин, givenName=Яков, dateOfBirth=2021-12-25}}
+2021-12-25 15:58:10 DEBUG [main]: student.domain.StudentOrder{wife=component[dateOfBirth,givenName,patronymic,surName]{patronymic=..., surName=Тюттерина, givenName=..., dateOfBirth=2021-12-25}, studentOrderId=1, husband=component[dateOfBirth,givenName,patronymic,surName]{patronymic=Николаевич, surName=Тюттерин, givenName=Яков, dateOfBirth=2021-12-25}}
+2021-12-25 15:58:10 DEBUG [main]: student.domain.StudentOrder{wife=component[dateOfBirth,givenName,patronymic,surName]{patronymic=..., surName=Тюттерина, givenName=..., dateOfBirth=2021-12-25}, studentOrderId=2, husband=component[dateOfBirth,givenName,patronymic,surName]{patronymic=Николаевич, surName=Тюттерин, givenName=Яков, dateOfBirth=2021-12-25}}
+2021-12-25 15:58:10 DEBUG [main]: Closing JPA EntityManager [SessionImpl(293749050<open>)] after transaction
+2021-12-25 15:58:10 DEBUG [main]: Retrieved ApplicationContext [2011997442] from cache with key [[MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+2021-12-25 15:58:10 DEBUG [main]: Spring test ApplicationContext cache statistics: [DefaultContextCache@3f0ce0d1 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1]
+2021-12-25 15:58:10 DEBUG [main]: Retrieved ApplicationContext [2011997442] from cache with key [[MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+2021-12-25 15:58:10 DEBUG [main]: Spring test ApplicationContext cache statistics: [DefaultContextCache@3f0ce0d1 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1]
+2021-12-25 15:58:10 DEBUG [main]: After test method: context [DefaultTestContext@2f54a33d testClass = StudentOrderServiceTest, testInstance = student.business.StudentOrderServiceTest@69fb6037, testMethod = testSave@StudentOrderServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+2021-12-25 15:58:10 DEBUG [main]: Retrieved ApplicationContext [2011997442] from cache with key [[MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+2021-12-25 15:58:10 DEBUG [main]: Spring test ApplicationContext cache statistics: [DefaultContextCache@3f0ce0d1 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1]
+2021-12-25 15:58:10 DEBUG [main]: After test class: context [DefaultTestContext@2f54a33d testClass = StudentOrderServiceTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1018bde2 testClass = StudentOrderServiceTest, locations = '{classpath:springCOntext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]], class annotated with @DirtiesContext [false] with mode [null].
+2021-12-25 15:58:10 DEBUG [SpringContextShutdownHook]: Closing org.springframework.context.support.GenericApplicationContext@77eca502, started on Sat Dec 25 15:58:06 MSK 2021
+2021-12-25 15:58:10 INFO  [SpringContextShutdownHook]: Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-25 15:58:10 DEBUG [SpringContextShutdownHook]: HHH000031: Closing
+2021-12-25 15:58:10 DEBUG [SpringContextShutdownHook]: Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@484b434b] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@795f8317]
+2021-12-25 15:58:10 DEBUG [SpringContextShutdownHook]: Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+2021-12-25 15:58:10 DEBUG [SpringContextShutdownHook]: Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
