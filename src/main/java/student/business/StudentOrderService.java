@@ -5,8 +5,6 @@ import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,7 +26,7 @@ import student.domain.StudentOrderChild;
 @Service
 public class StudentOrderService {
 	
-	private static final Logger logger = LoggerFactory.getLogger(StudentOrderService.class);
+//	private static final Logger logger = LoggerFactory.getLogger(StudentOrderService.class);
 	
 	@Autowired
 	private StudentOrderRepository orderDao;
@@ -45,18 +43,20 @@ public class StudentOrderService {
 	@Autowired 
 	private RegisterOfficeRepository registerDao;
 	
+
 	
 	
 	@Transactional
 	public void testSave() {
 		StudentOrder so = new StudentOrder();
-		so.setHusband(buildPerson(false));
-		so.setWife(buildPerson(true));
+
 		so.setStudentOrderDate(LocalDateTime.now());
 		so.setStatus(statusDao.getOne(1L));
 		so.setCertificateNumber("1234567890");
-		so.setRegisterOffice(registerDao.getOne(1L));
+		so.setRegisterOffice(registerDao.findById(1L).orElseGet(null));
 		so.setMarriageDate(LocalDate.now());
+		so.setHusband(buildPerson(false));
+		so.setWife(buildPerson(true));
 		orderDao.save(so);
 		
 		StudentOrderChild ch = buildChild(so);
@@ -71,15 +71,15 @@ public class StudentOrderService {
 	public void testGet() {
 		
 		List<StudentOrder> orders = orderDao.findAll();
-		logger.info("testGet");
-		logger.info("WIFE: "+orders.get(0).getWife().getSurName());
+//		logger.info("testGet");
+//		logger.info("WIFE: "+orders.get(0).getWife().getSurName());
 		//logger.info("CHILD: "+orders.get(0).getStudentOrderChild().get(0).getChild().getGivenName());
 	}
 	
 	private Adult buildPerson(boolean wife) {
 		Adult a = new Adult();
 		Address ad = new Address();
-		Street one = streetDao.getOne(2L);
+		Street one = streetDao.findById(1L).get();
 		ad.setStreet(one);
 		ad.setPostCode("3333");
 		ad.setBuilding("3A");
@@ -139,4 +139,6 @@ public class StudentOrderService {
 		sc.setChild(ch);
 		return sc;
 	}
+	
+	
 }

@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(locations= {"classpath:springCOntext.xml"})
+@ContextConfiguration(locations= {"classpath:application.properties"})
 public class StudentOrderServiceTest {
 
 	@Autowired
