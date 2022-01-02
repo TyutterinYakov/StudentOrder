@@ -7,7 +7,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import student.dao.PassportOfficeRepository;
 import student.dao.RegisterOfficeRepository;
@@ -15,10 +14,13 @@ import student.dao.StreetRepository;
 import student.dao.StudentOrderRepository;
 import student.dao.StudentOrderStatusRepository;
 import student.dao.UniversityRepository;
-import student.domain.Address;
 import student.domain.Adult;
+import student.domain.PassportOffice;
+import student.domain.RegisterOffice;
+import student.domain.Street;
 import student.domain.StudentOrder;
 import student.domain.StudentOrderStatus;
+import student.domain.University;
 
 @Service
 public class StudentService {
@@ -84,29 +86,31 @@ public class StudentService {
 
 	public void updateStudentOrder(StudentOrder so) {
 		so.setStudentOrderDate(studentDao.findById(so.getStudentOrderId()).get().getStudentOrderDate());
-		so.setStatus(studentDao.findById(so.getStudentOrderId()).get().getStatus());
-		so.setRegisterOffice(registerDao.findById(1L).get());
-		Adult w = so.getWife();
-		w.setPassportOffice(passportDao.findById(1L).get());
-		w.setUniversity(universityDao.findById(1L).get());
-		Address wa = so.getWife().getAddress();
-		wa.setStreet(streetDao.findById(1L).get());
-		w.setAddress(wa);
-		
-		
-		Adult h = so.getHusband();
-		h.setPassportOffice(passportDao.findById(2L).get());
-		h.setUniversity(universityDao.findById(2L).get());
-		Address ha = so.getHusband().getAddress();
-		ha.setStreet(streetDao.findById(1L).get());
-		h.setAddress(ha);
-		
-		
-		so.setWife(w);
-		so.setHusband(h);
 		studentDao.save(so);
 		//statusDao.save(studentDao.findById(so.getStudentOrderId()).get().getStatus());
 		
+	}
+
+	public List<PassportOffice> getListPassportOffice() {
+		return passportDao.findAll();
+	}
+
+	public List<RegisterOffice> getListRegisterOffice() {
+		
+		return registerDao.findAll();
+	}
+
+	public List<University> getListUnivers() {
+		
+		return universityDao.findAll();
+	}
+
+	public List<Street> findListStreet() {
+		return streetDao.findAll();
+	}
+
+	public List<StudentOrderStatus> findListStatus() {
+		return statusDao.findAll();
 	}
 	
 }

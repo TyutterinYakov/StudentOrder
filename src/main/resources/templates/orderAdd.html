@@ -72,11 +72,15 @@
                     <input type="text" class="form-control" required th:field="*{wife.address.postCode}" name="w_postCode" id="w_postCode"
                            >
                 </div>
-<!--                 <div class="form-group">
-                    <label for="description">Улица</label>
-                    <input type="text" class="form-control" required th:field="*{wife.address.street.streetName}" name="w_streetName" id="w_streetName"
-                           >
-                </div> -->
+                <div class="form-group">
+                    <label for="category">Улица</label>
+                    <select class="form-control" th:field="*{wife.address.street}" id="address.street" name="address.street">
+                        <option th:each="str :${streets}"
+                                th:value="${str.streetCode}"
+                                th:text="${str.streetName}"
+                        >
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="description">Дом</label>
                     <input type="text" class="form-control" required th:field="*{wife.address.building}" name="w_building" id="w_streetName"
@@ -102,11 +106,25 @@
                     <input type="text" class="form-control" required th:field="*{wife.passportNumber}" name="w_passportNumber" id="w_passportNumber"
                            >
                 </div>
-<!--                 <div class="form-group">
-                    <label for="description">Кем выдан</label>
-                    <input type="text" class="form-control" required th:field="*{wife.passportOffice.passportOfficeName}" name="w_passportOfficeName" id="w_passportOfficeName"
-                           >
-                </div> -->
+
+                <div class="form-group">
+                    <label for="category">Кем выдан</label>
+                    <select class="form-control" th:field="*{wife.passportOffice}" id="passportOffice" name="passportOffice">
+                        <option th:each="passport :${pOfficies}"
+                                th:value="${passport.passportOfficeId}"
+                                th:text="${passport.passportOfficeName}"
+                        >
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="category">Университет</label>
+                    <select class="form-control" th:field="*{wife.university}" id="passportOffice" name="passportOffice">
+                        <option th:each="uni :${univers}"
+                                th:value="${uni.universityId}"
+                                th:text="${uni.universityName}"
+                        >
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="description">Дата поступления</label>
                     <input type="text" class="form-control" required th:field="*{wife.issueDate}" name="w_issueDate" id="w_issueDate"
@@ -117,6 +135,8 @@
                     <input type="text" class="form-control" required th:field="*{wife.studentNumber}" name="w_studentNumber" id="w_studentNumber"
                            >
                 </div>
+                </div>
+                <div class="col-sm-5">
                 <!-- HUSBAND -->
                  <hr><strong>Отец</strong><hr>
                 <div class="form-group">
@@ -144,11 +164,15 @@
                     <input type="text" class="form-control" required th:field="*{husband.address.postCode}" name="h_postCode" id="h_postCode"
                            >
                 </div>
-<!--                 <div class="form-group">
-                    <label for="description">Улица</label>
-                    <input type="text" class="form-control" required th:field="*{husband.address.street.streetName}" name="h_streetName" id="h_streetName"
-                           >
-                </div> -->
+                <div class="form-group">
+                    <label for="category">Улица</label>
+                    <select class="form-control" th:field="*{husband.address.street}" id="address.street" name="address.street">
+                        <option th:each="str :${streets}"
+                                th:value="${str.streetCode}"
+                                th:text="${str.streetName}"
+                        >
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="description">Дом</label>
                     <input type="text" class="form-control" required th:field="*{husband.address.building}" name="h_building" id="h_streetName"
@@ -175,11 +199,24 @@
                     <input type="text" class="form-control" required th:field="*{husband.passportNumber}" name="h_passportNumber" id="h_passportNumber"
                            >
                 </div>
-<!--                 <div class="form-group">
-                    <label for="description">Кем выдан</label>
-                    <input type="text" class="form-control" required th:field="*{husband.passportOffice.passportOfficeName}" name="h_passportOfficeName" id="h_passportOfficeName"
-                           >
-                </div> -->
+                <div class="form-group">
+                    <label for="category">Кем выдан</label>
+                    <select class="form-control" th:field="*{husband.passportOffice}" id="passportOffice" name="passportOffice">
+                        <option th:each="passport :${pOfficies}"
+                                th:value="${passport.passportOfficeId}"
+                                th:text="${passport.passportOfficeName}"
+                        >
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="category">Университет</label>
+                    <select class="form-control" th:field="*{husband.university}" id="passportOffice" name="passportOffice">
+                        <option th:each="uni :${univers}"
+                                th:value="${uni.universityId}"
+                                th:text="${uni.universityName}"
+                        >
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="description">Дата поступления</label>
                     <input type="text" class="form-control" required th:field="*{husband.issueDate}" name="h_issueDate" id="h_issueDate"
@@ -190,7 +227,8 @@
                     <input type="text" class="form-control" required th:field="*{husband.studentNumber}" name="h_studentNumber" id="h_studentNumber"
                            >
                 </div>
-                
+                </div>
+                <div class="col-sm-5">
                 <hr><strong>Свадьба</strong><hr>
                 <div class="form-group">
                     <label for="description">Сертификат</label>
@@ -202,12 +240,33 @@
                     <input type="text" class="form-control" required th:field="*{marriageDate}" name="marriageDate" id="marriageDate"
                            >
                 </div>
+                 <div class="form-group">
+                    <label for="category">Кем выдан</label>
+                    <select class="form-control" th:field="*{registerOffice}" id="passportOffice" name="passportOffice">
+                        <option th:each="register :${registers}"
+                                th:value="${register.registerOfficeId}"
+                                th:text="${register.registerOfficeName}"
+                        >
+                    </select>
             </div> 
-            <div class="col-sm-5">
-                <button type="submit" class="btn btn-primary">Сохранить</button>
-            </div>
+            <hr><strong>Заявление</strong><hr>
+                    <div class="form-group">
+                    <label for="category">Статус заявления</label>
+                    <select class="form-control" th:field="*{status}" id="stats" name="stats">
+                        <option th:each="st :${statuses}"
+                                th:value="${st.statusId}"
+                                th:text="${st.statusName}"
+                        >
+                    </select>
+            </div> 
         </div>
+        </div>
+             <div class="col-sm-5">
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a href="/admin/orders" class="btn btn-danger">Выйти без изменений</a>
+            </div>
     </form>
+    
 </div>
 
 
