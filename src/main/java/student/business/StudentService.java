@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import student.dao.CountryStructRepository;
 import student.dao.PassportOfficeRepository;
 import student.dao.RegisterOfficeRepository;
 import student.dao.StreetRepository;
@@ -15,6 +16,7 @@ import student.dao.StudentOrderRepository;
 import student.dao.StudentOrderStatusRepository;
 import student.dao.UniversityRepository;
 import student.domain.Adult;
+import student.domain.CountryStruct;
 import student.domain.PassportOffice;
 import student.domain.RegisterOffice;
 import student.domain.Street;
@@ -37,6 +39,8 @@ public class StudentService {
 	private StreetRepository streetDao;
 	@Autowired
 	private RegisterOfficeRepository registerDao;
+	@Autowired
+	private CountryStructRepository countryDao;
 	
 	
 	@Transactional
@@ -111,6 +115,10 @@ public class StudentService {
 
 	public List<StudentOrderStatus> findListStatus() {
 		return statusDao.findAll();
+	}
+	
+	public List<CountryStruct> findListCountry(){
+		return countryDao.findAll();
 	}
 	
 }

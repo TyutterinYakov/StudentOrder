@@ -13,17 +13,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import student.business.CountryStructService;
+import student.business.PassportOfficeService;
+import student.business.RegisterOfficeService;
 import student.business.StatusService;
 import student.business.StreetService;
 import student.business.StudentOrderChildService;
 import student.business.StudentOrderService;
 import student.business.StudentService;
+import student.business.UniversityService;
 import student.domain.Address;
 import student.domain.Adult;
+import student.domain.CountryStruct;
+import student.domain.PassportOffice;
+import student.domain.RegisterOffice;
 import student.domain.Street;
 import student.domain.StudentOrder;
 import student.domain.StudentOrderChild;
 import student.domain.StudentOrderStatus;
+import student.domain.University;
 
 @Controller
 public class AdminController {
@@ -40,6 +48,14 @@ public class AdminController {
 	private StreetService streetService;
 	@Autowired
 	private StatusService statusService;
+	@Autowired
+	private UniversityService universityService;
+	@Autowired
+	private PassportOfficeService passportService;
+	@Autowired
+	private CountryStructService structService;
+	@Autowired
+	private RegisterOfficeService registerService;
 	
 
 	
@@ -179,5 +195,131 @@ public class AdminController {
 		md.addAttribute("status", new StudentOrderStatus());
 		return "statusAdd";
 	}
+	
+	//University
+	@GetMapping("/admin/universities")
+	public String getUniversities(Model md) {
+		md.addAttribute("universities", universityService.findAllUniversity());
+		return "university";
+	}
+
+	@GetMapping("/admin/university/update/{id}")
+	public String updateUniversity(@PathVariable("id") Long id, Model md) {
+		md.addAttribute("university", universityService.getUniversityById(id));
+		return "universityAdd";
+	}
+	@PostMapping("/admin/university/add")
+	public String updateUniversity(@ModelAttribute("university") University university) {
+		universityService.saveUniversity(university);
+		return "redirect:/admin/universities";
+	}
+	
+	@GetMapping("/admin/university/remove/{id}")
+	public String removeUniversity(@PathVariable("id") Long id, Model md) {
+		universityService.removeUniversityById(id);
+		return "redirect:/admin/universities";
+	}
+	@GetMapping("/admin/university/add")
+	public String addUniversity(Model md) {
+		md.addAttribute("university", new University());
+		return "universityAdd";
+	}
+	
+	//PASSPORT
+	
+	@GetMapping("/admin/pasports")
+	public String getPassports(Model md) {
+		md.addAttribute("passports", passportService.findListPassportOffice());
+		return "passportOffice";
+	}
+	@GetMapping("/admin/passport/update/{id}")
+	public String updatePassport(@PathVariable("id") Long id, Model md) {
+		md.addAttribute("passportAreas", studentServ.findListCountry());
+		md.addAttribute("passport", passportService.getPassportById(id));
+		return "passportAdd";
+	}
+	@PostMapping("/admin/passport/add")
+	public String updatePassport(@ModelAttribute("passport") PassportOffice pass) {
+		passportService.savePassport(pass);
+		return "redirect:/admin/pasports";
+	}
+	
+	@GetMapping("/admin/passport/remove/{id}")
+	public String removePassport(@PathVariable("id") Long id, Model md) {
+		passportService.removePassportById(id);
+		return "redirect:/admin/pasports";
+	}
+	@GetMapping("/admin/passport/add")
+	public String addPassport(Model md) {
+		md.addAttribute("passportAreas", studentServ.findListCountry());
+		md.addAttribute("passport", new PassportOffice());
+		return "passportAdd";
+	}
+	
+	
+	//COUNTRIES
+	
+	@GetMapping("/admin/countries")
+	public String getCountries(Model md) {
+		md.addAttribute("countries", structService.findAllStruct());
+		
+		return "countryStruct";
+	}
+	@GetMapping("/admin/country/update/{id}")
+	public String updateCountry(@PathVariable("id") String id, Model md) {
+		md.addAttribute("struct", structService.findStructById(id));
+		return "countryStructAdd";
+	}
+	@PostMapping("/admin/country/add")
+	public String updateCountry(@ModelAttribute("struct") CountryStruct str) {
+		structService.saveCountryStruct(str);
+		
+		return "redirect:/admin/countries";
+	}
+	
+	@GetMapping("/admin/country/remove/{id}")
+	public String removeCountry(@PathVariable("id") String id, Model md) {
+		structService.removeStructById(id);
+		return "redirect:/admin/countries";
+	}
+	@GetMapping("/admin/country/add")
+	public String addCountry(Model md) {
+		md.addAttribute("passportAreas", studentServ.findListCountry());
+		md.addAttribute("struct", new CountryStruct());
+		return "countryStructAdd";
+	}
+	
+	//RegisterOffice
+	
+	@GetMapping("/admin/register")
+	public String getRegister(Model md) {
+		md.addAttribute("registers", registerService.findListRegister());
+		return "registerOffice";
+	}
+	@GetMapping("/admin/register/update/{id}")
+	public String updateRegister(@PathVariable("id") Long id, Model md) {
+		md.addAttribute("registerOffice", registerService.findRegisterOfficeById(id));
+		md.addAttribute("areas", studentServ.findListCountry());
+		return "registerOfficeAdd";
+	}
+	@PostMapping("/admin/register/add")
+	public String updateRegister(@ModelAttribute("registerOffice") RegisterOffice ro) {
+		registerService.saveRegisterOffice(ro);
+		
+		return "redirect:/admin/register";
+	}
+	
+	@GetMapping("/admin/register/remove/{id}")
+	public String removeRegister(@PathVariable("id") Long id, Model md) {
+		registerService.removeRegisterOfficeById(id);
+		return "redirect:/admin/register";
+	}
+	@GetMapping("/admin/register/add")
+	public String addRegister(Model md) {
+		md.addAttribute("areas", studentServ.findListCountry());
+		md.addAttribute("registerOffice", new RegisterOffice());
+		return "registerOfficeAdd";
+	}
+	
 	
 }
