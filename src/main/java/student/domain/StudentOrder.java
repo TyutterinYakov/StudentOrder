@@ -88,8 +88,8 @@ public class StudentOrder {
 	@OneToMany(cascade= {CascadeType.REFRESH, CascadeType.REMOVE}, fetch=FetchType.LAZY, 
 			mappedBy="studentOrder")
 	private List<StudentOrderChild> studentOrderChild;
-	private boolean checkRegisterOffice;
-	private boolean checkCityRegister;
+//	private boolean checkRegisterOffice;
+//	private boolean checkCityRegister;
 	
 	
 	
@@ -165,21 +165,21 @@ public class StudentOrder {
 		this.studentOrderChild = studentOrderChild;
 	}
 
-	public boolean isCheckRegisterOffice() {
-		return checkRegisterOffice;
-	}
-
-	public void setCheckRegisterOffice(boolean checkRegisterOffice) {
-		this.checkRegisterOffice = checkRegisterOffice;
-	}
-
-	public boolean isCheckCityRegister() {
-		return checkCityRegister;
-	}
-
-	public void setCheckCityRegister(boolean checkCityRegister) {
-		this.checkCityRegister = checkCityRegister;
-	}
+//	public boolean isCheckRegisterOffice() {
+//		return checkRegisterOffice;
+//	}
+//
+//	public void setCheckRegisterOffice(boolean checkRegisterOffice) {
+//		this.checkRegisterOffice = checkRegisterOffice;
+//	}
+//
+//	public boolean isCheckCityRegister() {
+//		return checkCityRegister;
+//	}
+//
+//	public void setCheckCityRegister(boolean checkCityRegister) {
+//		this.checkCityRegister = checkCityRegister;
+//	}
 	
 	
 	

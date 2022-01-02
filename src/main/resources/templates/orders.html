@@ -36,8 +36,12 @@
     </div>
 </nav>
 <div class="container-fluid">
-
-    <a th:href="@{/admin/order/add}" style="margin: 20px 0" class="btn btn-primary">Добавить заявку</a>
+<form action="/admin/orders/title" method="get">
+	Поиск по номеру заявки: <input type="number" name="title">
+	<input type="submit" value="Поиск"/>
+</form>
+</div>
+<div class="container-fluid">
     <table class="table">
         <thead class="thead-light">
         <tr>
@@ -46,6 +50,7 @@
             <th scope="col">Дата</th>
             <th scope="col">Взрослые</th>
             <th scope="col">Дети</th>
+            <th scope="col"></th>
             <th scope="col"></th>
             <th scope="col"></th>
             <th scope="col"></th>
@@ -75,8 +80,9 @@
              </td>
             <td><a href="" th:href="@{/admin/orders/requestzags/{id}(id=${order.studentOrderId})}" class="btn btn-danger">Проверка(ЗАГС)</a> </td>
             <td><a href="" th:href="@{/admin/orders/requestgrn/{id}(id=${order.studentOrderId})}" class="btn btn-danger">Проверка(ГРН)</a></td>
+            <td><a href="" th:href="@{/admin/orders/request/{id}(id=${order.studentOrderId})}" class="btn btn-danger">Проверка(УНИВЕР)</a></td>
 			<td><a href="" th:href="@{/admin/order/{id}(id=${order.studentOrderId})}" class="btn btn-warning">👁</a></td>
-						<td><a href="" th:href="@{/admin/order/edit/{id}(id=${order.studentOrderId})}" class="btn btn-warning">✎</a></td>
+						<td><a href="" th:href="@{/admin/order/update/{id}(id=${order.studentOrderId})}" class="btn btn-warning">✎</a></td>
 						<td><a href=""  th:href="@{/admin/order/remove/{id}(id=${order.studentOrderId})}" class="btn btn-danger">✘</a></td>
 						
         </tr>
