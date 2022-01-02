@@ -57,14 +57,14 @@ public class StudentOrderService {
 		so.setMarriageDate(LocalDate.now());
 		so.setHusband(buildPerson(false));
 		so.setWife(buildPerson(true));
+		List<StudentOrderChild> ch = buildChild(so);
+		so.setStudentOrderChild(ch);
 		orderDao.save(so);
 		
-		StudentOrderChild ch = buildChild(so);
-		List<StudentOrderChild> childs = new LinkedList<>();
-		childs.add(ch);
-		so.setStudentOrderChild(childs);
-		
-		childDao.save(ch);
+		System.out.println(ch.size());
+		for(int i=0; i<ch.size(); i++) {
+		childDao.save(ch.get(i));
+		}
 	}
 	
 	@Transactional
@@ -115,7 +115,8 @@ public class StudentOrderService {
 		return a;
 	}
 
-	private StudentOrderChild buildChild(StudentOrder so) {
+	private List<StudentOrderChild> buildChild(StudentOrder so) {
+		List<StudentOrderChild> childs = new LinkedList<>();
 		StudentOrderChild sc = new StudentOrderChild();
 		System.out.println(so.getStudentOrderId());
 		sc.setStudentOrder(so);
@@ -137,7 +138,31 @@ public class StudentOrderService {
 		ch.setAddress(add);
 		ch.setRegisterOffice(registerDao.getOne(2L));		
 		sc.setChild(ch);
-		return sc;
+		sc.setStudentOrder(so);
+		childs.add(sc);
+		
+		StudentOrderChild sc1 = new StudentOrderChild();
+		Child ch1 = new Child();
+		ch1.setSurName("Тюттерина");
+		ch1.setGivenName("Марина");
+		ch1.setPatronymic("Яковлевна");
+		ch1.setChildCertificate("333333");
+		ch1.setCertificateDate(LocalDate.now());
+		ch1.setDateOfBirth(LocalDate.now());
+		
+		Address add1 = new Address();
+		add1.setStreet(streetDao.getOne(2L));
+		add1.setPostCode("32231");
+		add1.setBuilding("22");
+		add1.setExtension("4A");
+		add1.setApartment("33");
+		ch1.setAddress(add1);
+		ch1.setRegisterOffice(registerDao.getOne(2L));		
+		sc1.setChild(ch1);
+		sc1.setStudentOrder(so);
+		childs.add(sc1);
+		
+		return childs;
 	}
 	
 	

@@ -9,7 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
-
 public class Child extends Person{
 	private String childCertificate;
 	private LocalDate certificateDate;

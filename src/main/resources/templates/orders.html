@@ -37,7 +37,7 @@
 </nav>
 <div class="container-fluid">
 
-    <a th:href="@{/admin/products/add}" style="margin: 20px 0" class="btn btn-primary">Добавить заявку</a>
+    <a th:href="@{/admin/order/add}" style="margin: 20px 0" class="btn btn-primary">Добавить заявку</a>
     <table class="table">
         <thead class="thead-light">
         <tr>
@@ -46,10 +46,11 @@
             <th scope="col">Дата</th>
             <th scope="col">Взрослые</th>
             <th scope="col">Дети</th>
-            <th scope="col">Адрес</th>
-            <th scope="col">Проверка(ЗАГС)</th>
-            <th scope="col">Проверка(ГРН)</th>
-            <th scope="col">Информация</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
         </tr>
         </thead>
 		
@@ -57,18 +58,30 @@
             <th scope="row" th:text="${order.studentOrderId}">Larry</th>
             <td th:text="${order.status.statusName}">Larry</td>
             <td th:text="${order.studentOrderDate}">Larry</td>
-            <td th:text="${order.husband.surName}">Larry</td>
-             <td th:text="${order.wife.surName}">Larry</td>
-            <td th:text="${order.certificateNumber}">Larry</td>
-            <td th:text="${order.registerOffice.registerOfficeName}">Larry</td>
+             <td>
+				
+				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Список</button>
+				  <div class="dropdown-menu">
+				    <a class="dropdown-item" href="" th:href="@{/admin/wife/{id}(id=${order.studentOrderId})}" target="new">Мать</a>
+				    <a class="dropdown-item" href="" th:href="@{/admin/husband/{id}(id=${order.studentOrderId})}" target="new">Отец</a>
+				  </div>
+             </td>
+             <td>
 
-            <td><a href="" th:href="@{/admin/product/requestgrn/{id}(id=${order.studentOrderId})}" class="btn btn-danger">Проверка(ЗАГС)</a></td>
-            <td><a href="" th:href="@{/admin/product/update/{id}(id=${order.studentOrderId})}" class="btn btn-warning">Проверка(ГРН)</a></td>
-
+				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Список</button>
+				  <div class="dropdown-menu">
+				    <a class="dropdown-item" href="" th:each="chi : ${order.studentOrderChild}" th:text="${chi.child.givenName}" th:href="@{/admin/child/{id}(id=${chi.studentChildId})}" target="new"></a>
+				  </div>
+             </td>
+            <td><a href="" th:href="@{/admin/orders/requestzags/{id}(id=${order.studentOrderId})}" class="btn btn-danger">Проверка(ЗАГС)</a> </td>
+            <td><a href="" th:href="@{/admin/orders/requestgrn/{id}(id=${order.studentOrderId})}" class="btn btn-danger">Проверка(ГРН)</a></td>
+			<td><a href="" th:href="@{/admin/order/{id}(id=${order.studentOrderId})}" class="btn btn-warning">👁</a></td>
+						<td><a href="" th:href="@{/admin/order/edit/{id}(id=${order.studentOrderId})}" class="btn btn-warning">✎</a></td>
+						<td><a href=""  th:href="@{/admin/order/remove/{id}(id=${order.studentOrderId})}" class="btn btn-danger">✘</a></td>
+						
         </tr>
         </tbody>
     </table>
-    <h1 th:text="${status}"></h1>
 </div>
 
 
