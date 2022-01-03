@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +33,7 @@ import student.domain.StudentOrder;
 import student.domain.StudentOrderChild;
 import student.domain.StudentOrderStatus;
 import student.domain.University;
+import student.domain.User;
 
 @Controller
 public class AdminController {
@@ -119,8 +121,8 @@ public class AdminController {
 		return "orders";
 	}
 	@PostMapping("/admin/childs/add")
-	public String updateChild(@ModelAttribute("studentOrderChild") StudentOrderChild so, Model md) {
-		childService.saveChild(so);
+	public String updateChild(@ModelAttribute("studentOrderChild") StudentOrderChild so, Model md, @AuthenticationPrincipal User user) {
+		childService.saveChild(so, user);
 		//studentServ.updateStudentOrder(so);
 		return "redirect:/admin/orders";
 	}

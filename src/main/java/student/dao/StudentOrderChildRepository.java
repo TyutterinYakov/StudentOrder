@@ -1,6 +1,7 @@
 package student.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -12,6 +13,7 @@ import student.domain.StudentOrderChild;
 public interface StudentOrderChildRepository extends JpaRepository<StudentOrderChild, Long>{
 
 	List<StudentOrderChild> findAllByStudentOrder(StudentOrder so);
+	List<StudentOrderChild> findAllByEmailAdd(String email);
 
 
 

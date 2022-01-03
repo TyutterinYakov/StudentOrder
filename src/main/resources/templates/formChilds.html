@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img th:src="@{/images/logo.png}" src="../static/images/logo.png" width="auto" height="40"
+                 class="d-inline-block align-top" alt=""/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/}" href="#">главная</a>
+                </li>
+				<li class="nav-item active">
+                    <a class="nav-link" th:href="@{/orders}" href="#">мои заявления</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/logout}" href="#">выход</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="container">
+
+    <form th:action="@{/formChilds}" method="post" th:object="${child}">
+        <div class="row">
+            <div class="col-sm-5">
+
+
+                <hr><strong>Ребенок</strong><hr>
+                <div class="form-group">
+                    <label for="price">Фамилия</label>
+                    <input type="text" class="form-control" required th:field="*{child.surName}" name="w_surName" id="w_surName"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="weight">Имя</label>
+                    <input type="text" class="form-control" required th:field="*{child.givenName}" name="w_givenName" id="w_givenName"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="description">Отчество</label>
+                    <input type="text" class="form-control" required th:field="*{child.patronymic}" name="w_patronymic" id="w_patronymic"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="description">День рождения</label>
+                    <input type="date" class="form-control" required th:field="*{child.dateOfBirth}" name="w_dateOfBirth" id="w_dateOfBirth"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="description">Посткод</label>
+                    <input type="text" class="form-control" required th:field="*{child.address.postCode}" name="w_postCode" id="w_postCode"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="category">Улица</label>
+                    <select class="form-control" th:field="*{child.address.street}" id="address.street" name="address.street">
+                        <option th:each="str :${streets}"
+                                th:value="${str.streetCode}"
+                                th:text="${str.streetName}"
+                        >
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Дом</label>
+                    <input type="text" class="form-control" required th:field="*{child.address.building}" name="w_building" id="w_streetName"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="description">Корпус</label>
+                    <input type="text" class="form-control" required th:field="*{child.address.extension}" name="w_extension" id="w_streetName"
+                           >
+                </div>  
+                <div class="form-group">
+                    <label for="description">Квартира</label>
+                    <input type="text" class="form-control" required th:field="*{child.address.apartment}" name="w_apartment" id="w_streetName"
+                           >
+                </div>                  
+                <div class="form-group">
+                    <label for="description">Свидетельство о рождении</label>
+                    <input type="text" class="form-control" required th:field="*{child.childCertificate}" name="childCertificate" id="childCertificate"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="description">Дата выдачи</label>
+                    <input type="date" class="form-control" required th:field="*{child.certificateDate}" name="marriageDate" id="marriageDate"
+                           >
+                </div>
+                 <div class="form-group">
+                    <label for="category">Кем выдан</label>
+                    <select class="form-control" th:field="*{child.registerOffice}">
+                        <option th:each="register :${registers}"
+                                th:value="${register.registerOfficeId}"
+                                th:text="${register.registerOfficeName}"
+                        >
+                    </select>
+            </div> 
+            
+            
+            <div class="row">
+                <div class="col-sm-5">
+				<button type="submit" class="btn btn-primary">Добавить ребенка</button>
+       			 </div>
+                <div class="col-sm-5">
+                <strong>Если имеются еще дети, откройте форму повторно!</strong>
+                </div>
+                </div><br><br>
+    </form>
+                </div>
+    
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>

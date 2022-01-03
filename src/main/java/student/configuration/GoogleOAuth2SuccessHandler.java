@@ -51,7 +51,7 @@ public class GoogleOAuth2SuccessHandler implements AuthenticationSuccessHandler 
 			user.setRoles(roles);
 			userRepo.save(user);
 		}
-		redirectStrategy.sendRedirect(request, response, "/admin");
+		redirectStrategy.sendRedirect(request, response, "/");
 	}
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, FilterChain chain,

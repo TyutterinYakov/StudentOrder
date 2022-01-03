@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,10 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <title>Document</title>
+    
 </head>
 <body>
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light" >
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -24,43 +29,31 @@
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/admin}" href="#">админ панель</a>
+                    <a class="nav-link" th:href="@{/}" href="#">главная</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/logout}" href="#">выход</a>
+                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/formPay}" href="#">Общее заявление</a>
                 </li>
-
+                <li class="nav-item active">
+                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/formChilds}" href="#">Заявление детей</a>
+                </li>
+              	<li class="nav-item active">
+                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/orders}" href="#">мои заявления</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login}" href="#">вход</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}" href="#">выход</a>
+                </li>
             </ul>
 
         </div>
     </div>
 </nav>
-<div class="container-fluid">
-	<b>Фамилия:</b> <b th:text="${adult.surName}"></b><br>
-	<b>Имя: </b><b th:text="${adult.givenName}"></b><br>
-	<b>Отчество: </b><b th:text="${adult.patronymic}"></b><br>
-	<b>Дата рождения: </b><b th:text="${adult.dateOfBirth}"></b><br>
-	<b>Серия паспорта: </b><b th:text="${adult.passportSeria}"></b><br>
-	<b>Номер паспорта: </b><b th:text="${adult.passportNumber}"></b><br>
-	<b>Кем выдан: </b><b th:text="${adult.passportOffice.passportOfficeName}"></b><br>
-	<b>Адрес паспортного стола: </b><b th:text="${adult.passportOffice.passportAreaId.areaName}"></b><br><hr>
-	<div><strong>АДРЕС</strong><br><hr>
-	<b>Посткод: </b><b th:text="${adult.address.postCode}"></b><br>
-	<b>Улица: </b><b th:text="${adult.address.street.streetName}"></b><br>
-	<b>Строение: </b><b th:text="${adult.address.building}"></b><br>
-	<b>Корпус: </b><b th:text="${adult.address.extension}"></b><br>
-	<b>Квартира: </b><b th:text="${adult.address.apartment}"></b><br>
-	<div><strong>Университет</strong><br><hr>
-	<b>Дата: </b><b th:text="${adult.issueDate}"></b><br>
-	<b>Номер студенческого: </b><b th:text="${adult.studentNumber}"></b><br>
-	</div>
-	</div>
 
 
-
-
-
-</div>
+<strong sec:authorize="isAnonymous()">Для подачи заявления необходима авторизация</strong>
 
 
 

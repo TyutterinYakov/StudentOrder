@@ -28,6 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		http
 			.authorizeRequests()
+			.antMatchers("/formPay/**", "/orders/**", "/formChilds/**").hasRole("USER")
 			.antMatchers("/", "/register").permitAll()
 			.antMatchers("/admin/**").hasRole("ADMIN")
 			.anyRequest()
@@ -73,6 +74,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		web.ignoring().antMatchers("/resources/**", "/static/**",
 				"/images/**");
 	}
+	
 	
 	
 	

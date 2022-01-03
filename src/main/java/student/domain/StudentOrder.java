@@ -88,14 +88,33 @@ public class StudentOrder {
 	@ManyToOne(cascade=CascadeType.REFRESH, fetch=FetchType.EAGER)
 	@JoinColumn(name="register_office_id")
 	private RegisterOffice registerOffice;
-	@OneToMany(cascade= {CascadeType.REFRESH, CascadeType.REMOVE}, fetch=FetchType.LAZY, 
+	@OneToMany(cascade= {CascadeType.ALL}, fetch=FetchType.LAZY, 
 			mappedBy="studentOrder")
 	private List<StudentOrderChild> studentOrderChild;
 //	private boolean checkRegisterOffice;
 //	private boolean checkCityRegister;
+	@Column(unique=true)
+	private String emailAdd;
+	private String emailEdit;
 	
 	
 	
+	public String getEmailAdd() {
+		return emailAdd;
+	}
+
+	public void setEmailAdd(String emailAdd) {
+		this.emailAdd = emailAdd;
+	}
+
+	public String getEmailEdit() {
+		return emailEdit;
+	}
+
+	public void setEmailEdit(String emailEdit) {
+		this.emailEdit = emailEdit;
+	}
+
 	public Long getStudentOrderId() {
 		return studentOrderId;
 	}

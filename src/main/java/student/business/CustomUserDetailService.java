@@ -23,7 +23,6 @@ public class CustomUserDetailService implements UserDetailsService{
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Optional<User> user = userRepo.findUserByEmail(username);
 		user.orElseThrow(()->new UsernameNotFoundException("Такой пользователь не найден"));
-		
 		return user.map(CustomUserDetail::new).get();
 	}
 

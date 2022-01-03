@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,12 +20,14 @@ import student.dao.StudentOrderStatusRepository;
 import student.dao.UniversityRepository;
 import student.domain.Adult;
 import student.domain.CountryStruct;
+import student.domain.CustomUserDetail;
 import student.domain.PassportOffice;
 import student.domain.RegisterOffice;
 import student.domain.Street;
 import student.domain.StudentOrder;
 import student.domain.StudentOrderStatus;
 import student.domain.University;
+import student.domain.User;
 
 @Service
 public class StudentService {
@@ -42,7 +46,7 @@ public class StudentService {
 	private RegisterOfficeRepository registerDao;
 	@Autowired
 	private CountryStructRepository countryDao;
-	
+
 	
 	@Transactional
 	public List<StudentOrder> getAllStudentOrder(){
@@ -122,6 +126,19 @@ public class StudentService {
 	
 	public List<CountryStruct> findListCountry(){
 		return countryDao.findAll();
+	}
+
+	public void saveStudentOrder(StudentOrder so, User us) {
+		so.setStudentOrderDate(LocalDateTime.now());
+		so.setStatus(statusDao.getOne(6L));
+		so.setEmailAdd(us.getEmail());
+		studentDao.save(so);
+		
+	}
+
+	public Optional<StudentOrder> getStudentOrderByEmailAdd(User user) {
+		Optional<StudentOrder> stud = studentDao.findStudentOrderByEmailAdd(user.getEmail());
+		return stud;
 	}
 	
 }

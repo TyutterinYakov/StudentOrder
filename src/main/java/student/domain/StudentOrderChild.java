@@ -49,8 +49,22 @@ public class StudentOrderChild{
 	})
 	@Embedded
 	private Child child;
+	private String emailAdd;
+	private String emailEdit;
 	
 	
+	public String getEmailAdd() {
+		return emailAdd;
+	}
+	public void setEmailAdd(String emailAdd) {
+		this.emailAdd = emailAdd;
+	}
+	public String getEmailEdit() {
+		return emailEdit;
+	}
+	public void setEmailEdit(String emailEdit) {
+		this.emailEdit = emailEdit;
+	}
 	public Long getStudentChildId() {
 		return studentChildId;
 	}

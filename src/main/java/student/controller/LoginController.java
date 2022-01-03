@@ -38,6 +38,6 @@ public class LoginController {
 	public String registerPost(@ModelAttribute("user") User user, HttpServletRequest request, Model md) throws ServletException {
 		loginServ.register(user, request);
 
-		return "redirect:/admin";
+		return "redirect:/";
 	}
 }
