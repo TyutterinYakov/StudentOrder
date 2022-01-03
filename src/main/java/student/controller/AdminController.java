@@ -99,6 +99,9 @@ public class AdminController {
 	
 	@GetMapping("/admin/child/{id}")
 	public String infoChild(@PathVariable("id") Long id, Model md) {
+		md.addAttribute("streets", studentServ.findListStreet());
+		md.addAttribute("studentOrderChild", childService.getChildOrderById(id));
+		md.addAttribute("registers", studentServ.getListRegisterOffice());
 		Optional<StudentOrderChild> soc = childService.getChildOrderById(id);
 		if(soc.isPresent()) {
 		md.addAttribute("orderChild",soc.get());
@@ -115,6 +118,12 @@ public class AdminController {
 		
 		return "orders";
 	}
+	@PostMapping("/admin/childs/add")
+	public String updateChild(@ModelAttribute("studentOrderChild") StudentOrderChild so, Model md) {
+		childService.saveChild(so);
+		//studentServ.updateStudentOrder(so);
+		return "redirect:/admin/orders";
+	}
 	
 	@GetMapping("/admin/order/update/{id}")
 	public String getAddOrders(@PathVariable("id") Long id, Model md) {
@@ -124,8 +133,6 @@ public class AdminController {
 		md.addAttribute("univers", studentServ.getListUnivers());
 		md.addAttribute("streets", studentServ.findListStreet());
 		md.addAttribute("statuses", studentServ.findListStatus());
-		List<StudentOrderChild> childs = studentServ.getStudentOrderById(id).get().getStudentOrderChild();
-		md.addAttribute("childs", childs);
 		if(so.isPresent()) {
 			md.addAttribute("studentOrder", so.get());
 		} else {
@@ -139,7 +146,8 @@ public class AdminController {
 		
 		studentServ.updateStudentOrder(so);
 		return "redirect:/admin/orders";
-	}
+	}	
+	
 	//STREET
 	@GetMapping("/admin/streets")
 	public String getStreets(Model md) {
@@ -266,7 +274,7 @@ public class AdminController {
 		return "countryStruct";
 	}
 	@GetMapping("/admin/country/update/{id}")
-	public String updateCountry(@PathVariable("id") String id, Model md) {
+	public String updateCountry(@PathVariable("id") Long id, Model md) {
 		md.addAttribute("struct", structService.findStructById(id));
 		return "countryStructAdd";
 	}
@@ -278,7 +286,7 @@ public class AdminController {
 	}
 	
 	@GetMapping("/admin/country/remove/{id}")
-	public String removeCountry(@PathVariable("id") String id, Model md) {
+	public String removeCountry(@PathVariable("id") Long id, Model md) {
 		structService.removeStructById(id);
 		return "redirect:/admin/countries";
 	}

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import student.domain.CountryStruct;
 
 @Repository
-public interface CountryStructRepository extends JpaRepository<CountryStruct, String>  {
+public interface CountryStructRepository extends JpaRepository<CountryStruct, Long>  {
 
 }

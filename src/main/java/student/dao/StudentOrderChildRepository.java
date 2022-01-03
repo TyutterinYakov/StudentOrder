@@ -11,6 +11,8 @@ import student.domain.StudentOrderChild;
 @Repository
 public interface StudentOrderChildRepository extends JpaRepository<StudentOrderChild, Long>{
 
+	List<StudentOrderChild> findAllByStudentOrder(StudentOrder so);
+
 
 
 }

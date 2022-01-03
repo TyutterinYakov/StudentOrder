@@ -5,11 +5,14 @@ import java.time.LocalDate;
 
 import javax.persistence.MappedSuperclass;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @MappedSuperclass
 public class Person {
 	private String surName;
 	private String givenName;
 	private String patronymic;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dateOfBirth;
 	private Address address;
 	

@@ -36,21 +36,87 @@
     </div>
 </nav>
 <div class="container-fluid">
-	<b>Фамилия:</b> <b th:text="${orderChild.child.surName}"></b><br>
-	<b>Имя: </b><b th:text="${orderChild.child.givenName}"></b><br>
-	<b>Отчество: </b><b th:text="${orderChild.child.patronymic}"></b><br>
-	<b>Дата рождения: </b><b th:text="${orderChild.child.dateOfBirth}"></b><br>
-	<b>Свидетельство о рождении: </b><b th:text="${orderChild.child.childCertificate}"></b><br>
-	<b>Дата выдачи свидетельства: </b><b th:text="${orderChild.child.certificateDate}"></b><br>
-	<b>Кем выдано: </b><b th:text="${orderChild.child.registerOffice.registerOfficeName}"></b ><br>
-	<b>Адрес ЗАГСА: </b><b th:text="${orderChild.child.registerOffice.registerAreaId.areaName}"></b><br><hr>
-	<div><strong>АДРЕС</strong><br><hr>
-	<b>Посткод: </b><b th:text="${orderChild.child.address.postCode}"></b><br>
-	<b>Улица: </b><b th:text="${orderChild.child.address.street.streetName}"></b><br>
-	<b>Строение: </b><b th:text="${orderChild.child.address.building}"></b><br>
-	<b>Корпус: </b><b th:text="${orderChild.child.address.extension}"></b><br>
-	<b>Квартира: </b><b th:text="${orderChild.child.address.apartment}"></b><br>
-	</div>
+    <form th:action="@{/admin/childs/add}" method="post" th:object="${studentOrderChild}">
+        <div class="row">
+            <div class="col-sm-5">
+                <input type="hidden" name="id" th:field="*{studentOrder}">
+                <input type="hidden" name="id" th:field="*{studentChildId}">
+                <div class="form-group">
+                    <label for="price">Фамилия</label>
+                    <input type="text" class="form-control" required th:field="*{child.surName}" name="surName" id="surName"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="price">Имя</label>
+                    <input type="text" class="form-control" required th:field="*{child.givenName}" name="givenName" id="givenName"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="price">Отчество</label>
+                    <input type="text" class="form-control" required th:field="*{child.patronymic}" name="patronymic" id="patronymic"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="price">Дата рождения</label>
+                    <input type="text" class="form-control" required th:field="*{child.dateOfBirth}" name="patronymic" id="patronymic"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="price">Посткод</label>
+                    <input type="text" class="form-control" required th:field="*{child.address.postCode}" name="patronymic" id="patronymic"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="category">Улица</label>
+                    <select class="form-control" th:field="*{child.address.street}" id="address.street" name="address.street">
+                        <option th:each="str :${streets}"
+                                th:value="${str.streetCode}"
+                                th:text="${str.streetName}"
+                        >
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="price">Дом</label>
+                    <input type="text" class="form-control" required th:field="*{child.address.building}" name="patronymic" id="patronymic"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="price">Корпус</label>
+                    <input type="text" class="form-control" required th:field="*{child.address.extension}" name="patronymic" id="patronymic"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="price">Квартира</label>
+                    <input type="text" class="form-control" required th:field="*{child.address.apartment}" name="patronymic" id="patronymic"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="price">Номер сертификата</label>
+                    <input type="text" class="form-control" required th:field="*{child.childCertificate}" name="patronymic" id="patronymic"
+                           >
+                </div>
+                <div class="form-group">
+                    <label for="price">Дата выдачи</label>
+                    <input type="text" class="form-control" required th:field="*{child.certificateDate}" name="patronymic" id="patronymic"
+                           >
+                </div>
+                 <div class="form-group">
+                    <label for="category">Кем выдан</label>
+                    <select class="form-control" th:field="*{child.registerOffice}" id="passportOffice" name="passportOffice">
+                        <option th:each="register :${registers}"
+                                th:value="${register.registerOfficeId}"
+                                th:text="${register.registerOfficeName}"
+                        >
+                    </select>
+            </div> 
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a href="/admin/orders" class="btn btn-danger">Выйти без изменений</a><br><br>
+                
+
+
+</div>
+</div>
+</form>
 </div>
 
 

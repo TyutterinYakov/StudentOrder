@@ -9,8 +9,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Child extends Person{
 	private String childCertificate;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate certificateDate;
 	@ManyToOne(cascade= {CascadeType.REFRESH}, fetch=FetchType.LAZY)
 	@JoinColumn(name="c_register_office_id")

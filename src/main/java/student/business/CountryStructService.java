@@ -18,7 +18,7 @@ public class CountryStructService {
 		return structDao.findAll();
 	}
 
-	public CountryStruct findStructById(String id) {
+	public CountryStruct findStructById(Long id) {
 		
 		return structDao.findById(id).get();
 	}
@@ -28,7 +28,7 @@ public class CountryStructService {
 		
 	}
 
-	public void removeStructById(String id) {
+	public void removeStructById(Long id) {
 		structDao.deleteById(id);
 		
 	}

@@ -7,11 +7,14 @@ import javax.persistence.Embeddable;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Embeddable
 public class Adult extends Person {
 	
 	private String passportSeria;
 	private String passportNumber;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate issueDate;
 	@ManyToOne(cascade=CascadeType.REFRESH, fetch=FetchType.EAGER)
 	private PassportOffice passportOffice;

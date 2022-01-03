@@ -87,9 +87,9 @@ public class StudentOrderService {
 		ad.setApartment("237");
 		
 		if(wife) {
-			a.setGivenName("...");
-			a.setSurName("Тюттерина");
-			a.setPatronymic("...");
+			a.setGivenName("Ирина");
+			a.setSurName("Макарова");
+			a.setPatronymic("Сергеевна");
 			a.setPassportSeria("3333");
 			a.setPassportNumber("111111");
 			a.setAddress(ad);
@@ -100,8 +100,8 @@ public class StudentOrderService {
 			a.setUniversity(universityDao.getOne(1L));
 			
 		} else {
-			a.setGivenName("Яков");
-			a.setSurName("Тюттерин");
+			a.setGivenName("Аркадий");
+			a.setSurName("Макаров");
 			a.setPatronymic("Николаевич");
 			a.setPassportSeria("4444");
 			a.setPassportNumber("666111");
@@ -122,9 +122,9 @@ public class StudentOrderService {
 		sc.setStudentOrder(so);
 		
 		Child ch = new Child();
-		ch.setSurName("Тюттерин");
-		ch.setGivenName("...");
-		ch.setPatronymic("Яковлевич");
+		ch.setSurName("Макаров");
+		ch.setGivenName("Сергей");
+		ch.setPatronymic("Аркадьевич");
 		ch.setChildCertificate("333333");
 		ch.setCertificateDate(LocalDate.now());
 		ch.setDateOfBirth(LocalDate.now());
@@ -143,9 +143,9 @@ public class StudentOrderService {
 		
 		StudentOrderChild sc1 = new StudentOrderChild();
 		Child ch1 = new Child();
-		ch1.setSurName("Тюттерина");
-		ch1.setGivenName("Марина");
-		ch1.setPatronymic("Яковлевна");
+		ch1.setSurName("Макарова");
+		ch1.setGivenName("Василиса");
+		ch1.setPatronymic("Аркадьевна");
 		ch1.setChildCertificate("333333");
 		ch1.setCertificateDate(LocalDate.now());
 		ch1.setDateOfBirth(LocalDate.now());
