@@ -21,6 +21,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="jc_student_order")
 public class StudentOrder {
@@ -81,6 +83,7 @@ public class StudentOrder {
 	@Column(name="certificate_number")
 	private String certificateNumber;
 	@Column(name="marriage_date")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate marriageDate;
 	@ManyToOne(cascade=CascadeType.REFRESH, fetch=FetchType.EAGER)
 	@JoinColumn(name="register_office_id")
