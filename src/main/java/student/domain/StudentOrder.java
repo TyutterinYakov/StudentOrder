@@ -96,6 +96,8 @@ public class StudentOrder {
 	@Column(unique=true)
 	private String emailAdd;
 	private String emailEdit;
+	private boolean checkUniversityWife;
+	private boolean checkUniversityHusband;
 	
 	
 	
@@ -185,6 +187,22 @@ public class StudentOrder {
 
 	public void setStudentOrderChild(List<StudentOrderChild> studentOrderChild) {
 		this.studentOrderChild = studentOrderChild;
+	}
+
+	public boolean isCheckUniversityWife() {
+		return checkUniversityWife;
+	}
+
+	public void setCheckUniversityWife(boolean checkUniversityWife) {
+		this.checkUniversityWife = checkUniversityWife;
+	}
+
+	public boolean isCheckUniversityHusband() {
+		return checkUniversityHusband;
+	}
+
+	public void setCheckUniversityHusband(boolean checkUniversityHusband) {
+		this.checkUniversityHusband = checkUniversityHusband;
 	}
 
 //	public boolean isCheckRegisterOffice() {

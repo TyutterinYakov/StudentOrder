@@ -79,11 +79,8 @@
              </td>
             <td><a href="" th:href="@{/admin/orders/requestzags/{id}(id=${order.studentOrderId})}" class="btn btn-danger">Проверка(ЗАГС)</a> </td>
             <td><a href="" th:href="@{/admin/orders/requestgrn/{id}(id=${order.studentOrderId})}" class="btn btn-danger">Проверка(ГРН)</a></td>
-            <td>
-            <form action="/admin/checkUniversity" method="post">
-            <input type="submit" th:href="@{/admin/orders/request/{id}(id=${order.studentOrderId})}" class="btn btn-danger"/>
-            </form>
-            </td>
+            <td><a href="" th:href="@{/admin/checkUniversity/{id}(id=${order.studentOrderId})}" class="btn btn-danger">Проверка(УНИВЕРЫ)</a></td>
+
 						<td><a href="" th:href="@{/admin/order/update/{id}(id=${order.studentOrderId})}" class="btn btn-warning">✎</a></td>
 						<td><a href=""  th:href="@{/admin/order/remove/{id}(id=${order.studentOrderId})}" class="btn btn-danger">✘</a></td>
 						

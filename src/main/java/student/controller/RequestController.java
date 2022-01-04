@@ -4,63 +4,66 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.Socket;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import student.business.StudentService;
+import student.business.UniversityRequestService;
+import student.domain.StudentOrder;
+import student.request.UniversityRequest;
 import student.response.UniversityResponse;
 
 @Controller
 public class RequestController {
 	
+	@Autowired
+	private UniversityRequestService requestUniversityService;
+	@Autowired
+	private StudentService studentServ;
 	
-	//@PostMapping(path="/admin/checkUniversity", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	//@ResponseBody
-	@PostMapping("/admin/checkUniversity")
-	public String getStudentInfo() throws UnknownHostException, IOException {
-		URL url = new URL("http://localhost:8005/checkUniversity");
-		URLConnection con = url.openConnection();
-		HttpURLConnection http = (HttpURLConnection)con;
-		http.setRequestMethod("POST"); // PUT is another valid option
-		http.setDoOutput(true);
-		byte[] out = "{\"passportDate\":\"30.04.2016\",\"passportNumber\":\"222222\",\"dateOfBirth\":\"12.04.2000\",\"passportSeria\":\"1111\",\"middleName\":\"Middle\", \"firstName\":\"First\", \"lastName\":\"Last\"}" .getBytes(StandardCharsets.UTF_8);
-		int length = out.length;
-
-		http.setFixedLengthStreamingMode(length);
-		http.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-		http.connect();
-		try(OutputStream os = http.getOutputStream()) {
-		    os.write(out);
-		    
+	@GetMapping("/admin/checkUniversity/{id}")
+	public String getStudentInfo(@PathVariable("id") Long id, Model md) {
+		Optional<StudentOrder> so = studentServ.getStudentOrderById(id);
+		if(so.isPresent()) {
+			md.addAttribute("studentOrder", so.get());
+			return "checkUniversity";
 		}
-		BufferedReader br = new BufferedReader(new InputStreamReader( http.getInputStream(),"utf-8"));
-		String line = null;
-		StringBuilder sb = new StringBuilder();
-		while ((line = br.readLine()) != null) {
-		    sb.append(line + "\n");
-		}
-		br.close();
-		String json = sb.toString();
-		ObjectMapper mapper = new ObjectMapper();
-		List<UniversityResponse> list = mapper.readValue(json, new TypeReference<List<UniversityResponse>>(){});
-		for(UniversityResponse ur: list) {
-			System.out.println(ur.getFacultyName());
-		}
-		System.out.println(""+sb.toString());
 		
-		
-		
-		http.disconnect();
+		return "404";
+	}
+	
+	@PostMapping("/admin/checkUniversity/wife/{id}")
+	public String postStudentWife(@PathVariable("id") Long id) {
+		requestUniversityService.buildWifeUniversityRequest(id);
 		return "redirect:/admin/orders"; 
 	}
+	@PostMapping("/admin/checkUniversity/husband/{id}")
+	public String postStudentHusband(@PathVariable("id") Long id) {
+		requestUniversityService.buildHusbandUniversityRequest(id);
+		return "redirect:/admin/orders"; 
+	}
+
+
 }

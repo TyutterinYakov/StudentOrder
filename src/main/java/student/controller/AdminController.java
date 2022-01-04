@@ -143,10 +143,13 @@ public class AdminController {
 		return "orderAdd";
 	}
 	@PostMapping("/admin/orders/add")
-	public String updateOrder(@ModelAttribute("studentOrder") StudentOrder so, Model md) {
+	public String updateOrder(@ModelAttribute("studentOrder") StudentOrder so, Model md, @AuthenticationPrincipal User user) {
+		if(user.getEmail()==null) {
+			return "redirect:/logout";
+		}
 		
-		
-		studentServ.updateStudentOrder(so);
+		studentServ.updateStudentOrder(so, user);
+
 		return "redirect:/admin/orders";
 	}	
 	

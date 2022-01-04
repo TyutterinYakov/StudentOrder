@@ -93,9 +93,11 @@ public class StudentService {
 		return studentDao.findById(id);
 	}
 
-	public void updateStudentOrder(StudentOrder so) {
+	public void updateStudentOrder(StudentOrder so, User us) {
 		//so.setStudentOrderDate(studentDao.findById(so.getStudentOrderId()).get().getStudentOrderDate());
 		so.setStatus(statusDao.getOne(5L));
+		so.setEmailAdd(studentDao.findById(so.getStudentOrderId()).get().getEmailAdd());
+		so.setEmailEdit(us.getEmail());
 		so.setStudentOrderDate(LocalDateTime.now());
 		studentDao.save(so);
 		//statusDao.save(studentDao.findById(so.getStudentOrderId()).get().getStatus());
