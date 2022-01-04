@@ -43,6 +43,8 @@ public class RequestController {
 	@Autowired
 	private StudentService studentServ;
 	
+	
+	//UNIVERSITY
 	@GetMapping("/admin/checkUniversity/{id}")
 	public String getStudentInfo(@PathVariable("id") Long id, Model md) {
 		Optional<StudentOrder> so = studentServ.getStudentOrderById(id);
@@ -57,12 +59,12 @@ public class RequestController {
 	@PostMapping("/admin/checkUniversity/wife/{id}")
 	public String postStudentWife(@PathVariable("id") Long id) {
 		requestUniversityService.buildWifeUniversityRequest(id);
-		return "redirect:/admin/orders"; 
+		return "redirect:/admin/checkUniversity/{id}"; 
 	}
 	@PostMapping("/admin/checkUniversity/husband/{id}")
 	public String postStudentHusband(@PathVariable("id") Long id) {
 		requestUniversityService.buildHusbandUniversityRequest(id);
-		return "redirect:/admin/orders"; 
+		return "redirect:/admin/checkUniversity/{id}"; 
 	}
 
 

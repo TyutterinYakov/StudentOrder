@@ -40,8 +40,8 @@ public class AdminController {
 
 	@Autowired
 	private StudentService studentServ;
-	@Autowired
-	private StudentOrderService stOrServ;
+//	@Autowired
+//	private StudentOrderService stOrServ;
 	
 	@Autowired
 	private StudentOrderChildService childService;
@@ -71,8 +71,8 @@ public class AdminController {
 	@GetMapping("/admin/orders")
 	public String getOrders(Model md) {
 		md.addAttribute("orders", studentServ.getAllStudentOrder());
-		stOrServ.testSave();
-		stOrServ.testGet();
+//		stOrServ.testSave();
+//		stOrServ.testGet();
 		md.addAttribute("status", studentServ.getStatus());
 		return "orders";
 	}
@@ -128,7 +128,10 @@ public class AdminController {
 	}
 	
 	@GetMapping("/admin/order/update/{id}")
-	public String getAddOrders(@PathVariable("id") Long id, Model md) {
+	public String getAddOrders(@PathVariable("id") Long id, Model md, @AuthenticationPrincipal User user) {
+		if(user.getEmail()==null) {
+			return "redirect:/logout";
+		}
 		Optional<StudentOrder> so = studentServ.getStudentOrderById(id);
 		md.addAttribute("pOfficies", studentServ.getListPassportOffice());
 		md.addAttribute("registers", studentServ.getListRegisterOffice());
