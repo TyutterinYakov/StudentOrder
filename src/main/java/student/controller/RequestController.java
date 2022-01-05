@@ -32,7 +32,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import student.business.StudentService;
 import student.business.RequestRegisterService;
 import student.business.RequestUniversityService;
+import student.business.StudentOrderChildService;
+import student.business.StudentOrderService;
 import student.domain.StudentOrder;
+import student.domain.StudentOrderChild;
 import student.request.UniversityRequest;
 import student.response.UniversityResponse;
 
@@ -45,6 +48,8 @@ public class RequestController {
 	private StudentService studentServ;
 	@Autowired
 	private RequestRegisterService requestRegisterService;
+	@Autowired
+	private StudentOrderChildService childService;
 	
 	
 	//UNIVERSITY
@@ -72,12 +77,15 @@ public class RequestController {
 	
 	
 	//REGISTER OFFICE
-																		//TODO
 	@GetMapping("/admin/checkRegister/{id}")
 	public String getRegisterInfo(@PathVariable("id") Long id, Model md) {
 		Optional<StudentOrder> so = studentServ.getStudentOrderById(id);
 		if(so.isPresent()) {
 			md.addAttribute("studentOrder", so.get());
+			Optional<List<StudentOrderChild>> childs = childService.getChildOrderByStudentOrderId(so.get());
+			if(childs.isPresent()) {
+				md.addAttribute("childs", childs.get());
+			} 
 			return "checkRegisterOffice";
 		}
 		

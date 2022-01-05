@@ -1,9 +1,22 @@
 package student.response;
 
+import java.util.List;
+
+import student.domain.ChildResponse;
+
+
 public class RegisterOfficeResponse {
 	private boolean existingMother;
 	private boolean existingFather;
 	private boolean existingMarriage;
+	private List<ChildResponse> childs;
+	
+	public List<ChildResponse> getChilds() {
+		return childs;
+	}
+	public void setChilds(List<ChildResponse> childs) {
+		this.childs = childs;
+	}
 	public boolean isExistingMarriage() {
 		return existingMarriage;
 	}

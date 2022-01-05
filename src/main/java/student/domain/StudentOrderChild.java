@@ -51,8 +51,15 @@ public class StudentOrderChild{
 	private Child child;
 	private String emailAdd;
 	private String emailEdit;
+	private boolean checkChildRegister;
 	
 	
+	public boolean isCheckChildRegister() {
+		return checkChildRegister;
+	}
+	public void setCheckChildRegister(boolean checkChildRegister) {
+		this.checkChildRegister = checkChildRegister;
+	}
 	public String getEmailAdd() {
 		return emailAdd;
 	}

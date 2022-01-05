@@ -12,7 +12,7 @@ import student.domain.StudentOrderChild;
 @Repository
 public interface StudentOrderChildRepository extends JpaRepository<StudentOrderChild, Long>{
 
-	List<StudentOrderChild> findAllByStudentOrder(StudentOrder so);
+	Optional<List<StudentOrderChild>> findAllByStudentOrder(StudentOrder so);
 	List<StudentOrderChild> findAllByEmailAdd(String email);
 
 

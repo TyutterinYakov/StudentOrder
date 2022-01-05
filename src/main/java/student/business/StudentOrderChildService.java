@@ -34,7 +34,7 @@ public class StudentOrderChildService {
 	}
 
 
-	public List<StudentOrderChild> getChildOrderByStudentOrderId(StudentOrder so) {
+	public Optional<List<StudentOrderChild>> getChildOrderByStudentOrderId(StudentOrder so) {
 		
 		return childDao.findAllByStudentOrder(so);
 	}
