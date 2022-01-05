@@ -11,25 +11,31 @@ import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import student.request.RegisterOfficeRequest;
 import student.request.UniversityRequest;
+import student.response.RegisterOfficeResponse;
 import student.response.UniversityResponse;
 
-public class ConnectAndCheckUniversity {
+public class ConnectAndCheckMarriage {
 
 	//TODO
+	private static final Logger log = LoggerFactory.getLogger(ConnectAndCheckMarriage.class);
 	
-	public List<UniversityResponse> checkUniversity(UniversityRequest request) throws IOException {
-		List<UniversityResponse> list;
+	public RegisterOfficeResponse checkMarriage(RegisterOfficeRequest request) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
-		URL url = new URL("http://localhost:8005/checkUniversity");
+		URL url = new URL("http://localhost:8003/checkMarriage");
 		URLConnection con = url.openConnection();
 		HttpURLConnection http = (HttpURLConnection)con;
 		http.setRequestMethod("POST"); // PUT is another valid option
 		http.setDoOutput(true);
 		String jsonString = mapper.writeValueAsString(request);
+		log.info(jsonString);
 		byte[] out = jsonString.getBytes(StandardCharsets.UTF_8);
 		int length = out.length;
 		
@@ -48,10 +54,12 @@ public class ConnectAndCheckUniversity {
 		}
 		br.close();
 		String json = sb.toString();
-		list = mapper.readValue(json, new TypeReference<List<UniversityResponse>>(){});
-
+		
+		log.info(json);
+		
 		http.disconnect();
-		return list;
+		
+		return mapper.readValue(json, new TypeReference<RegisterOfficeResponse>(){});
 		}	
 	
 }

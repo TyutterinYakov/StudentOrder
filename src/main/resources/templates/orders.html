@@ -77,7 +77,7 @@
 				    <a class="dropdown-item" href="" th:each="chi : ${order.studentOrderChild}" th:text="${chi.child.givenName}" th:href="@{/admin/child/{id}(id=${chi.studentChildId})}" target="new"></a>
 				  </div>
              </td>
-            <td><a href="" th:href="@{/admin/orders/requestzags/{id}(id=${order.studentOrderId})}" class="btn btn-danger">Проверка(ЗАГС)</a> </td>
+            <td><a href="" th:href="@{/admin/checkRegister/{id}(id=${order.studentOrderId})}" class="btn btn-danger">Проверка(ЗАГС)</a> </td>
             <td><a href="" th:href="@{/admin/orders/requestgrn/{id}(id=${order.studentOrderId})}" class="btn btn-danger">Проверка(ГРН)</a></td>
             <td><a href="" th:href="@{/admin/checkUniversity/{id}(id=${order.studentOrderId})}" class="btn btn-danger">Проверка(УНИВЕРЫ)</a></td>
 

@@ -30,7 +30,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import student.business.StudentService;
-import student.business.UniversityRequestService;
+import student.business.RequestRegisterService;
+import student.business.RequestUniversityService;
 import student.domain.StudentOrder;
 import student.request.UniversityRequest;
 import student.response.UniversityResponse;
@@ -39,9 +40,11 @@ import student.response.UniversityResponse;
 public class RequestController {
 	
 	@Autowired
-	private UniversityRequestService requestUniversityService;
+	private RequestUniversityService requestUniversityService;
 	@Autowired
 	private StudentService studentServ;
+	@Autowired
+	private RequestRegisterService requestRegisterService;
 	
 	
 	//UNIVERSITY
@@ -65,6 +68,25 @@ public class RequestController {
 	public String postStudentHusband(@PathVariable("id") Long id) {
 		requestUniversityService.buildHusbandUniversityRequest(id);
 		return "redirect:/admin/checkUniversity/{id}"; 
+	}
+	
+	
+	//REGISTER OFFICE
+																		//TODO
+	@GetMapping("/admin/checkRegister/{id}")
+	public String getRegisterInfo(@PathVariable("id") Long id, Model md) {
+		Optional<StudentOrder> so = studentServ.getStudentOrderById(id);
+		if(so.isPresent()) {
+			md.addAttribute("studentOrder", so.get());
+			return "checkRegisterOffice";
+		}
+		
+		return "404";
+	}
+	@PostMapping("/admin/checkRegister/{id}")
+	public String postRegisterInfo(@PathVariable("id") Long id) {
+		requestRegisterService.buildRegisterOfficeRequest(id);
+		return "redirect:/admin/checkRegister/{id}";
 	}
 
 

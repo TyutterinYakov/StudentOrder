@@ -98,9 +98,36 @@ public class StudentOrder {
 	private String emailEdit;
 	private boolean checkUniversityWife;
 	private boolean checkUniversityHusband;
+	private boolean registerWife;
+	private boolean registerHusband;
+	private boolean marriage;
 	
 	
 	
+	public boolean isRegisterWife() {
+		return registerWife;
+	}
+
+	public void setRegisterWife(boolean registerWife) {
+		this.registerWife = registerWife;
+	}
+
+	public boolean isRegisterHusband() {
+		return registerHusband;
+	}
+
+	public void setRegisterHusband(boolean registerHusband) {
+		this.registerHusband = registerHusband;
+	}
+
+	public boolean isMarriage() {
+		return marriage;
+	}
+
+	public void setMarriage(boolean marriage) {
+		this.marriage = marriage;
+	}
+
 	public String getEmailAdd() {
 		return emailAdd;
 	}

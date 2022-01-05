@@ -14,10 +14,11 @@ import student.domain.Adult;
 import student.domain.StudentOrder;
 import student.request.UniversityRequest;
 import student.response.UniversityResponse;
+import student.util.ConnectAndCheckMarriage;
 import student.util.ConnectAndCheckUniversity;
 
 @Service
-public class UniversityRequestService {
+public class RequestUniversityService {
 	private Properties property = new Properties();
 	
 	@Autowired
