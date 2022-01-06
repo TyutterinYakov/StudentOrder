@@ -21,8 +21,16 @@ public class Adult extends Person {
 	@ManyToOne(cascade=CascadeType.REFRESH, fetch=FetchType.EAGER)
 	private University university;
 	private String studentNumber;
+	private boolean checkCityRegister;
 	
 	
+	
+	public boolean isCheckCityRegister() {
+		return checkCityRegister;
+	}
+	public void setCheckCityRegister(boolean checkCityRegister) {
+		this.checkCityRegister = checkCityRegister;
+	}
 	public String getPassportSeria() {
 		return passportSeria;
 	}

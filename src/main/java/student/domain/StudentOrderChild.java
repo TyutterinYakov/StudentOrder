@@ -44,7 +44,8 @@ public class StudentOrderChild{
 		@AttributeOverride(name="address.extension", column=@Column(name="c_extension")),
 		@AttributeOverride(name="address.apartment", column=@Column(name="c_apartment")),
 		@AttributeOverride(name="childCertificate", column=@Column(name="c_certificate_number")),
-		@AttributeOverride(name="certificateDate", column=@Column(name="c_certificate_date"))
+		@AttributeOverride(name="certificateDate", column=@Column(name="c_certificate_date")),
+		@AttributeOverride(name="checkChildCityRegister", column=@Column(name="c_check_child_city_register")),
 		
 	})
 	@Embedded
@@ -52,6 +53,8 @@ public class StudentOrderChild{
 	private String emailAdd;
 	private String emailEdit;
 	private boolean checkChildRegister;
+	
+	
 	
 	
 	public boolean isCheckChildRegister() {

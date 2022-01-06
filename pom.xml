@@ -81,22 +81,8 @@
 		    <artifactId>jackson-databind</artifactId>
 		</dependency>
 
+
 	</dependencies>
-	<repositories>
-		<repository>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
-			<id>snapshots</id>
-			<name>libs-snapshot</name>
-			<url>https://artifactorypg.paytm.in/artifactory/libs-snapshot</url>
-		</repository>
-		<repository>
-			<id>my-repo1</id>
-			<url> http://artifactorypg.paytm.in/artifactory/libs-release </url>
-		</repository>
-	</repositories>
 	<build>
 		<plugins>
 			<plugin>

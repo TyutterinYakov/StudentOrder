@@ -30,6 +30,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import student.business.StudentService;
+import student.business.RequestCityRegisterService;
 import student.business.RequestRegisterService;
 import student.business.RequestUniversityService;
 import student.business.StudentOrderChildService;
@@ -50,6 +51,8 @@ public class RequestController {
 	private RequestRegisterService requestRegisterService;
 	@Autowired
 	private StudentOrderChildService childService;
+	@Autowired
+	private RequestCityRegisterService requestCityService;
 	
 	
 	//UNIVERSITY
@@ -96,6 +99,24 @@ public class RequestController {
 		requestRegisterService.buildRegisterOfficeRequest(id);
 		return "redirect:/admin/checkRegister/{id}";
 	}
-
-
+	
+	//CITY REGISTER
+	@GetMapping("/admin/checkCityRegister/{id}")
+	public String getCityRegister(@PathVariable("id") Long id, Model md) {
+		Optional<StudentOrder> so = studentServ.getStudentOrderById(id);
+		if(so.isPresent()) {
+			md.addAttribute("studentOrder", so.get());
+		Optional<List<StudentOrderChild>> childs = childService.getChildOrderByStudentOrderId(so.get());
+			if(childs.isPresent()) {
+				md.addAttribute("childs", childs.get());
+			} 
+			return "checkCityRegister";
+		}
+		return "404";
+	}
+	@PostMapping("/admin/checkCityRegister/{id}")
+	public String postCityRegister(@PathVariable("id") Long id) {
+		requestCityService.buildCityRegisterRequest(id);
+		return "redirect:/admin/checkCityRegister/{id}";
+	}
 }

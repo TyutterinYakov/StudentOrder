@@ -18,6 +18,9 @@ public class Child extends Person{
 	@ManyToOne(cascade= {CascadeType.REFRESH}, fetch=FetchType.LAZY)
 	@JoinColumn(name="c_register_office_id")
 	private RegisterOffice registerOffice;
+	private boolean checkChildCityRegister;
+	
+	
 	public String getChildCertificate() {
 		return childCertificate;
 	}
@@ -35,6 +38,12 @@ public class Child extends Person{
 	}
 	public void setRegisterOffice(RegisterOffice registerOffice) {
 		this.registerOffice = registerOffice;
+	}
+	public boolean isCheckChildCityRegister() {
+		return checkChildCityRegister;
+	}
+	public void setCheckChildCityRegister(boolean checkChildCityRegister) {
+		this.checkChildCityRegister = checkChildCityRegister;
 	}
 	
 	

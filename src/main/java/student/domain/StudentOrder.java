@@ -55,7 +55,8 @@ public class StudentOrder {
 		@AttributeOverride(name="passportSeria", column=@Column(name="h_passport_seria")),
 		@AttributeOverride(name="passportNumber", column=@Column(name="h_passport_number")),
 		@AttributeOverride(name="issueDate", column=@Column(name="h_passport_date")),
-		@AttributeOverride(name="studentNumber", column=@Column(name="h_student_number"))
+		@AttributeOverride(name="studentNumber", column=@Column(name="h_student_number")),
+		@AttributeOverride(name="checkCityRegister", column=@Column(name="h_check_city_register"))
 	})
 	@Embedded
 	private Adult husband;
@@ -76,7 +77,8 @@ public class StudentOrder {
 		@AttributeOverride(name="passportSeria", column=@Column(name="w_passport_seria")),
 		@AttributeOverride(name="passportNumber", column=@Column(name="w_passport_number")),
 		@AttributeOverride(name="issueDate", column=@Column(name="w_passport_date")),
-		@AttributeOverride(name="studentNumber", column=@Column(name="w_student_number"))
+		@AttributeOverride(name="studentNumber", column=@Column(name="w_student_number")),
+		@AttributeOverride(name="checkCityRegister", column=@Column(name="w_check_city_register"))
 	})
 	@Embedded
 	private Adult wife;

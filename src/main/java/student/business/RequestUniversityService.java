@@ -19,7 +19,6 @@ import student.util.ConnectAndCheckUniversity;
 
 @Service
 public class RequestUniversityService {
-	private Properties property = new Properties();
 	
 	@Autowired
 	private StudentOrderRepository studentDao;
@@ -67,10 +66,12 @@ public class RequestUniversityService {
 	}
 	
 	private boolean checkStudentResponse(List<UniversityResponse> resp) {
+		if(resp!=null) {
 		for(int i=0; i<resp.size(); i++) {
 			if(resp.get(i).getExpiredDate()==null) {
 				return true;
 			}
+		}
 		}
 		return false;
 	}
