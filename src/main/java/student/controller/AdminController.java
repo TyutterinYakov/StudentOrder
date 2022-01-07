@@ -69,7 +69,15 @@ public class AdminController {
 		md.addAttribute("orders", studentServ.getAllStudentOrder());
 		stOrServ.testSave();
 		md.addAttribute("status", studentServ.getStatus());
+		
+		
 		return "orders";
+	}
+	
+	@PostMapping("/admin/checkAll")
+	public String checkAll() {
+		studentServ.checkAllOrders();
+		return "redirect:/admin/orders";
 	}
 	//WIFE
 	@GetMapping("/admin/wife/{id}")

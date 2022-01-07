@@ -40,11 +40,11 @@
             <div class="col-sm-5">
                <form th:action="@{/admin/checkRegister/{id}(id=${studentOrder.studentOrderId})}" method="post" th:object="${studentOrder}">
                 <div class="form-group">
-                    <label for="price">Проверка жены: </label> <strong th:text="*{registerWife}"></strong>
-                    <label for="price">Проверка мужа:</label> <strong th:text="*{registerHusband}"></strong>
-                    <label for="price">Проверка женатости:</label> <strong th:text="*{marriage}"></strong>
+                    <label for="price">Проверка жены: </label> <strong th:text="*{wife.checkRegisterMarriage}"></strong>
+                    <label for="price">Проверка мужа:</label> <strong th:text="*{husband.checkRegisterMarriage}"></strong>
+                    <label for="price">Проверка брака:</label> <strong th:text="*{marriage}"></strong>
                     <div class="form-group" th:each="chi : ${childs}">
-                    <label for="price">Проверка принадлежности ребенка: </label> <strong th:text="${chi.checkChildRegister}"></strong><br>
+                    <label for="price">Проверка ребенка: </label> <strong th:text="${chi.child.checkChildRegister}"></strong><br>
                     Имя: <strong th:text="${chi.child.givenName}"></strong>
                 </div>
                     <button type="submit" class="btn btn-primary">Пройти проверку</button>

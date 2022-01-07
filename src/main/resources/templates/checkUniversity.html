@@ -40,13 +40,13 @@
             <div class="col-sm-5">
                <form th:action="@{/admin/checkUniversity/wife/{id}(id=${studentOrder.studentOrderId})}" method="post" th:object="${studentOrder}">
                 <div class="form-group">
-                    <label for="price">Проверка жены: </label> <strong th:text="*{checkUniversityWife}"></strong>
+                    <label for="price">Проверка жены: </label> <strong th:text="*{wife.checkUniversity}"></strong>
                     <button type="submit" class="btn btn-primary">Проверить жену</button>
                 </div>
                 </form>
   			   <form th:action="@{/admin/checkUniversity/husband/{id}(id=${studentOrder.studentOrderId})}" method="post" th:object="${studentOrder}">
                 <div class="form-group">
-                    <label for="price">Проверка отца:</label> <strong th:text="*{checkUniversityHusband}"></strong>
+                    <label for="price">Проверка отца:</label> <strong th:text="*{husband.checkUniversity}"></strong>
                     <button type="submit" class="btn btn-primary">Проверить отца</button>
                 </div>
                 </form>

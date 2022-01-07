@@ -36,10 +36,16 @@
     </div>
 </nav>
 <div class="container-fluid">
+<div class="row">
 <form action="/admin/orders/title" method="get">
 	Поиск по номеру заявки: <input type="number" name="title">
-	<input type="submit" value="Поиск"/>
+	<input class="btn btn-primary" type="submit" value="Поиск"/>
 </form>
+
+<form action="/admin/checkAll" method="post">
+	<input type="submit" class="btn btn-danger" value="Проверить все заявки"/>
+</form>
+</div>
 </div>
 <div class="container-fluid">
     <table class="table">

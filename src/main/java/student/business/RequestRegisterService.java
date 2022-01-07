@@ -94,8 +94,8 @@ public class RequestRegisterService {
 			so.setMarriage(marriage);
 			Adult wifeSo = so.getWife();
 			Adult husbandSo = so.getHusband();
-			wifeSo.setRegisterMarriage(wife);
-			husbandSo.setRegisterMarriage(husband);
+			wifeSo.setCheckRegisterMarriage(wife);
+			husbandSo.setCheckRegisterMarriage(husband);;
 			so.setWife(wifeSo);
 			so.setHusband(husbandSo);
 			if(wife&&husband) {
@@ -103,7 +103,7 @@ public class RequestRegisterService {
 					if(childs.isPresent()) {
 						for(StudentOrderChild soc: childs.get()) {
 							if(soc.getChild().getGivenName().equals(cr.getName())) {
-								soc.setCheckChildRegister(true);
+								soc.getChild().setCheckChildRegister(true);
 								childDao.save(soc);
 								break;
 							}

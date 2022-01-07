@@ -27,11 +27,12 @@ public class Adult extends Person {
 	
 	
 	
-	public boolean isRegisterMarriage() {
+
+	public boolean isCheckRegisterMarriage() {
 		return checkRegisterMarriage;
 	}
-	public void setRegisterMarriage(boolean registerMarriage) {
-		this.checkRegisterMarriage = registerMarriage;
+	public void setCheckRegisterMarriage(boolean checkRegisterMarriage) {
+		this.checkRegisterMarriage = checkRegisterMarriage;
 	}
 	public boolean isCheckUniversity() {
 		return checkUniversity;

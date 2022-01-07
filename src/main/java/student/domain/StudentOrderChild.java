@@ -45,23 +45,17 @@ public class StudentOrderChild{
 		@AttributeOverride(name="childCertificate", column=@Column(name="c_certificate_number")),
 		@AttributeOverride(name="certificateDate", column=@Column(name="c_certificate_date")),
 		@AttributeOverride(name="checkChildCityRegister", column=@Column(name="c_check_child_city_register")),
+		@AttributeOverride(name="checkChildRegister", column=@Column(name="c_check_child_register"))
 		
 	})
 	@Embedded
 	private Child child;
 	private String emailAdd;
 	private String emailEdit;
-	private boolean checkChildRegister;
 	
 	
 	
 	
-	public boolean isCheckChildRegister() {
-		return checkChildRegister;
-	}
-	public void setCheckChildRegister(boolean checkChildRegister) {
-		this.checkChildRegister = checkChildRegister;
-	}
 	public String getEmailAdd() {
 		return emailAdd;
 	}

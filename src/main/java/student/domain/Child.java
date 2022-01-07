@@ -17,8 +17,17 @@ public class Child extends Person{
 	@JoinColumn(name="c_register_office_id")
 	private RegisterOffice registerOffice;
 	private boolean checkChildCityRegister;
+	private boolean checkChildRegister;
 	
 	
+	
+	
+	public boolean isCheckChildRegister() {
+		return checkChildRegister;
+	}
+	public void setCheckChildRegister(boolean checkChildRegister) {
+		this.checkChildRegister = checkChildRegister;
+	}
 	public String getChildCertificate() {
 		return childCertificate;
 	}

@@ -1,9 +1,11 @@
 package student.business;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -138,6 +140,25 @@ public class StudentService {
 	public Optional<StudentOrder> getStudentOrderByEmailAdd(User user) {
 		Optional<StudentOrder> stud = studentDao.findStudentOrderByEmailAdd(user.getEmail());
 		return stud;
+	}
+
+	public void checkAllOrders() {
+		Set<Long> sos = new HashSet<>();
+		
+		sos = studentDao.checkAllStatus();
+		if(!sos.isEmpty()) {
+			for(Long id: sos) {
+				Optional<StudentOrder> soOptional = studentDao.findById(id);
+				if(soOptional.isPresent()) {
+					StudentOrder so = soOptional.get();
+					Optional<StudentOrderStatus> statusOptional = statusDao.findById(3L);
+					if(statusOptional.isPresent()) {
+					so.setStatus(statusOptional.get());
+					studentDao.save(so);
+					}
+				}
+			}
+		}
 	}
 	
 }

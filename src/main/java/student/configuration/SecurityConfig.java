@@ -52,10 +52,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.invalidateHttpSession(true)
 			.deleteCookies("JSESSIONID")
 			.and()
-			.exceptionHandling()
-			.and()
 			.csrf()
-			.disable();
+			.disable()
+			.exceptionHandling();
 		http.headers().frameOptions().disable();
 	}
 	
