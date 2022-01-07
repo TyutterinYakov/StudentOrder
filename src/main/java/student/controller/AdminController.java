@@ -1,7 +1,5 @@
 package student.controller;
 
-import java.time.LocalDate;
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +21,6 @@ import student.business.StudentOrderChildService;
 import student.business.StudentOrderService;
 import student.business.StudentService;
 import student.business.UniversityService;
-import student.domain.Address;
-import student.domain.Adult;
 import student.domain.CountryStruct;
 import student.domain.PassportOffice;
 import student.domain.RegisterOffice;
@@ -72,7 +68,6 @@ public class AdminController {
 	public String getOrders(Model md) {
 		md.addAttribute("orders", studentServ.getAllStudentOrder());
 		stOrServ.testSave();
-		stOrServ.testGet();
 		md.addAttribute("status", studentServ.getStatus());
 		return "orders";
 	}

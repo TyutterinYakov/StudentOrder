@@ -22,9 +22,23 @@ public class Adult extends Person {
 	private University university;
 	private String studentNumber;
 	private boolean checkCityRegister;
+	private boolean checkUniversity;
+	private boolean checkRegisterMarriage;
 	
 	
 	
+	public boolean isRegisterMarriage() {
+		return checkRegisterMarriage;
+	}
+	public void setRegisterMarriage(boolean registerMarriage) {
+		this.checkRegisterMarriage = registerMarriage;
+	}
+	public boolean isCheckUniversity() {
+		return checkUniversity;
+	}
+	public void setCheckUniversity(boolean checkUniversity) {
+		this.checkUniversity = checkUniversity;
+	}
 	public boolean isCheckCityRegister() {
 		return checkCityRegister;
 	}

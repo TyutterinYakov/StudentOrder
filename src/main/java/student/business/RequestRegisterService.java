@@ -92,8 +92,12 @@ public class RequestRegisterService {
 		boolean husband = checkMarriage.isExistingFather();
 		if(wife||husband||marriage) {
 			so.setMarriage(marriage);
-			so.setRegisterWife(wife);
-			so.setRegisterHusband(husband);
+			Adult wifeSo = so.getWife();
+			Adult husbandSo = so.getHusband();
+			wifeSo.setRegisterMarriage(wife);
+			husbandSo.setRegisterMarriage(husband);
+			so.setWife(wifeSo);
+			so.setHusband(husbandSo);
 			if(wife&&husband) {
 				for(ChildResponse cr : checkMarriage.getChilds()) {
 					if(childs.isPresent()) {

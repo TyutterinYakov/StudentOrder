@@ -6,8 +6,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,7 +18,6 @@ import student.dao.StudentOrderStatusRepository;
 import student.dao.UniversityRepository;
 import student.domain.Adult;
 import student.domain.CountryStruct;
-import student.domain.CustomUserDetail;
 import student.domain.PassportOffice;
 import student.domain.RegisterOffice;
 import student.domain.Street;

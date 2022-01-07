@@ -34,7 +34,7 @@ public class ConnectAndCheckCityRegister {
 		http.setRequestMethod("POST"); // PUT is another valid option
 		http.setDoOutput(true);
 		String jsonString = mapper.writeValueAsString(request);
-		log.info("University request: {}",jsonString);
+		log.info("City request: {}",jsonString);
 		byte[] out = jsonString.getBytes(StandardCharsets.UTF_8);
 		int length = out.length;
 		
@@ -54,7 +54,7 @@ public class ConnectAndCheckCityRegister {
 		}
 		br.close();
 		String json = sb.toString();
-		log.info("University response: {}",json);
+		log.info("City response: {}",json);
 		
 		list = mapper.readValue(json, new TypeReference<List<CityRegisterResponse>>(){});
 

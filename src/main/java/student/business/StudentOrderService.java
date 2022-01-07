@@ -67,14 +67,6 @@ public class StudentOrderService {
 		}
 	}
 	
-	@Transactional
-	public void testGet() {
-		
-		List<StudentOrder> orders = orderDao.findAll();
-//		logger.info("testGet");
-//		logger.info("WIFE: "+orders.get(0).getWife().getSurName());
-		//logger.info("CHILD: "+orders.get(0).getStudentOrderChild().get(0).getChild().getGivenName());
-	}
 	
 	private Adult buildPerson(boolean wife) {
 		Adult a = new Adult();

@@ -29,7 +29,8 @@ public class LoginService {
 	
 	
 	@Transactional
-	public void register(User user, HttpServletRequest request) throws ServletException {
+	public boolean register(User user, HttpServletRequest request) throws ServletException {
+		if(!userRepo.findUserByEmail(user.getEmail()).isPresent()) {
 		String password = user.getPassword();
 		user.setPassword(cryptPass.encode(password));
 		List<Role> roles = new ArrayList<>();
@@ -37,5 +38,9 @@ public class LoginService {
 		user.setRoles(roles);
 		userRepo.save(user);
 		request.login(user.getEmail(), password);
+		return true;
+		}
+		return false;
 	}
+	
 }

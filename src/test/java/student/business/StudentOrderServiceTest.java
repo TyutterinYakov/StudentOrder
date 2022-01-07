@@ -20,7 +20,6 @@ public class StudentOrderServiceTest {
 	@Test
 	public void testSave() {
 		service.testSave();
-		service.testGet();
 	}
 
 }

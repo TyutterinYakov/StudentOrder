@@ -56,7 +56,9 @@ public class StudentOrder {
 		@AttributeOverride(name="passportNumber", column=@Column(name="h_passport_number")),
 		@AttributeOverride(name="issueDate", column=@Column(name="h_passport_date")),
 		@AttributeOverride(name="studentNumber", column=@Column(name="h_student_number")),
-		@AttributeOverride(name="checkCityRegister", column=@Column(name="h_check_city_register"))
+		@AttributeOverride(name="checkCityRegister", column=@Column(name="h_check_city_register")),
+		@AttributeOverride(name="checkUniversity", column=@Column(name="h_check_university")),
+		@AttributeOverride(name="checkRegisterMarriage", column=@Column(name="h_check_register_marriage"))
 	})
 	@Embedded
 	private Adult husband;
@@ -78,7 +80,9 @@ public class StudentOrder {
 		@AttributeOverride(name="passportNumber", column=@Column(name="w_passport_number")),
 		@AttributeOverride(name="issueDate", column=@Column(name="w_passport_date")),
 		@AttributeOverride(name="studentNumber", column=@Column(name="w_student_number")),
-		@AttributeOverride(name="checkCityRegister", column=@Column(name="w_check_city_register"))
+		@AttributeOverride(name="checkCityRegister", column=@Column(name="w_check_city_register")),
+		@AttributeOverride(name="checkUniversity", column=@Column(name="w_check_university")),
+		@AttributeOverride(name="checkRegisterMarriage", column=@Column(name="w_check_register_marriage"))
 	})
 	@Embedded
 	private Adult wife;
@@ -98,29 +102,8 @@ public class StudentOrder {
 	@Column(unique=true)
 	private String emailAdd;
 	private String emailEdit;
-	private boolean checkUniversityWife;
-	private boolean checkUniversityHusband;
-	private boolean registerWife;
-	private boolean registerHusband;
 	private boolean marriage;
 	
-	
-	
-	public boolean isRegisterWife() {
-		return registerWife;
-	}
-
-	public void setRegisterWife(boolean registerWife) {
-		this.registerWife = registerWife;
-	}
-
-	public boolean isRegisterHusband() {
-		return registerHusband;
-	}
-
-	public void setRegisterHusband(boolean registerHusband) {
-		this.registerHusband = registerHusband;
-	}
 
 	public boolean isMarriage() {
 		return marriage;
@@ -217,41 +200,4 @@ public class StudentOrder {
 	public void setStudentOrderChild(List<StudentOrderChild> studentOrderChild) {
 		this.studentOrderChild = studentOrderChild;
 	}
-
-	public boolean isCheckUniversityWife() {
-		return checkUniversityWife;
-	}
-
-	public void setCheckUniversityWife(boolean checkUniversityWife) {
-		this.checkUniversityWife = checkUniversityWife;
-	}
-
-	public boolean isCheckUniversityHusband() {
-		return checkUniversityHusband;
-	}
-
-	public void setCheckUniversityHusband(boolean checkUniversityHusband) {
-		this.checkUniversityHusband = checkUniversityHusband;
-	}
-
-//	public boolean isCheckRegisterOffice() {
-//		return checkRegisterOffice;
-//	}
-//
-//	public void setCheckRegisterOffice(boolean checkRegisterOffice) {
-//		this.checkRegisterOffice = checkRegisterOffice;
-//	}
-//
-//	public boolean isCheckCityRegister() {
-//		return checkCityRegister;
-//	}
-//
-//	public void setCheckCityRegister(boolean checkCityRegister) {
-//		this.checkCityRegister = checkCityRegister;
-//	}
-	
-	
-	
-	
-	
 }

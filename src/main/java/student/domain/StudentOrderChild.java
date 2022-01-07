@@ -1,6 +1,5 @@
 package student.domain;
 
-import java.time.LocalDate;
 
 import javax.persistence.AssociationOverride;
 import javax.persistence.AssociationOverrides;

@@ -64,6 +64,10 @@
             </div>
 
             <input type="submit" value="Register" class="btn btn-primary btn-block">
+            
+            <div th:if="${param.error}" class="alert alert-error text-danger">
+                    Пользователь с таким email уже зарегистрирован.
+                </div>
             <span style="margin-top: 10px">Уже есть аккаунт? <a class="linkControl" href="./login.html"
                                                                       th:href="@{/login}">Авторизуйтесь</a></span>
         </form>
