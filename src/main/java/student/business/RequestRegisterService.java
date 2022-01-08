@@ -33,7 +33,7 @@ public class RequestRegisterService {
 
 	
 	@Transactional
-	public void buildRegisterOfficeRequest(Long id) {
+	public void buildRegisterOfficeRequest(Long id) throws IOException {
 		Optional<List<StudentOrderChild>> childs;
 		Optional<StudentOrder> studentOrder = studentDao.findById(id);
 		if(studentOrder.isPresent()) {
@@ -74,11 +74,7 @@ public class RequestRegisterService {
 					listChilds.add(req);
 				}
 				request.setChilds(listChilds);
-			}
-			try {
 				saveRegisterOfficeInfo(checkMarriage.checkMarriage(request), so, childs);
-			} catch (IOException e) {
-				e.printStackTrace();
 			}
 		}
 		

@@ -50,6 +50,9 @@
                     <button type="submit" class="btn btn-primary">Пройти проверку</button>
                 </div>
                 </form>
+                <div th:if="${param.error}" class="alert alert-error text-danger">
+                    В данный момент сервер недоступен.
+                </div>
                 
                
                 

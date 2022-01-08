@@ -29,7 +29,7 @@ public class RequestCityRegisterService {
 	private StudentOrderChildRepository childDao;
 	
 	@Transactional
-	public void buildCityRegisterRequest(Long id) {
+	public void buildCityRegisterRequest(Long id) throws IOException {
 		List<CityRegisterRequest> listRequest = new LinkedList<>();
 		
 		Optional<StudentOrder> soOptional =  studentDao.findById(id);
@@ -55,11 +55,7 @@ public class RequestCityRegisterService {
 					listRequest.add(request);
 				}
 			}
-			try {
 				CheckCityRegister(cityGetResponse.checkCityRegister(listRequest), so, socOptional);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 		}
 	}
 	

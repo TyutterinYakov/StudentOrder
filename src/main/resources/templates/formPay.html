@@ -52,17 +52,17 @@
                 <hr><strong>Мать</strong><hr>
                 <div class="form-group">
                     <label for="price">Фамилия</label>
-                    <input type="text" class="form-control" required th:field="*{wife.surName}" name="w_surName" id="w_surName"
+                    <input maxlength="100" type="text" class="form-control" required th:field="*{wife.surName}" name="w_surName" id="w_surName"
                            >
                 </div>
                 <div class="form-group">
                     <label for="weight">Имя</label>
-                    <input type="text" class="form-control" required th:field="*{wife.givenName}" name="w_givenName" id="w_givenName"
+                    <input maxlength="100" type="text" class="form-control" required th:field="*{wife.givenName}" name="w_givenName" id="w_givenName"
                            >
                 </div>
                 <div class="form-group">
                     <label for="description">Отчество</label>
-                    <input type="text" class="form-control" required th:field="*{wife.patronymic}" name="w_patronymic" id="w_patronymic"
+                    <input maxlength="100" type="text" class="form-control" required th:field="*{wife.patronymic}" name="w_patronymic" id="w_patronymic"
                            >
                 </div>
                 <div class="form-group">
@@ -72,7 +72,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Посткод</label>
-                    <input type="text" class="form-control" required th:field="*{wife.address.postCode}" name="w_postCode" id="w_postCode"
+                    <input maxlength="6" minlength="6" type="text" class="form-control" required th:field="*{wife.address.postCode}" name="w_postCode" id="w_postCode"
                            >
                 </div>
                 <div class="form-group">
@@ -86,27 +86,27 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Дом</label>
-                    <input type="text" class="form-control" required th:field="*{wife.address.building}" name="w_building" id="w_streetName"
+                    <input type="text" maxlength="5" class="form-control" required th:field="*{wife.address.building}" name="w_building" id="w_streetName"
                            >
                 </div>
                 <div class="form-group">
                     <label for="description">Корпус</label>
-                    <input type="text" class="form-control" required th:field="*{wife.address.extension}" name="w_extension" id="w_streetName"
+                    <input type="text" maxlength="4" class="form-control" required th:field="*{wife.address.extension}" name="w_extension" id="w_streetName"
                            >
                 </div>  
                 <div class="form-group">
                     <label for="description">Квартира</label>
-                    <input type="text" class="form-control" required th:field="*{wife.address.apartment}" name="w_apartment" id="w_streetName"
+                    <input type="text" maxlength="5" class="form-control" required th:field="*{wife.address.apartment}" name="w_apartment" id="w_streetName"
                            >
                 </div>                  
                 <div class="form-group">
                     <label for="description">Серия</label>
-                    <input type="text" class="form-control" required th:field="*{wife.passportSeria}" name="w_passportSeria" id="w_passportSeria"
+                    <input type="text" maxlength="4" minlength="4" class="form-control" required th:field="*{wife.passportSeria}" name="w_passportSeria" id="w_passportSeria"
                            >
                 </div>
                 <div class="form-group">
                     <label for="description">Номер</label>
-                    <input type="text" class="form-control" required th:field="*{wife.passportNumber}" name="w_passportNumber" id="w_passportNumber"
+                    <input type="text" maxlength="6" minlength="6" class="form-control" required th:field="*{wife.passportNumber}" name="w_passportNumber" id="w_passportNumber"
                            >
                 </div>
                 <div class="form-group">
@@ -140,7 +140,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Номер студенческого</label>
-                    <input type="text" class="form-control" required th:field="*{wife.studentNumber}" name="w_studentNumber" id="w_studentNumber"
+                    <input type="text" maxlength="10" minlength="6" class="form-control" required th:field="*{wife.studentNumber}" name="w_studentNumber" id="w_studentNumber"
                            >
                 </div>
                 </div>
@@ -149,17 +149,17 @@
                  <hr><strong>Отец</strong><hr>
                 <div class="form-group">
                     <label for="price">Фамилия</label>
-                    <input type="text" class="form-control" required th:field="*{husband.surName}" name="h_surName" id="h_surName"
+                    <input type="text" class="form-control" maxlength="100" required th:field="*{husband.surName}" name="h_surName" id="h_surName"
                            >
                 </div>
                 <div class="form-group">
                     <label for="weight">Имя</label>
-                    <input type="text" class="form-control" required th:field="*{husband.givenName}" name="h_givenName" id="h_givenName"
+                    <input type="text" class="form-control"  maxlength="100" required th:field="*{husband.givenName}" name="h_givenName" id="h_givenName"
                            >
                 </div>
                 <div class="form-group">
                     <label for="description">Отчество</label>
-                    <input type="text" class="form-control" required th:field="*{husband.patronymic}" name="h_patronymic" id="h_patronymic"
+                    <input type="text" class="form-control" maxlength="100" required th:field="*{husband.patronymic}" name="h_patronymic" id="h_patronymic"
                            >
                 </div>
                 <div class="form-group">
@@ -169,7 +169,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Посткод</label>
-                    <input type="text" class="form-control" required th:field="*{husband.address.postCode}" name="h_postCode" id="h_postCode"
+                    <input type="text" class="form-control" maxlength="6" minlength="6" required th:field="*{husband.address.postCode}" name="h_postCode" id="h_postCode"
                            >
                 </div>
                 <div class="form-group">
@@ -183,28 +183,28 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Дом</label>
-                    <input type="text" class="form-control" required th:field="*{husband.address.building}" name="h_building" id="h_streetName"
+                    <input type="text" class="form-control" maxlength="5" required th:field="*{husband.address.building}" name="h_building" id="h_streetName"
                            >
                 </div>
                 <div class="form-group">
                     <label for="description">Корпус</label>
-                    <input type="text" class="form-control" required th:field="*{husband.address.extension}" name="h_extension" id="h_streetName"
+                    <input type="text" class="form-control" maxlength="4" required th:field="*{husband.address.extension}" name="h_extension" id="h_streetName"
                            >
                 </div>  
                 <div class="form-group">
                     <label for="description">Квартира</label>
-                    <input type="text" class="form-control" required th:field="*{husband.address.apartment}" name="h_apartment" id="h_streetName"
+                    <input type="text" class="form-control" maxlength="5" required th:field="*{husband.address.apartment}" name="h_apartment" id="h_streetName"
                            >
                 </div>   
                 
                 <div class="form-group">
                     <label for="description">Серия</label>
-                    <input type="text" class="form-control" required th:field="*{husband.passportSeria}" name="h_passportSeria" id="h_passportSeria"
+                    <input type="text" class="form-control" maxlength="4" minlength="4" required th:field="*{husband.passportSeria}" name="h_passportSeria" id="h_passportSeria"
                            >
                 </div>
                 <div class="form-group">
                     <label for="description">Номер</label>
-                    <input type="text" class="form-control" required th:field="*{husband.passportNumber}" name="h_passportNumber" id="h_passportNumber"
+                    <input type="text" class="form-control" maxlength="6" minlength="5" required th:field="*{husband.passportNumber}" name="h_passportNumber" id="h_passportNumber"
                            >
                 </div>
                 <div class="form-group">
@@ -237,15 +237,15 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Номер студенческого</label>
-                    <input type="text" class="form-control" required th:field="*{husband.studentNumber}" name="h_studentNumber" id="h_studentNumber"
+                    <input type="text" class="form-control" maxlength="10" minlength="6" required th:field="*{husband.studentNumber}" name="h_studentNumber" id="h_studentNumber"
                            >
                 </div>
                 </div>
                 <div class="col-sm-5">
-                <hr><strong>Свадьба</strong><hr>
+                <hr><strong>Брак</strong><hr>
                 <div class="form-group">
-                    <label for="description">Сертификат</label>
-                    <input type="text" class="form-control" required th:field="*{certificateNumber}" name="certificateNumber" id="certificateNumber"
+                    <label for="description">Свидетельство</label>
+                    <input type="text" class="form-control" maxlength="11" minlength="10" required th:field="*{certificateNumber}" name="certificateNumber" id="certificateNumber"
                            >
                 </div>
                 <div class="form-group">

@@ -23,7 +23,7 @@ public class RequestUniversityService {
 	
 	
 	@Transactional
-	public void buildWifeUniversityRequest(Long id) {
+	public void buildWifeUniversityRequest(Long id) throws IOException{
 		Optional<StudentOrder> so = studentDao.findById(id);
 		if(so.isPresent()) {
 			StudentOrder sor = so.get();
@@ -37,7 +37,7 @@ public class RequestUniversityService {
 		}
 	}	
 	@Transactional
-	public void buildHusbandUniversityRequest(Long id) {
+	public void buildHusbandUniversityRequest(Long id) throws IOException{
 		Optional<StudentOrder> so = studentDao.findById(id);
 		if(so.isPresent()) {
 			StudentOrder sor = so.get();
@@ -50,7 +50,7 @@ public class RequestUniversityService {
 			
 		}
 	}
-	private boolean buildAdult(Adult a) {
+	private boolean buildAdult(Adult a) throws IOException{
 		UniversityRequest request = new UniversityRequest();
 		request.setFirstName(a.getGivenName());
 		request.setLastName(a.getSurName());
@@ -76,14 +76,9 @@ public class RequestUniversityService {
 	
 	
 	
-	private List<UniversityResponse> studentInfo(UniversityRequest request) {
-		try {
+	private List<UniversityResponse> studentInfo(UniversityRequest request) throws IOException {
 			ConnectAndCheckUniversity uniCon = new ConnectAndCheckUniversity();
 			return uniCon.checkUniversity(request);
-		} catch (IOException e) {
-			e.printStackTrace(System.out);
-		}
-		return null;
 	}
 
 	

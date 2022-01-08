@@ -1,5 +1,6 @@
 package student.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,12 +48,20 @@ public class RequestController {
 	
 	@PostMapping("/admin/checkUniversity/wife/{id}")
 	public String postStudentWife(@PathVariable("id") Long id) {
+		try {
 		requestUniversityService.buildWifeUniversityRequest(id);
+		} catch(IOException ex) {
+			return "redirect:/admin/checkUniversity/{id}?error=true";
+		}
 		return "redirect:/admin/checkUniversity/{id}"; 
 	}
 	@PostMapping("/admin/checkUniversity/husband/{id}")
 	public String postStudentHusband(@PathVariable("id") Long id) {
+		try {
 		requestUniversityService.buildHusbandUniversityRequest(id);
+		} catch(IOException ex) {
+			return "redirect:/admin/checkUniversity/{id}?error=true";
+		}
 		return "redirect:/admin/checkUniversity/{id}"; 
 	}
 	
@@ -74,7 +83,11 @@ public class RequestController {
 	}
 	@PostMapping("/admin/checkRegister/{id}")
 	public String postRegisterInfo(@PathVariable("id") Long id) {
+		try {
 		requestRegisterService.buildRegisterOfficeRequest(id);
+		} catch(IOException ex) {
+			return "redirect:/admin/checkRegister/{id}?error=true";
+		}
 		return "redirect:/admin/checkRegister/{id}";
 	}
 	
@@ -94,7 +107,12 @@ public class RequestController {
 	}
 	@PostMapping("/admin/checkCityRegister/{id}")
 	public String postCityRegister(@PathVariable("id") Long id) {
+		try {
 		requestCityService.buildCityRegisterRequest(id);
+		} catch (IOException ex) {
+			return "redirect:/admin/checkCityRegister/{id}?error=true";
+		}
+		
 		return "redirect:/admin/checkCityRegister/{id}";
 	}
 }

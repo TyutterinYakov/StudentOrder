@@ -67,7 +67,7 @@ public class AdminController {
 	@GetMapping("/admin/orders")
 	public String getOrders(Model md) {
 		md.addAttribute("orders", studentServ.getAllStudentOrder());
-		stOrServ.testSave();
+	//	stOrServ.testSave();
 		md.addAttribute("status", studentServ.getStatus());
 		
 		

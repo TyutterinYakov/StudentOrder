@@ -12,4 +12,5 @@ import student.domain.User;
 public interface UserRepository extends JpaRepository<User, Long>{
 	Optional<User> findUserByEmail(String email);
 
+
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import student.business.LoginService;
@@ -41,4 +42,5 @@ public class LoginController {
 		md.addAttribute("msg_error", "Пользователь с таким email уже зарегистрирован");
 		return "redirect:/register?error=true";
 	}
+	
 }

@@ -2,6 +2,7 @@ package student.business;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -23,24 +24,26 @@ public class LoginService {
 	@Autowired
 	private BCryptPasswordEncoder cryptPass;
 	@Autowired
-	UserRepository userRepo;
+	private UserRepository userDao;
 	@Autowired
-	RoleRepository roleRepo;
+	private RoleRepository roleDao;
 	
 	
 	@Transactional
 	public boolean register(User user, HttpServletRequest request) throws ServletException {
-		if(!userRepo.findUserByEmail(user.getEmail()).isPresent()) {
+		if(!userDao.findUserByEmail(user.getEmail()).isPresent()) {
 		String password = user.getPassword();
 		user.setPassword(cryptPass.encode(password));
 		List<Role> roles = new ArrayList<>();
-		roles.add(roleRepo.findById(2).get());
+		roles.add(roleDao.findById(2).get());
 		user.setRoles(roles);
-		userRepo.save(user);
+		userDao.save(user);
 		request.login(user.getEmail(), password);
 		return true;
 		}
 		return false;
 	}
+
+
 	
 }

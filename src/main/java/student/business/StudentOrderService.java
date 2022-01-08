@@ -70,15 +70,15 @@ public class StudentOrderService {
 	
 	private Adult buildPerson(boolean wife) {
 		Adult a = new Adult();
-		Address ad = new Address();
-		Street one = streetDao.findById(1L).get();
-		ad.setStreet(one);
-		ad.setPostCode("3333");
-		ad.setBuilding("3A");
-		ad.setExtension("4");
-		ad.setApartment("237");
 		
 		if(wife) {
+			Address ad = new Address();
+			Street one = streetDao.findById(1L).get();
+			ad.setStreet(one);
+			ad.setPostCode("3333");
+			ad.setBuilding("3A");
+			ad.setExtension("4");
+			ad.setApartment("237");
 			a.setGivenName("Ирина");
 			a.setSurName("Макарова");
 			a.setPatronymic("Сергеевна");
@@ -91,7 +91,15 @@ public class StudentOrderService {
 			a.setStudentNumber("11111");
 			a.setUniversity(universityDao.getOne(1L));
 			
+			
 		} else {
+			Address ad = new Address();
+			Street one = streetDao.findById(1L).get();
+			ad.setStreet(one);
+			ad.setPostCode("3443");
+			ad.setBuilding("3");
+			ad.setExtension("4");
+			ad.setApartment("23");
 			a.setGivenName("Аркадий");
 			a.setSurName("Макаров");
 			a.setPatronymic("Николаевич");
@@ -138,16 +146,16 @@ public class StudentOrderService {
 		ch1.setSurName("Макарова");
 		ch1.setGivenName("Василиса");
 		ch1.setPatronymic("Аркадьевна");
-		ch1.setChildCertificate("333333");
+		ch1.setChildCertificate("45678");
 		ch1.setCertificateDate(LocalDate.now());
 		ch1.setDateOfBirth(LocalDate.now());
 		
 		Address add1 = new Address();
 		add1.setStreet(streetDao.getOne(2L));
 		add1.setPostCode("32231");
-		add1.setBuilding("22");
-		add1.setExtension("4A");
-		add1.setApartment("33");
+		add1.setBuilding("2");
+		add1.setExtension("1A");
+		add1.setApartment("3");
 		ch1.setAddress(add1);
 		ch1.setRegisterOffice(registerDao.getOne(2L));		
 		sc1.setChild(ch1);
