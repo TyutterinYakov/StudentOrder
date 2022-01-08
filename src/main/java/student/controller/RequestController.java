@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,7 @@ import student.domain.StudentOrderChild;
 @Controller
 public class RequestController {
 	
+	private static Logger log = LoggerFactory.getLogger(RequestController.class);
 	@Autowired
 	private RequestUniversityService requestUniversityService;
 	@Autowired
@@ -51,6 +54,7 @@ public class RequestController {
 		try {
 		requestUniversityService.buildWifeUniversityRequest(id);
 		} catch(IOException ex) {
+			log.error(ex.getMessage(), ex);
 			return "redirect:/admin/checkUniversity/{id}?error=true";
 		}
 		return "redirect:/admin/checkUniversity/{id}"; 
@@ -60,6 +64,7 @@ public class RequestController {
 		try {
 		requestUniversityService.buildHusbandUniversityRequest(id);
 		} catch(IOException ex) {
+			log.error(ex.getMessage(), ex);
 			return "redirect:/admin/checkUniversity/{id}?error=true";
 		}
 		return "redirect:/admin/checkUniversity/{id}"; 
@@ -86,6 +91,7 @@ public class RequestController {
 		try {
 		requestRegisterService.buildRegisterOfficeRequest(id);
 		} catch(IOException ex) {
+			log.error(ex.getMessage(), ex);
 			return "redirect:/admin/checkRegister/{id}?error=true";
 		}
 		return "redirect:/admin/checkRegister/{id}";
@@ -110,6 +116,7 @@ public class RequestController {
 		try {
 		requestCityService.buildCityRegisterRequest(id);
 		} catch (IOException ex) {
+			log.error(ex.getMessage(), ex);
 			return "redirect:/admin/checkCityRegister/{id}?error=true";
 		}
 		
