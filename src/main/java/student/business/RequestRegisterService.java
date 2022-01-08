@@ -18,12 +18,12 @@ import student.domain.StudentOrder;
 import student.domain.StudentOrderChild;
 import student.request.RegisterOfficeRequest;
 import student.response.RegisterOfficeResponse;
-import student.util.ConnectAndCheckMarriage;
+import student.util.ConnectAndCheck;
 
 @Service
 public class RequestRegisterService {
 	
-	private ConnectAndCheckMarriage checkMarriage = new ConnectAndCheckMarriage();
+	private ConnectAndCheck checkMarriage = new ConnectAndCheck();
 	
 	@Autowired
 	private StudentOrderRepository studentDao;
@@ -74,7 +74,7 @@ public class RequestRegisterService {
 					listChilds.add(req);
 				}
 				request.setChilds(listChilds);
-				saveRegisterOfficeInfo(checkMarriage.checkMarriage(request), so, childs);
+				saveRegisterOfficeInfo(checkMarriage.getResponseMarriage(request), so, childs);
 			}
 		}
 		

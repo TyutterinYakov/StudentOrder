@@ -17,12 +17,12 @@ import student.domain.StudentOrder;
 import student.domain.StudentOrderChild;
 import student.request.CityRegisterRequest;
 import student.response.CityRegisterResponse;
-import student.util.ConnectAndCheckCityRegister;
+import student.util.ConnectAndCheck;
 
 @Service
 public class RequestCityRegisterService {
 
-	private ConnectAndCheckCityRegister cityGetResponse = new ConnectAndCheckCityRegister();
+	private ConnectAndCheck cityGetResponse = new ConnectAndCheck();
 	@Autowired
 	private StudentOrderRepository studentDao;
 	@Autowired
@@ -55,7 +55,7 @@ public class RequestCityRegisterService {
 					listRequest.add(request);
 				}
 			}
-				CheckCityRegister(cityGetResponse.checkCityRegister(listRequest), so, socOptional);
+				CheckCityRegister(cityGetResponse.getResponseCity(listRequest), so, socOptional);
 		}
 	}
 	

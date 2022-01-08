@@ -13,7 +13,7 @@ import student.domain.Adult;
 import student.domain.StudentOrder;
 import student.request.UniversityRequest;
 import student.response.UniversityResponse;
-import student.util.ConnectAndCheckUniversity;
+import student.util.ConnectAndCheck;
 
 @Service
 public class RequestUniversityService {
@@ -77,8 +77,8 @@ public class RequestUniversityService {
 	
 	
 	private List<UniversityResponse> studentInfo(UniversityRequest request) throws IOException {
-			ConnectAndCheckUniversity uniCon = new ConnectAndCheckUniversity();
-			return uniCon.checkUniversity(request);
+			ConnectAndCheck uniCon = new ConnectAndCheck();
+			return uniCon.getResponseUniversity(request);
 	}
 
 	
