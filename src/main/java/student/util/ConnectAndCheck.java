@@ -1,23 +1,22 @@
 package student.util;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.Properties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import student.request.CityRegisterRequest;
@@ -30,6 +29,18 @@ import student.response.UniversityResponse;
 public class ConnectAndCheck {
 
 	private Logger log = LoggerFactory.getLogger(ConnectAndCheck.class);
+	
+	private FileInputStream fis;
+	private Properties property = new Properties();
+	
+	public ConnectAndCheck() {
+		try {
+		fis = new FileInputStream("src/main/resources/config.properties");
+			property.load(fis);
+		} catch (IOException ex) {
+			log.error(ex.getMessage(), ex);
+		}
+	}
 	
 	private String check(Object request, String connect) throws IOException {
 		
@@ -68,7 +79,7 @@ public class ConnectAndCheck {
 	
 	//CITY
 		public List<CityRegisterResponse> getResponseCity(List<CityRegisterRequest> request) throws IOException{
-		String json = check(request,"http://localhost:8004/checkCityRegister");
+		String json = check(request,property.getProperty("url.city"));
 		ObjectMapper mapper = new ObjectMapper();
 		log.info("City response: {}",json);
 		return mapper.readValue(json, new TypeReference<List<CityRegisterResponse>>(){}); 
@@ -76,14 +87,14 @@ public class ConnectAndCheck {
 		
 	//MARRIAGE
 		public RegisterOfficeResponse getResponseMarriage(RegisterOfficeRequest request) throws IOException{
-		String json = check(request,"http://localhost:8003/checkMarriage");
+		String json = check(request,property.getProperty("url.marriage"));
 		ObjectMapper mapper = new ObjectMapper();
 		log.info("Marriage response: {}",json);
 			return mapper.readValue(json, new TypeReference<RegisterOfficeResponse>(){});
 		}	
 	//UNIVERSITY
 		public List<UniversityResponse> getResponseUniversity(UniversityRequest request) throws IOException{
-		String json = check(request,"http://localhost:8005/checkUniversity");
+		String json = check(request,property.getProperty("url.univeristy"));
 		ObjectMapper mapper = new ObjectMapper();
 		log.info("University response: {}",json);
 		return mapper.readValue(json, new TypeReference<List<UniversityResponse>>(){});

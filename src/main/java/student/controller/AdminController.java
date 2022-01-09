@@ -124,8 +124,11 @@ public class AdminController {
 		return "orders";
 	}
 	@PostMapping("/admin/childs/add")
-	public String updateChild(@ModelAttribute("studentOrderChild") StudentOrderChild so, Model md, @AuthenticationPrincipal User user) {
-		childService.saveChild(so, user);
+	public String updateChild(@ModelAttribute("studentOrderChild") StudentOrderChild soc, Model md, @AuthenticationPrincipal User user) {
+		if(user.getEmail()==null) {
+			return "redirect:/logout";
+		}
+		childService.saveChild(soc, user);
 		//studentServ.updateStudentOrder(so);
 		return "redirect:/admin/orders";
 	}

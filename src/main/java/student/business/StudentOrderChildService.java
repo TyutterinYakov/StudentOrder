@@ -39,9 +39,14 @@ public class StudentOrderChildService {
 
 
 	public void saveChild(StudentOrderChild soc, User user) {
+		
+		Optional<StudentOrderChild> socOptional = childDao.findById(soc.getStudentChildId());
+		if(socOptional.isPresent()) {
 		studentDao.findById(soc.getStudentOrder().getStudentOrderId()).get().setStatus(statusDao.getOne(5L));
 		soc.setEmailEdit(user.getEmail());
+		soc.setEmailAdd(socOptional.get().getEmailAdd());
 		childDao.save(soc);
+		}
 		
 	}
 	public void saveChildNew(StudentOrderChild soc, User user) {

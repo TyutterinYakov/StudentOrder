@@ -41,22 +41,28 @@ public class RequestCityRegisterService {
 			Optional<List<StudentOrderChild>> socOptional = childDao.findAllByStudentOrder(so);
 			if(socOptional.isPresent()) {
 				for(StudentOrderChild soc: socOptional.get()) {
-					CityRegisterRequest request = new CityRegisterRequest();
-					request.setApartment(soc.getChild().getAddress().getApartment());
-					request.setExtension(soc.getChild().getAddress().getExtension());
-					request.setBuilding(soc.getChild().getAddress().getBuilding());
-					request.setStreetName(soc.getChild().getAddress().getStreet().getStreetName());
-					request.setDateOfBirth(soc.getChild().getDateOfBirth());
-					request.setGivenName(soc.getChild().getGivenName());
-					request.setPatronymic(soc.getChild().getPatronymic());
-					request.setSurName(soc.getChild().getSurName());
-					request.setBirthCertificateDate(soc.getChild().getCertificateDate());
-					request.setBirthCertififcate(soc.getChild().getChildCertificate());
-					listRequest.add(request);
+					listRequest.add(buildChild(soc));
 				}
 			}
 				CheckCityRegister(cityGetResponse.getResponseCity(listRequest), so, socOptional);
 		}
+	}
+
+
+
+	private CityRegisterRequest buildChild(StudentOrderChild soc) {
+		CityRegisterRequest request = new CityRegisterRequest();
+		request.setApartment(soc.getChild().getAddress().getApartment());
+		request.setExtension(soc.getChild().getAddress().getExtension());
+		request.setBuilding(soc.getChild().getAddress().getBuilding());
+		request.setStreetName(soc.getChild().getAddress().getStreet().getStreetName());
+		request.setDateOfBirth(soc.getChild().getDateOfBirth());
+		request.setGivenName(soc.getChild().getGivenName());
+		request.setPatronymic(soc.getChild().getPatronymic());
+		request.setSurName(soc.getChild().getSurName());
+		request.setBirthCertificateDate(soc.getChild().getCertificateDate());
+		request.setBirthCertififcate(soc.getChild().getChildCertificate());
+		return request;
 	}
 	
 	
@@ -84,8 +90,8 @@ public class RequestCityRegisterService {
 		if(checkSoc) {
 			for(StudentOrderChild soc: socOptional.get()) {
 				Child ch = soc.getChild();
-				if(ch.getGivenName().equals(resp.getFirstName())&&ch.
-						getPatronymic().equals(resp.getPatronymic())) 
+				if(ch.getGivenName().equalsIgnoreCase(resp.getFirstName())&&ch.
+						getPatronymic().equalsIgnoreCase(resp.getPatronymic())) 
 				{
 					ch.setCheckChildCityRegister(true);
 					soc.setChild(ch);
@@ -98,8 +104,8 @@ public class RequestCityRegisterService {
 	}
 
 	private void buildWife(StudentOrder so, Adult wife, CityRegisterResponse resp) {
-		if(wife.getGivenName().equals(resp.getFirstName())&&
-				wife.getPatronymic().equals(resp.getPatronymic())) {
+		if(wife.getGivenName().equalsIgnoreCase(resp.getFirstName())&&
+				wife.getPatronymic().equalsIgnoreCase(resp.getPatronymic())) {
 				wife.setCheckCityRegister(true);
 				so.setWife(wife);
 				studentDao.save(so);
@@ -107,8 +113,8 @@ public class RequestCityRegisterService {
 	}
 
 	private void buildHusband(StudentOrder so, Adult husband, CityRegisterResponse resp) {
-		if(husband.getGivenName().equals(resp.getFirstName())&&
-				husband.getPatronymic().equals(resp.getPatronymic())) {
+		if(husband.getGivenName().equalsIgnoreCase(resp.getFirstName())&&
+				husband.getPatronymic().equalsIgnoreCase(resp.getPatronymic())) {
 				husband.setCheckCityRegister(true);
 				so.setHusband(husband);
 				studentDao.save(so);
