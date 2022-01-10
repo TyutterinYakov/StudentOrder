@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import student.business.CountryStructService;
@@ -32,6 +33,7 @@ import student.domain.University;
 import student.domain.User;
 
 @Controller
+@RequestMapping("/admin")
 public class AdminController {
 
 	@Autowired
@@ -59,12 +61,12 @@ public class AdminController {
 	
 	
 	
-	@GetMapping("/admin")
+	@GetMapping()
 	public String getAdminPage() {
 	
 		return "adminHome";
 	}
-	@GetMapping("/admin/orders")
+	@GetMapping("/orders")
 	public String getOrders(Model md) {
 		md.addAttribute("orders", studentServ.getAllStudentOrder());
 	//	stOrServ.testSave();
@@ -74,13 +76,13 @@ public class AdminController {
 		return "orders";
 	}
 	
-	@PostMapping("/admin/checkAll")
+	@PostMapping("/checkAll")
 	public String checkAll() {
 		studentServ.checkAllOrders();
 		return "redirect:/admin/orders";
 	}
 	//WIFE
-	@GetMapping("/admin/wife/{id}")
+	@GetMapping("/wife/{id}")
 	public String getInfoWife(@PathVariable("id") Long number, Model md ) {
 		
 			md.addAttribute("adult", studentServ.getWifeByStudentOrderId(number));
@@ -88,21 +90,21 @@ public class AdminController {
 		return "parent-info";
 	}
 	//HUSBAND
-	@GetMapping("/admin/husband/{id}")
+	@GetMapping("/husband/{id}")
 	public String getInfoHusband(@PathVariable("id") Long number, Model md ) {
 		
 			md.addAttribute("adult", studentServ.getHusbandByStudentOrderId(number));
 		
 		return "parent-info";
 	}
-	@GetMapping("/admin/order/remove/{id}")
+	@GetMapping("/order/remove/{id}")
 	public String removeStudentOrder(@PathVariable Long id) {
 		studentServ.removeStudentOrderById(id);
 		return "redirect:/admin/orders";
 	}
 	//CHILD
 	
-	@GetMapping("/admin/child/{id}")
+	@GetMapping("/child/{id}")
 	public String infoChild(@PathVariable("id") Long id, Model md) {
 		md.addAttribute("streets", studentServ.findListStreet());
 		md.addAttribute("studentOrderChild", childService.getChildOrderById(id));
@@ -114,7 +116,7 @@ public class AdminController {
 		
 		return "child-info";
 	}
-	@GetMapping("/admin/orders/title")
+	@GetMapping("/orders/title")
 	public String searchOrders(@RequestParam(name="title", required = false) Long id, Model md) {
 		if(id==null||id==0L) {
 			return "redirect:/admin/orders";
@@ -123,7 +125,7 @@ public class AdminController {
 		
 		return "orders";
 	}
-	@PostMapping("/admin/childs/add")
+	@PostMapping("/childs/add")
 	public String updateChild(@ModelAttribute("studentOrderChild") StudentOrderChild soc, Model md, @AuthenticationPrincipal User user) {
 		if(user.getEmail()==null) {
 			return "redirect:/logout";
@@ -133,7 +135,7 @@ public class AdminController {
 		return "redirect:/admin/orders";
 	}
 	
-	@GetMapping("/admin/order/update/{id}")
+	@GetMapping("/order/update/{id}")
 	public String getAddOrders(@PathVariable("id") Long id, Model md, @AuthenticationPrincipal User user) {
 		if(user.getEmail()==null) {
 			return "redirect:/logout";
@@ -151,7 +153,7 @@ public class AdminController {
 		}
 		return "orderAdd";
 	}
-	@PostMapping("/admin/orders/add")
+	@PostMapping("/orders/add")
 	public String updateOrder(@ModelAttribute("studentOrder") StudentOrder so, Model md, @AuthenticationPrincipal User user) {
 		if(user.getEmail()==null) {
 			return "redirect:/logout";
@@ -163,85 +165,85 @@ public class AdminController {
 	}	
 	
 	//STREET
-	@GetMapping("/admin/streets")
+	@GetMapping("/streets")
 	public String getStreets(Model md) {
 		md.addAttribute("streets", streetService.findListStreet());
 		return "streets";
 	}
-	@GetMapping("/admin/street/update/{id}")
+	@GetMapping("/street/update/{id}")
 	public String updateStreet(@PathVariable("id") Long id, Model md) {
 		md.addAttribute("street", streetService.getStreetById(id));
 		return "streetAdd";
 	}
-	@PostMapping("/admin/street/add")
+	@PostMapping("/street/add")
 	public String updateStreet(@ModelAttribute("street") Street street) {
 		streetService.saveStreet(street);
 		return "redirect:/admin/streets";
 	}
 	
-	@GetMapping("/admin/street/remove/{id}")
+	@GetMapping("/street/remove/{id}")
 	public String removeStreet(@PathVariable("id") Long id, Model md) {
 		streetService.removeStreetById(id);
 		return "redirect:/admin/streets";
 	}
-	@GetMapping("/admin/street/add")
+	@GetMapping("/street/add")
 	public String addStreet(Model md) {
 		md.addAttribute("street", new Street());
 		return "streetAdd";
 	}
 	
 	//STATUS
-	@GetMapping("/admin/status")
+	@GetMapping("/status")
 	public String getStatus(Model md) {
 		md.addAttribute("status", statusService.getListStatus());
 		return "status";
 	}
-	@GetMapping("/admin/status/update/{id}")
+	@GetMapping("/status/update/{id}")
 	public String updateStatus(@PathVariable("id") Long id, Model md) {
 		md.addAttribute("status", statusService.getStatusById(id));
 		return "statusAdd";
 	}
-	@PostMapping("/admin/status/add")
+	@PostMapping("/status/add")
 	public String updateStatus(@ModelAttribute("studentOrderStatus") StudentOrderStatus status) {
 		statusService.saveStatus(status);
 		return "redirect:/admin/status";
 	}
 	
-	@GetMapping("/admin/status/remove/{id}")
+	@GetMapping("/status/remove/{id}")
 	public String removeStatus(@PathVariable("id") Long id, Model md) {
 		statusService.removeStatusById(id);
 		return "redirect:/admin/status";
 	}
-	@GetMapping("/admin/status/add")
+	@GetMapping("/status/add")
 	public String addStatus(Model md) {
 		md.addAttribute("status", new StudentOrderStatus());
 		return "statusAdd";
 	}
 	
 	//University
-	@GetMapping("/admin/universities")
+	@GetMapping("/universities")
 	public String getUniversities(Model md) {
 		md.addAttribute("universities", universityService.findAllUniversity());
 		return "university";
 	}
 
-	@GetMapping("/admin/university/update/{id}")
+	@GetMapping("/university/update/{id}")
 	public String updateUniversity(@PathVariable("id") Long id, Model md) {
 		md.addAttribute("university", universityService.getUniversityById(id));
 		return "universityAdd";
 	}
-	@PostMapping("/admin/university/add")
+	@PostMapping("/university/add")
 	public String updateUniversity(@ModelAttribute("university") University university) {
 		universityService.saveUniversity(university);
 		return "redirect:/admin/universities";
 	}
 	
-	@GetMapping("/admin/university/remove/{id}")
+	@GetMapping("/university/remove/{id}")
 	public String removeUniversity(@PathVariable("id") Long id, Model md) {
 		universityService.removeUniversityById(id);
 		return "redirect:/admin/universities";
 	}
-	@GetMapping("/admin/university/add")
+	@GetMapping("/university/add")
 	public String addUniversity(Model md) {
 		md.addAttribute("university", new University());
 		return "universityAdd";
@@ -249,29 +251,29 @@ public class AdminController {
 	
 	//PASSPORT
 	
-	@GetMapping("/admin/pasports")
+	@GetMapping("/pasports")
 	public String getPassports(Model md) {
 		md.addAttribute("passports", passportService.findListPassportOffice());
 		return "passportOffice";
 	}
-	@GetMapping("/admin/passport/update/{id}")
+	@GetMapping("/passport/update/{id}")
 	public String updatePassport(@PathVariable("id") Long id, Model md) {
 		md.addAttribute("passportAreas", studentServ.findListCountry());
 		md.addAttribute("passport", passportService.getPassportById(id));
 		return "passportAdd";
 	}
-	@PostMapping("/admin/passport/add")
+	@PostMapping("/passport/add")
 	public String updatePassport(@ModelAttribute("passport") PassportOffice pass) {
 		passportService.savePassport(pass);
 		return "redirect:/admin/pasports";
 	}
 	
-	@GetMapping("/admin/passport/remove/{id}")
+	@GetMapping("/passport/remove/{id}")
 	public String removePassport(@PathVariable("id") Long id, Model md) {
 		passportService.removePassportById(id);
 		return "redirect:/admin/pasports";
 	}
-	@GetMapping("/admin/passport/add")
+	@GetMapping("/passport/add")
 	public String addPassport(Model md) {
 		md.addAttribute("passportAreas", studentServ.findListCountry());
 		md.addAttribute("passport", new PassportOffice());
@@ -281,30 +283,30 @@ public class AdminController {
 	
 	//COUNTRIES
 	
-	@GetMapping("/admin/countries")
+	@GetMapping("/countries")
 	public String getCountries(Model md) {
 		md.addAttribute("countries", structService.findAllStruct());
 		
 		return "countryStruct";
 	}
-	@GetMapping("/admin/country/update/{id}")
+	@GetMapping("/country/update/{id}")
 	public String updateCountry(@PathVariable("id") Long id, Model md) {
 		md.addAttribute("struct", structService.findStructById(id));
 		return "countryStructAdd";
 	}
-	@PostMapping("/admin/country/add")
+	@PostMapping("/country/add")
 	public String updateCountry(@ModelAttribute("struct") CountryStruct str) {
 		structService.saveCountryStruct(str);
 		
 		return "redirect:/admin/countries";
 	}
 	
-	@GetMapping("/admin/country/remove/{id}")
+	@GetMapping("/country/remove/{id}")
 	public String removeCountry(@PathVariable("id") Long id, Model md) {
 		structService.removeStructById(id);
 		return "redirect:/admin/countries";
 	}
-	@GetMapping("/admin/country/add")
+	@GetMapping("/country/add")
 	public String addCountry(Model md) {
 		md.addAttribute("passportAreas", studentServ.findListCountry());
 		md.addAttribute("struct", new CountryStruct());
@@ -313,30 +315,30 @@ public class AdminController {
 	
 	//RegisterOffice
 	
-	@GetMapping("/admin/register")
+	@GetMapping("/register")
 	public String getRegister(Model md) {
 		md.addAttribute("registers", registerService.findListRegister());
 		return "registerOffice";
 	}
-	@GetMapping("/admin/register/update/{id}")
+	@GetMapping("/register/update/{id}")
 	public String updateRegister(@PathVariable("id") Long id, Model md) {
 		md.addAttribute("registerOffice", registerService.findRegisterOfficeById(id));
 		md.addAttribute("areas", studentServ.findListCountry());
 		return "registerOfficeAdd";
 	}
-	@PostMapping("/admin/register/add")
+	@PostMapping("/register/add")
 	public String updateRegister(@ModelAttribute("registerOffice") RegisterOffice ro) {
 		registerService.saveRegisterOffice(ro);
 		
 		return "redirect:/admin/register";
 	}
 	
-	@GetMapping("/admin/register/remove/{id}")
+	@GetMapping("/register/remove/{id}")
 	public String removeRegister(@PathVariable("id") Long id, Model md) {
 		registerService.removeRegisterOfficeById(id);
 		return "redirect:/admin/register";
 	}
-	@GetMapping("/admin/register/add")
+	@GetMapping("/register/add")
 	public String addRegister(Model md) {
 		md.addAttribute("areas", studentServ.findListCountry());
 		md.addAttribute("registerOffice", new RegisterOffice());
