@@ -6,6 +6,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -22,6 +23,7 @@ public class Child extends Person{
 	@ManyToOne(cascade= {CascadeType.REFRESH}, fetch=FetchType.LAZY)
 	@JoinColumn(name="c_register_office_id")
 	@NotNull(message="Отделение выдачи не может быть пустым")
+	@Valid
 	private RegisterOffice registerOffice;
 	private boolean checkChildCityRegister;
 	private boolean checkChildRegister;

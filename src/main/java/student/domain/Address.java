@@ -4,6 +4,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -20,6 +21,7 @@ public class Address {
 	private String apartment;
 	@ManyToOne(cascade=CascadeType.REFRESH, fetch=FetchType.EAGER)
 	@NotNull(message="Укажите улицу")
+	@Valid
 	private Street street;
 	
 	

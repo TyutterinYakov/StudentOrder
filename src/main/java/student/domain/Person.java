@@ -3,6 +3,7 @@ package student.domain;
 import java.time.LocalDate;
 
 import javax.persistence.MappedSuperclass;
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -22,6 +23,7 @@ public class Person {
 	@NotNull(message="Укажите дату рождения")
 	private LocalDate dateOfBirth;
 	@NotNull(message="Укажите адрес")
+	@Valid
 	private Address address;
 	
 	public String getSurName() {

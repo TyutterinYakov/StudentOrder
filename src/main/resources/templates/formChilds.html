@@ -76,6 +76,7 @@
                     <label for="description">Посткод</label>
                     <input type="text" class="form-control" required th:field="*{child.address.postCode}" name="w_postCode" id="w_postCode"
                            >
+                            <p style="color:red" th:if="${#fields.hasErrors('child.address.postCode')}" th:errors="*{child.address.postCode}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="category">Улица</label>
@@ -91,6 +92,7 @@
                     <label for="description">Дом</label>
                     <input type="text" class="form-control" required th:field="*{child.address.building}" name="w_building" id="w_streetName"
                            >
+                           <p style="color:red" th:if="${#fields.hasErrors('child.address.building')}" th:errors="*{child.address.building}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Корпус</label>
