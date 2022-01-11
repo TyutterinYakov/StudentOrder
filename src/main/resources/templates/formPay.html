@@ -43,7 +43,7 @@
 </nav>
 <div class="container">
 
-    <form th:action="@{/formPay}" method="post" th:object="${studentOrder}">
+    <form th:action="@{/formPay/add}" method="post" th:object="${studentOrder}">
         <div class="row">
             <div class="col-sm-5">
 
@@ -54,11 +54,13 @@
                     <label for="price">Фамилия</label>
                     <input maxlength="100" type="text" class="form-control" required th:field="*{wife.surName}" name="w_surName" id="w_surName"
                            >
+                     <p style="color:red" th:if="${#fields.hasErrors('wife.surName')}" th:errors="*{wife.surName}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="weight">Имя</label>
                     <input maxlength="100" type="text" class="form-control" required th:field="*{wife.givenName}" name="w_givenName" id="w_givenName"
                            >
+                    <p style="color:red" th:if="${#fields.hasErrors('wife.givenName')}" th:errors="*{wife.givenName}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Отчество</label>
@@ -69,11 +71,13 @@
                     <label for="description">День рождения</label>
                     <input type="date" class="form-control" required th:field="*{wife.dateOfBirth}" name="w_dateOfBirth" id="w_dateOfBirth"
                            >
+   				<p style="color:red" th:if="${#fields.hasErrors('wife.dateOfBirth')}" th:errors="*{wife.dateOfBirth}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Посткод</label>
                     <input maxlength="6" minlength="6" type="text" class="form-control" required th:field="*{wife.address.postCode}" name="w_postCode" id="w_postCode"
                            >
+   				<p style="color:red" th:if="${#fields.hasErrors('wife.address.postCode')}" th:errors="*{wife.address.postCode}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="category">Улица</label>
@@ -86,33 +90,39 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Дом</label>
-                    <input type="text" maxlength="5" class="form-control" required th:field="*{wife.address.building}" name="w_building" id="w_streetName"
+                    <input type="text" maxlength="5" minlength="1" class="form-control" required th:field="*{wife.address.building}" name="w_building" id="w_streetName"
                            >
+				<p style="color:red" th:if="${#fields.hasErrors('wife.address.building')}" th:errors="*{wife.address.building}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Корпус</label>
                     <input type="text" maxlength="4" class="form-control" required th:field="*{wife.address.extension}" name="w_extension" id="w_streetName"
                            >
+                    <p style="color:red" th:if="${#fields.hasErrors('wife.address.extension')}" th:errors="*{wife.address.extension}">...</p>
                 </div>  
                 <div class="form-group">
                     <label for="description">Квартира</label>
                     <input type="text" maxlength="5" class="form-control" required th:field="*{wife.address.apartment}" name="w_apartment" id="w_streetName"
                            >
+                    <p style="color:red" th:if="${#fields.hasErrors('wife.address.apartment')}" th:errors="*{wife.address.apartment}">...</p>
                 </div>                  
                 <div class="form-group">
                     <label for="description">Серия</label>
                     <input type="text" maxlength="4" minlength="4" class="form-control" required th:field="*{wife.passportSeria}" name="w_passportSeria" id="w_passportSeria"
                            >
+				<p style="color:red" th:if="${#fields.hasErrors('wife.passportSeria')}" th:errors="*{wife.passportSeria}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Номер</label>
                     <input type="text" maxlength="6" minlength="6" class="form-control" required th:field="*{wife.passportNumber}" name="w_passportNumber" id="w_passportNumber"
                            >
+				<p style="color:red" th:if="${#fields.hasErrors('wife.passportNumber')}" th:errors="*{wife.passportNumber}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Дата выдачи</label>
                     <input type="date" class="form-control" required th:field="*{wife.issueDate}" name="w_passportNumber" id="w_passportNumber"
                            >
+				<p style="color:red" th:if="${#fields.hasErrors('wife.issueDate')}" th:errors="*{wife.issueDate}">...</p>
                 </div>
 
                 <div class="form-group">
@@ -123,6 +133,7 @@
                                 th:text="${passport.passportOfficeName}"
                         >
                     </select>
+                    <p style="color:red" th:if="${#fields.hasErrors('wife.passportOffice')}" th:errors="*{wife.issueDate}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="category">Университет</label>
@@ -132,16 +143,13 @@
                                 th:text="${uni.universityName}"
                         >
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="description">Дата поступления</label>
-                    <input type="date" class="form-control" required th:field="*{wife.issueDate}" name="w_issueDate" id="w_issueDate"
-                           >
+                    <p style="color:red" th:if="${#fields.hasErrors('wife.university')}" th:errors="*{wife.university}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Номер студенческого</label>
                     <input type="text" maxlength="10" minlength="6" class="form-control" required th:field="*{wife.studentNumber}" name="w_studentNumber" id="w_studentNumber"
                            >
+                    <p style="color:red" th:if="${#fields.hasErrors('wife.studentNumber')}" th:errors="*{wife.studentNumber}">...</p>
                 </div>
                 </div>
                 <div class="col-sm-5">
@@ -151,11 +159,13 @@
                     <label for="price">Фамилия</label>
                     <input type="text" class="form-control" maxlength="100" required th:field="*{husband.surName}" name="h_surName" id="h_surName"
                            >
+                           <p style="color:red" th:if="${#fields.hasErrors('husband.surName')}" th:errors="*{husband.surName}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="weight">Имя</label>
                     <input type="text" class="form-control"  maxlength="100" required th:field="*{husband.givenName}" name="h_givenName" id="h_givenName"
                            >
+                           <p style="color:red" th:if="${#fields.hasErrors('husband.givenName')}" th:errors="*{husband.givenName}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Отчество</label>
@@ -166,11 +176,13 @@
                     <label for="description">День рождения</label>
                     <input type="date" class="form-control" required th:field="*{husband.dateOfBirth}" name="h_dateOfBirth" id="h_dateOfBirth"
                            >
+                           <p style="color:red" th:if="${#fields.hasErrors('husband.dateOfBirth')}" th:errors="*{husband.dateOfBirth}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Посткод</label>
                     <input type="text" class="form-control" maxlength="6" minlength="6" required th:field="*{husband.address.postCode}" name="h_postCode" id="h_postCode"
                            >
+                           <p style="color:red" th:if="${#fields.hasErrors('husband.address.postCode')}" th:errors="*{husband.address.postCode}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="category">Улица</label>
@@ -180,12 +192,14 @@
                                 th:text="${str.streetName}"
                         >
                     </select>
+                    <p style="color:red" th:if="${#fields.hasErrors('husband.address.street')}" th:errors="*{husband.address.street}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Дом</label>
-                    <input type="text" class="form-control" maxlength="5" required th:field="*{husband.address.building}" name="h_building" id="h_streetName"
+                    <input type="text" class="form-control" maxlength="5" minlength="1" required th:field="*{husband.address.building}" name="h_building" id="h_streetName"
                            >
                 </div>
+                    <p style="color:red" th:if="${#fields.hasErrors('husband.address.building')}" th:errors="*{husband.address.building}">...</p>
                 <div class="form-group">
                     <label for="description">Корпус</label>
                     <input type="text" class="form-control" maxlength="4" required th:field="*{husband.address.extension}" name="h_extension" id="h_streetName"
@@ -195,22 +209,26 @@
                     <label for="description">Квартира</label>
                     <input type="text" class="form-control" maxlength="5" required th:field="*{husband.address.apartment}" name="h_apartment" id="h_streetName"
                            >
+                           
                 </div>   
                 
                 <div class="form-group">
                     <label for="description">Серия</label>
                     <input type="text" class="form-control" maxlength="4" minlength="4" required th:field="*{husband.passportSeria}" name="h_passportSeria" id="h_passportSeria"
                            >
+                           <p style="color:red" th:if="${#fields.hasErrors('husband.passportSeria')}" th:errors="*{husband.passportSeria}}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Номер</label>
                     <input type="text" class="form-control" maxlength="6" minlength="5" required th:field="*{husband.passportNumber}" name="h_passportNumber" id="h_passportNumber"
                            >
+                           <p style="color:red" th:if="${#fields.hasErrors('husband.passportNumber')}" th:errors="*{husband.passportNumber}}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Дата выдачи</label>
                     <input type="date" class="form-control" required th:field="*{husband.issueDate}" name="h_passportNumber" id="h_passportNumber"
                            >
+                           <p style="color:red" th:if="${#fields.hasErrors('husband.issueDate')}" th:errors="*{husband.issueDate}}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="category">Кем выдан</label>
@@ -220,6 +238,7 @@
                                 th:text="${passport.passportOfficeName}"
                         >
                     </select>
+                    <p style="color:red" th:if="${#fields.hasErrors('husband.passportOffice')}" th:errors="*{husband.passportOffice}}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="category">Университет</label>
@@ -229,16 +248,13 @@
                                 th:text="${uni.universityName}"
                         >
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="description">Дата поступления</label>
-                    <input type="date" class="form-control" required th:field="*{husband.issueDate}" name="h_issueDate" id="h_issueDate"
-                           >
+                    <p style="color:red" th:if="${#fields.hasErrors('husband.university')}" th:errors="*{husband.university}}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Номер студенческого</label>
                     <input type="text" class="form-control" maxlength="10" minlength="6" required th:field="*{husband.studentNumber}" name="h_studentNumber" id="h_studentNumber"
                            >
+                           <p style="color:red" th:if="${#fields.hasErrors('husband.studentNumber')}" th:errors="*{husband.studentNumber}}">...</p>
                 </div>
                 </div>
                 <div class="col-sm-5">
@@ -247,11 +263,13 @@
                     <label for="description">Свидетельство</label>
                     <input type="text" class="form-control" maxlength="11" minlength="10" required th:field="*{certificateNumber}" name="certificateNumber" id="certificateNumber"
                            >
+                           <p style="color:red" th:if="${#fields.hasErrors('certificateNumber')}" th:errors="*{certificateNumber}}">...</p>
                 </div>
                 <div class="form-group">
                     <label for="description">Дата</label>
                     <input type="date" class="form-control" required th:field="*{marriageDate}" name="marriageDate" id="marriageDate"
                            >
+                           <p style="color:red" th:if="${#fields.hasErrors('marriageDate')}" th:errors="*{marriageDate}}">...</p>
                 </div>
                  <div class="form-group">
                     <label for="category">Кем выдан</label>
@@ -261,6 +279,7 @@
                                 th:text="${register.registerOfficeName}"
                         >
                     </select>
+                    <p style="color:red" th:if="${#fields.hasErrors('registerOffice')}" th:errors="*{registerOffice}}">...</p>
             </div> 
         </div>
         

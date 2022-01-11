@@ -20,6 +20,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.Valid;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -61,6 +62,7 @@ public class StudentOrder {
 		@AttributeOverride(name="checkRegisterMarriage", column=@Column(name="h_check_register_marriage"))
 	})
 	@Embedded
+	@Valid
 	private Adult husband;
 	@AssociationOverrides({
 		@AssociationOverride(name="address.street", joinColumns =@JoinColumn(name="w_street_code")),
@@ -85,6 +87,7 @@ public class StudentOrder {
 		@AttributeOverride(name="checkRegisterMarriage", column=@Column(name="w_check_register_marriage"))
 	})
 	@Embedded
+	@Valid
 	private Adult wife;
 	@Column(name="certificate_number")
 	private String certificateNumber;

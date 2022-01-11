@@ -3,10 +3,13 @@ package student.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,8 +49,16 @@ public class HomeController {
 		md.addAttribute("statuses", studentServ.findListStatus());
 		return "formPay";
 	}
-	@PostMapping("/formPay")
-	public String postFormPay(@ModelAttribute("studentOrder") StudentOrder so, @AuthenticationPrincipal User user) {
+	@PostMapping("/formPay/add")
+	public String postFormPay(@ModelAttribute("studentOrder")@Valid StudentOrder so, BindingResult result, @AuthenticationPrincipal User user, Model md) {
+		if(result.hasErrors()) {
+			md.addAttribute("pOfficies", studentServ.getListPassportOffice());
+			md.addAttribute("registers", studentServ.getListRegisterOffice());
+			md.addAttribute("univers", studentServ.getListUnivers());
+			md.addAttribute("streets", studentServ.findListStreet());
+			md.addAttribute("statuses", studentServ.findListStatus());
+			return "/formPay";
+		}
 		studentServ.saveStudentOrder(so, user);
 		return "redirect:/formChilds";
 	}
@@ -81,8 +92,13 @@ public class HomeController {
 		}
 		return "redirect:/formPay";
 	}
-	@PostMapping("/formChilds")
-	public String getFormChild(@ModelAttribute("child") StudentOrderChild soc, @AuthenticationPrincipal User user) {
+	@PostMapping("/formChilds/add")
+	public String getFormChild(@ModelAttribute("child") @Valid StudentOrderChild soc, BindingResult result,@AuthenticationPrincipal User user, Model md) {
+		if(result.hasErrors()) {
+			md.addAttribute("registers", studentServ.getListRegisterOffice());
+			md.addAttribute("streets", studentServ.findListStreet());
+			return "/formChilds";
+		}
 		childService.saveChildNew(soc, user);
 		
 		return "redirect:/orders";

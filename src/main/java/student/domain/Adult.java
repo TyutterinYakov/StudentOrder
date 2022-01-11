@@ -6,20 +6,32 @@ import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Embeddable
 public class Adult extends Person {
 	
+	@Size(max = 4, min=4, message="Size passport seria = 4")
+	@NotEmpty
 	private String passportSeria;
+	@Size(max = 6, min=6, message="Size passport number = 6")
+	@NotEmpty
 	private String passportNumber;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@NotNull(message="Укажите дату выдачи")
 	private LocalDate issueDate;
 	@ManyToOne(cascade=CascadeType.REFRESH, fetch=FetchType.EAGER)
+	@NotNull(message="Укажите место выдачи")
 	private PassportOffice passportOffice;
 	@ManyToOne(cascade=CascadeType.REFRESH, fetch=FetchType.EAGER)
+	@NotNull(message="Укажите место обучения")
 	private University university;
+	@NotEmpty
+	@Size(max = 10, min=6, message="Размер студенческого 6-10")
 	private String studentNumber;
 	private boolean checkCityRegister;
 	private boolean checkUniversity;

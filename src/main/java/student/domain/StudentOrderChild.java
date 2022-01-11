@@ -16,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.Valid;
 
 @Entity
 @Table(name="jc_student_child")
@@ -34,6 +35,7 @@ public class StudentOrderChild{
 		@AssociationOverride(name="registerOffice.c_register_office_id", joinColumns =@JoinColumn(name="c_street_code"))
 	})
 	@AttributeOverrides({
+		
 		@AttributeOverride(name="surName", column=@Column(name="c_sur_name")),
 		@AttributeOverride(name="givenName", column=@Column(name="c_given_name")),
 		@AttributeOverride(name="patronymic", column=@Column(name="c_patronymic")),
@@ -49,6 +51,7 @@ public class StudentOrderChild{
 		
 	})
 	@Embedded
+	@Valid
 	private Child child;
 	private String emailAdd;
 	private String emailEdit;
