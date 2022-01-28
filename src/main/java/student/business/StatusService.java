@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import student.dao.StudentOrderStatusRepository;
 import student.domain.StudentOrderStatus;
+import student.exception.DataNotFoundException;
 
 @Service
 public class StatusService {
@@ -35,8 +36,8 @@ public class StatusService {
 	}
 
 
-	public StudentOrderStatus getStatusById(Long id) {
+	public StudentOrderStatus getStatusById(Long id) throws DataNotFoundException {
 		
-		return statusDao.findById(id).get();
+		return statusDao.findById(id).orElseThrow(()->new DataNotFoundException("Статус с данным id не найден"));
 	}
 }

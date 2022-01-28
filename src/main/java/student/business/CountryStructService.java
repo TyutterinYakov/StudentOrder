@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import student.dao.CountryStructRepository;
 import student.domain.CountryStruct;
+import student.exception.DataNotFoundException;
 
 @Service
 public class CountryStructService {
@@ -18,9 +19,11 @@ public class CountryStructService {
 		return structDao.findAll();
 	}
 
-	public CountryStruct findStructById(Long id) {
+	public CountryStruct findStructById(Long id) throws DataNotFoundException {
 		
-		return structDao.findById(id).get();
+		CountryStruct countryStruct = structDao.findById(id).orElseThrow(()->
+		new DataNotFoundException("Country struct not found by Id"));
+		return countryStruct;
 	}
 
 	public void saveCountryStruct(CountryStruct str) {

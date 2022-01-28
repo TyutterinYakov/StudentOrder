@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import student.dao.PassportOfficeRepository;
 import student.domain.PassportOffice;
+import student.exception.DataNotFoundException;
 
 @Service
 public class PassportOfficeService {
@@ -34,8 +35,8 @@ public class PassportOfficeService {
 	}
 
 
-	public Object getPassportById(Long id) {
-		// TODO Auto-generated method stub
-		return passportDao.findById(id).get();
+	public Object getPassportById(Long id) throws DataNotFoundException {
+		return passportDao.findById(id).orElseThrow(()->
+				new DataNotFoundException("Паспорт по id не найден!"));
 	}
 }

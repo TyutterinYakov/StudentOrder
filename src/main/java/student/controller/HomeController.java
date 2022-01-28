@@ -19,6 +19,7 @@ import student.business.StudentService;
 import student.domain.StudentOrder;
 import student.domain.StudentOrderChild;
 import student.domain.User;
+import student.exception.DataNotFoundException;
 
 @Controller
 public class HomeController {
@@ -50,7 +51,7 @@ public class HomeController {
 		return "formPay";
 	}
 	@PostMapping("/formPay/add")
-	public String postFormPay(@ModelAttribute("studentOrder")@Valid StudentOrder so, BindingResult result, @AuthenticationPrincipal User user, Model md) {
+	public String postFormPay(@ModelAttribute("studentOrder")@Valid StudentOrder so, BindingResult result, @AuthenticationPrincipal User user, Model md) throws DataNotFoundException {
 		if(result.hasErrors()) {
 			md.addAttribute("pOfficies", studentServ.getListPassportOffice());
 			md.addAttribute("registers", studentServ.getListRegisterOffice());

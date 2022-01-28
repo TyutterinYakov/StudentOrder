@@ -27,6 +27,7 @@ import student.domain.StudentOrder;
 import student.domain.StudentOrderStatus;
 import student.domain.University;
 import student.domain.User;
+import student.exception.DataNotFoundException;
 
 @Service
 public class StudentService {
@@ -56,19 +57,20 @@ public class StudentService {
 	}
 	
 	@Transactional
-	public StudentOrderStatus getStatus() {
-		return statusDao.getOne(1L);
+	public StudentOrderStatus getStatus(Long id) throws DataNotFoundException {
+		return statusDao.findById(id).orElseThrow(()->
+			new DataNotFoundException("Статус не найден"));
 	}
 	
 	@Transactional
-	public Adult getWifeByStudentOrderId(Long id) {
+	public Adult getWifeByStudentOrderId(Long id) throws DataNotFoundException {
 		
-		return studentDao.findById(id).get().getWife();
+		return studentDao.findById(id).orElseThrow(()->new DataNotFoundException("Отец в заявке не найден")).getWife();
 	}
 	@Transactional
-	public Adult getHusbandByStudentOrderId(Long id) {
+	public Adult getHusbandByStudentOrderId(Long id) throws DataNotFoundException {
 		
-		return studentDao.findById(id).get().getHusband();
+		return studentDao.findById(id).orElseThrow(()->new DataNotFoundException("Отец в заявке не найден")).getHusband();
 	}
 
 	@Transactional
@@ -92,14 +94,14 @@ public class StudentService {
 		return studentDao.findById(id);
 	}
 
-	public void updateStudentOrder(StudentOrder so, User us) {
-		//so.setStudentOrderDate(studentDao.findById(so.getStudentOrderId()).get().getStudentOrderDate());
-		so.setStatus(statusDao.getOne(5L));
-		so.setEmailAdd(studentDao.findById(so.getStudentOrderId()).get().getEmailAdd());
+	public void updateStudentOrder(StudentOrder so, User us) throws DataNotFoundException {
+		so.setStatus(statusDao.findById(5L).orElseThrow(()->
+			new DataNotFoundException("Статус обновления заяки не найден")));
+		so.setEmailAdd(studentDao.findById(so.getStudentOrderId()).orElseThrow(()->
+			new DataNotFoundException("Заявка не найден")).getEmailAdd());
 		so.setEmailEdit(us.getEmail());
 		so.setStudentOrderDate(LocalDateTime.now());
 		studentDao.save(so);
-		//statusDao.save(studentDao.findById(so.getStudentOrderId()).get().getStatus());
 		
 	}
 
@@ -129,17 +131,17 @@ public class StudentService {
 		return countryDao.findAll();
 	}
 
-	public void saveStudentOrder(StudentOrder so, User us) {
+	public void saveStudentOrder(StudentOrder so, User us) throws DataNotFoundException {
 		so.setStudentOrderDate(LocalDateTime.now());
-		so.setStatus(statusDao.getOne(6L));
+		so.setStatus(statusDao.findById(6L).orElseThrow(()->
+			new DataNotFoundException("Статус сохранения заявки не найден")));
 		so.setEmailAdd(us.getEmail());
 		studentDao.save(so);
 		
 	}
 
 	public Optional<StudentOrder> getStudentOrderByEmailAdd(User user) {
-		Optional<StudentOrder> stud = studentDao.findStudentOrderByEmailAdd(user.getEmail());
-		return stud;
+		return studentDao.findStudentOrderByEmailAdd(user.getEmail());
 	}
 
 	public void checkAllOrders() {

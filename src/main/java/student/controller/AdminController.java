@@ -19,7 +19,6 @@ import student.business.RegisterOfficeService;
 import student.business.StatusService;
 import student.business.StreetService;
 import student.business.StudentOrderChildService;
-import student.business.StudentOrderService;
 import student.business.StudentService;
 import student.business.UniversityService;
 import student.domain.CountryStruct;
@@ -31,6 +30,7 @@ import student.domain.StudentOrderChild;
 import student.domain.StudentOrderStatus;
 import student.domain.University;
 import student.domain.User;
+import student.exception.DataNotFoundException;
 
 @Controller
 @RequestMapping("/admin")
@@ -38,8 +38,8 @@ public class AdminController {
 
 	@Autowired
 	private StudentService studentServ;
-	@Autowired
-	private StudentOrderService stOrServ;
+//	@Autowired
+//	private StudentOrderService stOrServ;
 	
 	@Autowired
 	private StudentOrderChildService childService;
@@ -67,10 +67,10 @@ public class AdminController {
 		return "adminHome";
 	}
 	@GetMapping("/orders")
-	public String getOrders(Model md) {
+	public String getOrders(Model md) throws DataNotFoundException {
 		md.addAttribute("orders", studentServ.getAllStudentOrder());
 	//	stOrServ.testSave();
-		md.addAttribute("status", studentServ.getStatus());
+		md.addAttribute("status", studentServ.getStatus(1L));
 		
 		
 		return "orders";
@@ -83,7 +83,7 @@ public class AdminController {
 	}
 	//WIFE
 	@GetMapping("/wife/{id}")
-	public String getInfoWife(@PathVariable("id") Long number, Model md ) {
+	public String getInfoWife(@PathVariable("id") Long number, Model md ) throws DataNotFoundException {
 		
 			md.addAttribute("adult", studentServ.getWifeByStudentOrderId(number));
 		
@@ -91,7 +91,7 @@ public class AdminController {
 	}
 	//HUSBAND
 	@GetMapping("/husband/{id}")
-	public String getInfoHusband(@PathVariable("id") Long number, Model md ) {
+	public String getInfoHusband(@PathVariable("id") Long number, Model md ) throws DataNotFoundException {
 		
 			md.addAttribute("adult", studentServ.getHusbandByStudentOrderId(number));
 		
@@ -154,7 +154,7 @@ public class AdminController {
 		return "orderAdd";
 	}
 	@PostMapping("/orders/add")
-	public String updateOrder(@ModelAttribute("studentOrder") StudentOrder so, Model md, @AuthenticationPrincipal User user) {
+	public String updateOrder(@ModelAttribute("studentOrder") StudentOrder so, Model md, @AuthenticationPrincipal User user) throws DataNotFoundException {
 		if(user.getEmail()==null) {
 			return "redirect:/logout";
 		}
@@ -171,7 +171,7 @@ public class AdminController {
 		return "streets";
 	}
 	@GetMapping("/street/update/{id}")
-	public String updateStreet(@PathVariable("id") Long id, Model md) {
+	public String updateStreet(@PathVariable("id") Long id, Model md) throws DataNotFoundException {
 		md.addAttribute("street", streetService.getStreetById(id));
 		return "streetAdd";
 	}
@@ -199,7 +199,7 @@ public class AdminController {
 		return "status";
 	}
 	@GetMapping("/status/update/{id}")
-	public String updateStatus(@PathVariable("id") Long id, Model md) {
+	public String updateStatus(@PathVariable("id") Long id, Model md) throws DataNotFoundException {
 		md.addAttribute("status", statusService.getStatusById(id));
 		return "statusAdd";
 	}
@@ -228,7 +228,7 @@ public class AdminController {
 	}
 
 	@GetMapping("/university/update/{id}")
-	public String updateUniversity(@PathVariable("id") Long id, Model md) {
+	public String updateUniversity(@PathVariable("id") Long id, Model md) throws DataNotFoundException {
 		md.addAttribute("university", universityService.getUniversityById(id));
 		return "universityAdd";
 	}
@@ -257,7 +257,7 @@ public class AdminController {
 		return "passportOffice";
 	}
 	@GetMapping("/passport/update/{id}")
-	public String updatePassport(@PathVariable("id") Long id, Model md) {
+	public String updatePassport(@PathVariable("id") Long id, Model md) throws DataNotFoundException {
 		md.addAttribute("passportAreas", studentServ.findListCountry());
 		md.addAttribute("passport", passportService.getPassportById(id));
 		return "passportAdd";
@@ -290,7 +290,7 @@ public class AdminController {
 		return "countryStruct";
 	}
 	@GetMapping("/country/update/{id}")
-	public String updateCountry(@PathVariable("id") Long id, Model md) {
+	public String updateCountry(@PathVariable("id") Long id, Model md) throws DataNotFoundException {
 		md.addAttribute("struct", structService.findStructById(id));
 		return "countryStructAdd";
 	}
@@ -321,7 +321,7 @@ public class AdminController {
 		return "registerOffice";
 	}
 	@GetMapping("/register/update/{id}")
-	public String updateRegister(@PathVariable("id") Long id, Model md) {
+	public String updateRegister(@PathVariable("id") Long id, Model md) throws DataNotFoundException {
 		md.addAttribute("registerOffice", registerService.findRegisterOfficeById(id));
 		md.addAttribute("areas", studentServ.findListCountry());
 		return "registerOfficeAdd";

@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import student.dao.StreetRepository;
 import student.domain.Street;
+import student.exception.DataNotFoundException;
 
 @Service
 public class StreetService {
@@ -31,9 +32,8 @@ public class StreetService {
 		streetDao.save(street);
 	}
 
-	public Street getStreetById(Long id) {
-		// TODO Auto-generated method stub
-		return streetDao.findById(id).get();
+	public Street getStreetById(Long id) throws DataNotFoundException {
+		return streetDao.findById(id).orElseThrow(()->new DataNotFoundException("Улицы с данным id нет"));
 	}
 
 	public void saveStreet(Street street) {

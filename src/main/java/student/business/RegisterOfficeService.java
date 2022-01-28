@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import student.dao.RegisterOfficeRepository;
 import student.domain.RegisterOffice;
+import student.exception.DataNotFoundException;
 
 @Service
 public class RegisterOfficeService {
@@ -20,8 +21,9 @@ public class RegisterOfficeService {
 	}
 
 
-	public RegisterOffice findRegisterOfficeById(Long id) {
-		return registerRepo.findById(id).get();
+	public RegisterOffice findRegisterOfficeById(Long id) throws DataNotFoundException {
+		return registerRepo.findById(id).orElseThrow(()->
+		new DataNotFoundException("Зал регистрации не найден по id"));
 	}
 
 

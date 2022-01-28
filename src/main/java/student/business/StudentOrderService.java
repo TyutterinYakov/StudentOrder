@@ -28,6 +28,8 @@ public class StudentOrderService {
 	
 //	private static final Logger logger = LoggerFactory.getLogger(StudentOrderService.class);
 	
+	//Класс не имеет никакой логической нагрузки. Создан в самом начале и не используется.
+	
 	@Autowired
 	private StudentOrderRepository orderDao;
 	@Autowired

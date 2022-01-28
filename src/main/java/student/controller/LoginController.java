@@ -9,11 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import student.business.LoginService;
 import student.domain.User;
+import student.exception.RoleNotFoundException;
 
 
 
@@ -33,7 +33,7 @@ public class LoginController {
 		return "register";
 	}
 	@PostMapping("/register")
-	public String registerPost(@ModelAttribute("user") User user, HttpServletRequest request, Model md) throws ServletException {
+	public String registerPost(@ModelAttribute("user") User user, HttpServletRequest request, Model md) throws ServletException, RoleNotFoundException {
 		boolean result = loginServ.register(user, request);
 		if(result) {
 

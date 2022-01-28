@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import student.dao.UniversityRepository;
 import student.domain.University;
+import student.exception.DataNotFoundException;
 
 @Service
 public class UniversityService {
@@ -30,8 +31,9 @@ public class UniversityService {
 		uniDao.save(uni);
 	}
 	@Transactional
-	public University getUniversityById(Long id) {
-		return uniDao.findById(id).get();
+	public University getUniversityById(Long id) throws DataNotFoundException {
+		return uniDao.findById(id).orElseThrow(()->
+			new DataNotFoundException("Университет с таким id не найден"));
 	}
 
 
