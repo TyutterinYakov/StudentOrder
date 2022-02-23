@@ -13,31 +13,33 @@ import student.exception.DataNotFoundException;
 @Service
 public class StatusService {
 	
+	
+	private final StudentOrderStatusRepository statusDao;
+	
 	@Autowired
-	private StudentOrderStatusRepository statusDao;
-	
-	
-	@Transactional
+	public StatusService(StudentOrderStatusRepository statusDao) {
+		super();
+		this.statusDao = statusDao;
+	}
+
+
 	public List<StudentOrderStatus> getListStatus(){
-		
 		return statusDao.findAll();
 	}
 
 
 	public void removeStatusById(Long id) {
 		statusDao.deleteById(id);
-		
 	}
 
 
 	public void saveStatus(StudentOrderStatus status) {
 		statusDao.save(status);
-		
 	}
 
 
 	public StudentOrderStatus getStatusById(Long id) throws DataNotFoundException {
-		
-		return statusDao.findById(id).orElseThrow(()->new DataNotFoundException("Статус с данным id не найден"));
+		return statusDao.findById(id).orElseThrow(()->
+			new DataNotFoundException("Статус с данным id не найден"));
 	}
 }

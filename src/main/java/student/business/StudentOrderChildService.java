@@ -19,14 +19,20 @@ import student.domain.User;
 @Service
 public class StudentOrderChildService {
 
-	@Autowired
-	private StudentOrderChildRepository childDao;
-	@Autowired
-	private StudentOrderRepository studentDao;
-	@Autowired
-	private StudentOrderStatusRepository statusDao;
+	private final StudentOrderChildRepository childDao;
+	private final StudentOrderRepository studentDao;
+	private final StudentOrderStatusRepository statusDao;
 	
-	@Transactional
+	@Autowired
+	public StudentOrderChildService(StudentOrderChildRepository childDao, StudentOrderRepository studentDao,
+			StudentOrderStatusRepository statusDao) {
+		super();
+		this.childDao = childDao;
+		this.studentDao = studentDao;
+		this.statusDao = statusDao;
+	}
+
+
 	public Optional<StudentOrderChild> getChildOrderById(Long id){
 		return childDao.findById(id);
 	}
@@ -55,9 +61,7 @@ public class StudentOrderChildService {
 		StudentOrder so = stud.get();
 		so.setStatus(statusDao.getOne(1L));
 		studentDao.save(so);
-		
 		soc.setEmailAdd(user.getEmail());
-		
 		childDao.save(soc);
 		
 	}

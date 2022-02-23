@@ -32,45 +32,44 @@ import student.exception.DataNotFoundException;
 @Service
 public class StudentService {
 
-	@Autowired
-	private StudentOrderRepository studentDao;
-	@Autowired
-	private StudentOrderStatusRepository statusDao;
-	@Autowired
-	private PassportOfficeRepository passportDao;
-	@Autowired
-	private UniversityRepository universityDao;
-	@Autowired
-	private StreetRepository streetDao;
-	@Autowired
-	private RegisterOfficeRepository registerDao;
-	@Autowired
-	private CountryStructRepository countryDao;
-
+	private final StudentOrderRepository studentDao;
+	private final StudentOrderStatusRepository statusDao;
+	private final PassportOfficeRepository passportDao;
+	private final UniversityRepository universityDao;
+	private final StreetRepository streetDao;
+	private final RegisterOfficeRepository registerDao;
+	private final CountryStructRepository countryDao;
 	
-	@Transactional
+	@Autowired
+	public StudentService(StudentOrderRepository studentDao, StudentOrderStatusRepository statusDao,
+			PassportOfficeRepository passportDao, UniversityRepository universityDao, StreetRepository streetDao,
+			RegisterOfficeRepository registerDao, CountryStructRepository countryDao) {
+		super();
+		this.studentDao = studentDao;
+		this.statusDao = statusDao;
+		this.passportDao = passportDao;
+		this.universityDao = universityDao;
+		this.streetDao = streetDao;
+		this.registerDao = registerDao;
+		this.countryDao = countryDao;
+	}
+
 	public List<StudentOrder> getAllStudentOrder(){
-		List<StudentOrder> studs = studentDao.findAll();
-		
-		
-		return studs;
+		return studentDao.findAll();
 	}
 	
-	@Transactional
 	public StudentOrderStatus getStatus(Long id) throws DataNotFoundException {
 		return statusDao.findById(id).orElseThrow(()->
-			new DataNotFoundException("Статус не найден"));
+				new DataNotFoundException("Статус не найден"));
 	}
 	
-	@Transactional
 	public Adult getWifeByStudentOrderId(Long id) throws DataNotFoundException {
-		
-		return studentDao.findById(id).orElseThrow(()->new DataNotFoundException("Отец в заявке не найден")).getWife();
+		return studentDao.findById(id).orElseThrow(()->
+				new DataNotFoundException("Мать в заявке не найдена")).getWife();
 	}
-	@Transactional
 	public Adult getHusbandByStudentOrderId(Long id) throws DataNotFoundException {
-		
-		return studentDao.findById(id).orElseThrow(()->new DataNotFoundException("Отец в заявке не найден")).getHusband();
+		return studentDao.findById(id).orElseThrow(()->
+				new DataNotFoundException("Отец в заявке не найден")).getHusband();
 	}
 
 	@Transactional
@@ -80,12 +79,9 @@ public class StudentService {
 	}
 	@Transactional
 	public List<StudentOrder> getListStudentOrderById(Long id) {
-		Optional<StudentOrder> so = studentDao.findById(id);
 		List<StudentOrder> lists = new LinkedList<>();
-		if(so.isPresent()) {
-			lists.add(so.get());
-		return lists;
-		}
+		studentDao.findById(id)
+			.ifPresent((so)->lists.add(so));
 		return lists;
 	}
 	
@@ -110,12 +106,10 @@ public class StudentService {
 	}
 
 	public List<RegisterOffice> getListRegisterOffice() {
-		
 		return registerDao.findAll();
 	}
 
 	public List<University> getListUnivers() {
-		
 		return universityDao.findAll();
 	}
 

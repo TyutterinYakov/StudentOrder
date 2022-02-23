@@ -14,6 +14,7 @@ import java.util.Properties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,6 +26,7 @@ import student.response.CityRegisterResponse;
 import student.response.RegisterOfficeResponse;
 import student.response.UniversityResponse;
 
+@Component
 public class ConnectAndCheck {
 
 	private Logger log = LoggerFactory.getLogger(ConnectAndCheck.class);

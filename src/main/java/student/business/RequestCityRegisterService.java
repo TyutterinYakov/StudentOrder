@@ -22,12 +22,22 @@ import student.util.ConnectAndCheck;
 @Service
 public class RequestCityRegisterService {
 
-	private ConnectAndCheck cityGetResponse = new ConnectAndCheck();
-	@Autowired
-	private StudentOrderRepository studentDao;
-	@Autowired
-	private StudentOrderChildRepository childDao;
+	private final ConnectAndCheck cityGetResponse;
+	private final StudentOrderRepository studentDao;
+	private final StudentOrderChildRepository childDao;
 	
+	
+	@Autowired
+	public RequestCityRegisterService(ConnectAndCheck cityGetResponse, StudentOrderRepository studentDao,
+			StudentOrderChildRepository childDao) {
+		super();
+		this.cityGetResponse = cityGetResponse;
+		this.studentDao = studentDao;
+		this.childDao = childDao;
+	}
+
+
+
 	@Transactional
 	public void buildCityRegisterRequest(Long id) throws IOException {
 		List<CityRegisterRequest> listRequest = new LinkedList<>();
@@ -44,7 +54,7 @@ public class RequestCityRegisterService {
 					listRequest.add(buildChild(soc));
 				}
 			}
-				CheckCityRegister(cityGetResponse.getResponseCity(listRequest), so, socOptional);
+				checkCityRegister(cityGetResponse.getResponseCity(listRequest), so, socOptional);
 		}
 	}
 
@@ -67,7 +77,7 @@ public class RequestCityRegisterService {
 	
 	
 	
-	private void CheckCityRegister(List<CityRegisterResponse> response, StudentOrder so, Optional<List<StudentOrderChild>> socOptional) {
+	private void checkCityRegister(List<CityRegisterResponse> response, StudentOrder so, Optional<List<StudentOrderChild>> socOptional) {
 		Adult wife = so.getWife();
 		Adult husband = so.getHusband();
 		boolean checkSoc = socOptional.isPresent();

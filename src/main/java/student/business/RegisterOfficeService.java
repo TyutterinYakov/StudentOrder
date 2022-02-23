@@ -12,10 +12,15 @@ import student.exception.DataNotFoundException;
 @Service
 public class RegisterOfficeService {
 
+	private final RegisterOfficeRepository registerRepo;
+	
 	@Autowired
-	private RegisterOfficeRepository registerRepo;
-	
-	
+	public RegisterOfficeService(RegisterOfficeRepository registerRepo) {
+		super();
+		this.registerRepo = registerRepo;
+	}
+
+
 	public List<RegisterOffice> findListRegister(){
 		return registerRepo.findAll(); 
 	}

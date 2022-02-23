@@ -23,15 +23,21 @@ import student.util.ConnectAndCheck;
 @Service
 public class RequestRegisterService {
 	
-	private ConnectAndCheck checkMarriage = new ConnectAndCheck();
+	private final ConnectAndCheck checkMarriage;
+	private final StudentOrderRepository studentDao;
+	private final StudentOrderChildRepository childDao;
 	
 	@Autowired
-	private StudentOrderRepository studentDao;
-	@Autowired
-	private StudentOrderChildRepository childDao;
-	
+	public RequestRegisterService(ConnectAndCheck checkMarriage, StudentOrderRepository studentDao,
+			StudentOrderChildRepository childDao) {
+		super();
+		this.checkMarriage = checkMarriage;
+		this.studentDao = studentDao;
+		this.childDao = childDao;
+	}
 
-	
+
+
 	@Transactional
 	public void buildRegisterOfficeRequest(Long id) throws IOException {
 		Optional<List<StudentOrderChild>> childs;

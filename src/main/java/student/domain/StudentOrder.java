@@ -100,8 +100,6 @@ public class StudentOrder {
 	@OneToMany(cascade= {CascadeType.ALL}, fetch=FetchType.LAZY, 
 			mappedBy="studentOrder")
 	private List<StudentOrderChild> studentOrderChild;
-//	private boolean checkRegisterOffice;
-//	private boolean checkCityRegister;
 	@Column(unique=true)
 	private String emailAdd;
 	private String emailEdit;

@@ -13,11 +13,15 @@ import student.exception.DataNotFoundException;
 @Service
 public class PassportOfficeService {
 
+	private final PassportOfficeRepository passportDao;
+	
 	@Autowired
-	private PassportOfficeRepository passportDao;
-	
-	
-	@Transactional
+	public PassportOfficeService(PassportOfficeRepository passportDao) {
+		super();
+		this.passportDao = passportDao;
+	}
+
+
 	public List<PassportOffice> findListPassportOffice(){
 		return passportDao.findAll();
 	}
@@ -25,13 +29,11 @@ public class PassportOfficeService {
 
 	public void savePassport(PassportOffice pass) {
 		passportDao.save(pass);
-		
 	}
 
 
 	public void removePassportById(Long id) {
 		passportDao.deleteById(id);
-		
 	}
 
 

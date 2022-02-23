@@ -17,12 +17,21 @@ import student.domain.User;
 @Service
 public class CustomUserDetailService implements UserDetailsService{
 
+	private final UserRepository userDao;
+	
 	@Autowired
-	private UserRepository userRepo;
+	public CustomUserDetailService(UserRepository userDao) {
+		super();
+		this.userDao = userDao;
+	}
+
+
+
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Optional<User> user = userRepo.findUserByEmail(username);
-		user.orElseThrow(()->new UsernameNotFoundException("Такой пользователь не найден"));
+		Optional<User> user = userDao.findUserByEmail(username);
+		user.orElseThrow(()->
+			new UsernameNotFoundException("Такой пользователь не найден"));
 		return user.map(CustomUserDetail::new).get();
 	}
 

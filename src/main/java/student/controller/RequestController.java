@@ -24,19 +24,26 @@ import student.domain.StudentOrderChild;
 @Controller
 public class RequestController {
 	
-	private static Logger log = LoggerFactory.getLogger(RequestController.class);
-	@Autowired
-	private RequestUniversityService requestUniversityService;
-	@Autowired
-	private StudentService studentServ;
-	@Autowired
-	private RequestRegisterService requestRegisterService;
-	@Autowired
-	private StudentOrderChildService childService;
-	@Autowired
-	private RequestCityRegisterService requestCityService;
+	private static final Logger log = LoggerFactory.getLogger(RequestController.class);
+	private final RequestUniversityService requestUniversityService;
+	private final StudentService studentServ;
+	private final RequestRegisterService requestRegisterService;
+	private final StudentOrderChildService childService;
+	private final RequestCityRegisterService requestCityService;
 	
+	@Autowired
+	public RequestController(RequestUniversityService requestUniversityService, StudentService studentServ,
+			RequestRegisterService requestRegisterService, StudentOrderChildService childService,
+			RequestCityRegisterService requestCityService) {
+		super();
+		this.requestUniversityService = requestUniversityService;
+		this.studentServ = studentServ;
+		this.requestRegisterService = requestRegisterService;
+		this.childService = childService;
+		this.requestCityService = requestCityService;
+	}
 	
+
 	//UNIVERSITY
 	@GetMapping("/admin/checkUniversity/{id}")
 	public String getStudentInfo(@PathVariable("id") Long id, Model md) {
@@ -89,7 +96,7 @@ public class RequestController {
 	@PostMapping("/admin/checkRegister/{id}")
 	public String postRegisterInfo(@PathVariable("id") Long id) {
 		try {
-		requestRegisterService.buildRegisterOfficeRequest(id);
+			requestRegisterService.buildRegisterOfficeRequest(id);
 		} catch(IOException ex) {
 			log.error(ex.getMessage(), ex);
 			return "redirect:/admin/checkRegister/{id}?error=true";
@@ -103,7 +110,7 @@ public class RequestController {
 		Optional<StudentOrder> so = studentServ.getStudentOrderById(id);
 		if(so.isPresent()) {
 			md.addAttribute("studentOrder", so.get());
-		Optional<List<StudentOrderChild>> childs = childService.getChildOrderByStudentOrderId(so.get());
+			Optional<List<StudentOrderChild>> childs = childService.getChildOrderByStudentOrderId(so.get());
 			if(childs.isPresent()) {
 				md.addAttribute("childs", childs.get());
 			} 
@@ -114,7 +121,7 @@ public class RequestController {
 	@PostMapping("/admin/checkCityRegister/{id}")
 	public String postCityRegister(@PathVariable("id") Long id) {
 		try {
-		requestCityService.buildCityRegisterRequest(id);
+			requestCityService.buildCityRegisterRequest(id);
 		} catch (IOException ex) {
 			log.error(ex.getMessage(), ex);
 			return "redirect:/admin/checkCityRegister/{id}?error=true";

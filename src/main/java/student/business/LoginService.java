@@ -21,26 +21,32 @@ import student.exception.RoleNotFoundException;
 
 @Service
 public class LoginService {
-	@Autowired
+	
 	private BCryptPasswordEncoder cryptPass;
-	@Autowired
 	private UserRepository userDao;
-	@Autowired
 	private RoleRepository roleDao;
 	
-	
+	@Autowired
+	public LoginService(BCryptPasswordEncoder cryptPass, UserRepository userDao, RoleRepository roleDao) {
+		super();
+		this.cryptPass = cryptPass;
+		this.userDao = userDao;
+		this.roleDao = roleDao;
+	}
+
+
 	@Transactional
 	public boolean register(User user, HttpServletRequest request) throws ServletException, RoleNotFoundException {
 		if(!userDao.findUserByEmail(user.getEmail()).isPresent()) {
-		String password = user.getPassword();
-		user.setPassword(cryptPass.encode(password));
-		List<Role> roles = new ArrayList<>();
-		roles.add(roleDao.findById(2).orElseThrow(()->
-			new RoleNotFoundException("Ошибка присваивания роли, роль пользователя не найдена!")));
-		user.setRoles(roles);
-		userDao.save(user);
-		request.login(user.getEmail(), password);
-		return true;
+			String password = user.getPassword();
+			user.setPassword(cryptPass.encode(password));
+			List<Role> roles = new ArrayList<>();
+			roles.add(roleDao.findById(2).orElseThrow(()->
+				new RoleNotFoundException("Ошибка присваивания роли, роль пользователя не найдена!")));
+			user.setRoles(roles);
+			userDao.save(user);
+			request.login(user.getEmail(), password);
+			return true;
 		}
 		return false;
 	}

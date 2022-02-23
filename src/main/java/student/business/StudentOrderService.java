@@ -30,24 +30,29 @@ public class StudentOrderService {
 	
 	//Класс не имеет никакой логической нагрузки. Создан в самом начале и не используется.
 	
-	@Autowired
-	private StudentOrderRepository orderDao;
-	@Autowired
-	private StudentOrderChildRepository childDao;
-	@Autowired
-	private StreetRepository streetDao;
-	@Autowired
-	private StudentOrderStatusRepository statusDao;
-	@Autowired
-	private PassportOfficeRepository passportDao;
-	@Autowired
-	private UniversityRepository universityDao;
-	@Autowired 
-	private RegisterOfficeRepository registerDao;
+	private final StudentOrderRepository orderDao;
+	private final StudentOrderChildRepository childDao;
+	private final StreetRepository streetDao;
+	private final StudentOrderStatusRepository statusDao;
+	private final PassportOfficeRepository passportDao;
+	private final UniversityRepository universityDao;
+	private final RegisterOfficeRepository registerDao;
 	
+	@Autowired
+	public StudentOrderService(StudentOrderRepository orderDao, StudentOrderChildRepository childDao,
+			StreetRepository streetDao, StudentOrderStatusRepository statusDao, PassportOfficeRepository passportDao,
+			UniversityRepository universityDao, RegisterOfficeRepository registerDao) {
+		super();
+		this.orderDao = orderDao;
+		this.childDao = childDao;
+		this.streetDao = streetDao;
+		this.statusDao = statusDao;
+		this.passportDao = passportDao;
+		this.universityDao = universityDao;
+		this.registerDao = registerDao;
+	}
 
-	
-	
+
 	@Transactional
 	public void testSave() {
 		StudentOrder so = new StudentOrder();

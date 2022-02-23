@@ -13,24 +13,25 @@ import student.exception.DataNotFoundException;
 @Service
 public class UniversityService {
 	
+	private final UniversityRepository uniDao;
+	
 	@Autowired
-	private UniversityRepository uniDao;
-	
-	
-	@Transactional
+	public UniversityService(UniversityRepository uniDao) {
+		super();
+		this.uniDao = uniDao;
+	}
+
 	public List<University> findAllUniversity(){
 		return uniDao.findAll();
 	}
 	
-	@Transactional
 	public void removeUniversityById(Long id) {
 		uniDao.deleteById(id);
 	}
-	@Transactional
 	public void saveUniversity(University uni) {
 		uniDao.save(uni);
 	}
-	@Transactional
+	
 	public University getUniversityById(Long id) throws DataNotFoundException {
 		return uniDao.findById(id).orElseThrow(()->
 			new DataNotFoundException("Университет с таким id не найден"));

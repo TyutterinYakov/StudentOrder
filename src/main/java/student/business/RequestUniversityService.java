@@ -18,10 +18,15 @@ import student.util.ConnectAndCheck;
 @Service
 public class RequestUniversityService {
 	
+	private final ConnectAndCheck uniCon;
+	private final StudentOrderRepository studentDao;
+	
 	@Autowired
-	private StudentOrderRepository studentDao;
-	
-	
+	public RequestUniversityService(ConnectAndCheck uniCon, StudentOrderRepository studentDao) {
+		super();
+		this.uniCon = uniCon;
+		this.studentDao = studentDao;
+	}
 	@Transactional
 	public void buildWifeUniversityRequest(Long id) throws IOException{
 		Optional<StudentOrder> so = studentDao.findById(id);
@@ -77,7 +82,6 @@ public class RequestUniversityService {
 	
 	
 	private List<UniversityResponse> studentInfo(UniversityRequest request) throws IOException {
-			ConnectAndCheck uniCon = new ConnectAndCheck();
 			return uniCon.getResponseUniversity(request);
 	}
 
